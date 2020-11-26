@@ -1,0 +1,37 @@
+<div class="col-md-6 mt-4 ml-10 depl">
+  <div class="panel panel-primary">
+    <div class="panel panel-heading">Choisir votre centre d'interet</div>
+    <div class="panel-body">
+
+<form #f="ngForm"  (ngSubmit)="onCategories(f.value)">
+  <div class="form-check">
+    <input type="checkbox" [(ngModel)]="covid"  class="form-check-input" id="covid" name="covid"  checked>
+    <label class="form-check-label" ngModel  for="covid">Connaissance covid</label>
+  </div>
+  <div class="form-check">
+    <input type="checkbox" [(ngModel)]="sanitaire"  class="form-check-input" name="sanitaire" id="sanitaire" checked>
+    <label class="form-check-label left" style="position: relative " for="sanitaire">   Historique sanitaire</label>
+  </div>
+  <div class="form-check">
+    <input type="checkbox" [(ngModel)]="environnement"  class="form-check-input" id="environnement" name="environnement"  checked>
+    <label class="form-check-label" for="environnement">Environnement</label>
+  </div>
+
+  <div class="form-check">
+    <input type="checkbox" [(ngModel)]="nutrition"  class="form-check-input" id="nutrition" name="nutrition"  checked>
+    <label class="form-check-label" for="nutrition">Nutrition</label>
+  </div>
+  <div class="form-check">
+    <input type="checkbox" [(ngModel)]="identite"  class="form-check-input" id="identite" name="identite" checked>
+    <label class="form-check-label" for="identite">Identite</label>
+  </div>
+  <div class="form-check">
+    <input type="checkbox"  [(ngModel)]="objet"  class="form-check-input" id="objet" name="objet"  checked>
+    <label class="form-check-label" for="objet">Objet</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+    </div>
+  </div>
+</div>
+

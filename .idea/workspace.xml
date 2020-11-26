@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="bd303f78-b463-43be-8b7d-03c5fa3c985a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/prescrawling/.browserslistrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prescrawling/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prescrawling/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prescrawling/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prescrawling/angular.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prescrawling/e2e/protractor.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prescrawling/e2e/src/app.e2e-spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prescrawling/e2e/src/app.po.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prescrawling/e2e/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prescrawling/karma.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prescrawling/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prescrawling/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prescrawling/src/app/app-routing.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prescrawling/src/app/app.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prescrawling/src/app/app.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prescrawling/src/app/app.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prescrawling/src/app/app.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prescrawling/src/app/app.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prescrawling/src/app/classes/Utilisateur.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prescrawling/src/assets/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prescrawling/src/environments/environment.prod.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prescrawling/src/environments/environment.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prescrawling/src/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prescrawling/src/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prescrawling/src/main.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prescrawling/src/polyfills.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prescrawling/src/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prescrawling/src/test.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prescrawling/tsconfig.app.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prescrawling/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prescrawling/tsconfig.spec.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prescrawling/tslint.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/prescrawling" />
+  </component>
+  <component name="ProjectId" id="1kZYtbKsQaIAIFl1FJ0h2YWYbAJ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.tslint" />
+    <property name="ts.external.directory.path" value="D:\DevAppPers\fronted\scrawling\prescrawling\node_modules\typescript\lib" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bd303f78-b463-43be-8b7d-03c5fa3c985a" name="Default Changelist" comment="" />
+      <created>1605894481892</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1605894481892</updated>
+      <workItem from="1605894483252" duration="951000" />
+      <workItem from="1605909901886" duration="666000" />
+      <workItem from="1605949277195" duration="1145000" />
+      <workItem from="1605990130140" duration="614000" />
+      <workItem from="1606033266974" duration="808000" />
+      <workItem from="1606034156765" duration="599000" />
+      <workItem from="1606072838650" duration="1235000" />
+      <workItem from="1606081142125" duration="3651000" />
+      <workItem from="1606115894527" duration="1767000" />
+      <workItem from="1606122371164" duration="38071000" />
+      <workItem from="1606203577048" duration="2979000" />
+      <workItem from="1606208749191" duration="45867000" />
+      <workItem from="1606327254782" duration="4673000" />
+      <workItem from="1606385552657" duration="2752000" />
+      <workItem from="1606389550544" duration="691000" />
+      <workItem from="1606391664995" duration="16053000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="441" y="167" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606144589668">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="441" y="167" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1606144589668" />
+    <state x="715" y="100" width="533" height="528" key="DiffContextDialog" timestamp="1606116836409">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="715" y="100" width="533" height="528" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1606116836409" />
+    <state x="724" y="106" key="FileChooserDialogImpl" timestamp="1606084566522">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="724" y="106" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1606084566522" />
+    <state x="368" y="7" key="SettingsEditor" timestamp="1606125454958">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="368" y="7" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1606125454958" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1606146815811">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1606146815811" />
+    <state x="477" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1606391936269">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="477" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1606391936269" />
+  </component>
+</project>

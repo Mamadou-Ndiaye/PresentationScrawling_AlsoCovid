@@ -52,12 +52,12 @@ export class WebDocumentsComponent implements OnInit {
     this.nutrition=this.documentsService.nutrition;
     this.identite=this.documentsService.identite;
     this.sanitaire=this.documentsService.sanitaire;
-   this.changeShow(this.url[0])
+    this.changeShow(this.url[0])
 
 
   }
 
-
+// Recuperer la page current  et on linjecte
   onPageDocument(i: number) {
     this.currentPage=i;
     this.documentsService.getAlldocuments(this.currentUrl,this.currentPage,this.size)
@@ -65,8 +65,7 @@ export class WebDocumentsComponent implements OnInit {
         console.log("voila le resultat de get",data)
         console.log("page courrante est ",this.currentPage)
         // this.totalPages = data["page"].totalPages;
-        // this.pages=new  Array<number>(this.totalPages);
-        // this.totalPages = this.documents.totalPages;
+         
 
         this.documents= data;
 

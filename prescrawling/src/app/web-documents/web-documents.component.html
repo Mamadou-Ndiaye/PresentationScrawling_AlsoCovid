@@ -53,46 +53,68 @@
 </nav>
 <!--{{documents.totalPages|json}}-->
 
+
 <div class="row">
-  <div class="panel-body">
-    <div *ngIf="documents">
-      <div *ngFor=" let doc of  documents.content">
+     <div class="col-sm-8" *ngIf="documents" >
+      <div class="row" *ngFor=" let doc of  documents.content">
 
-        <div class="col-md-8">
 
-          <div class="row">
+
+
             <div class="col-md-4">
               <img class="img-thumbnail img-rounded btn" width="200px" height="300px" [src]="doc.img[0]"/>
             </div>
-            <br class="col-md-8">
+            <div class="col-md-8">
               <h4 class="text-center text-capitalize text-info"> {{doc.titre}}</h4>
               <span> {{doc.resume}}</span><p></p>
               <span> <a href="{{doc.url}}">{{doc.url}}</a></span>
 
 
-            </div>
-          </div>
+           </div>
 
 
-        </div>
-
-      <ul  *ngIf="pages" class="nav nav-pills">
-        <li *ngFor="let p of pages; let  i=index" [ngClass]="i==currentPage? 'active':'' ">
-          <a class="clickable" (click)="onPageDocument(i)">{{i}}</a>
-        </li>
-      </ul>
+     </div>
+       <div class="row">
+         <div class="col-sm-4">
 
 
-        <div class="col-md-4" style="background: blue ">
-             <p>hello world AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
-        </div>
+         </div>
+         <div class="col-sm-8">
+           <ul  *ngIf="pages" class="nav nav-pills">
+             <li *ngFor="let p of pages; let  i=index" [ngClass]="i==currentPage? 'active':'' ">
+               <a class="clickable" (click)="onPageDocument(i)">{{i}}</a>
+             </li>
+           </ul>
 
+         </div>
 
-
-
-      </div>
+       </div>
     </div>
+  <div class="col-md-4" style="background: blue ">
+    Bootstrap est essentiellement un fichier CSS. Il comporte de nombreuses classes que l’on peut utiliser directement dans les balises HTML. La version 4 a adopté définitivement Flexbox, que je vous ai présenté au précédent chapitre, parce que ce nouveau système est maintenant reconnu par tous les navigateurs. Avec Bootstrap vous n’avez pas réellement besoin d’approfondir le sujet parce que le système de grille masque en grande partie le système utilisé.
+    La première classe à connaître est row, qui représente une rangée.
+    Cette classe établit des marges négatives à droite et à gauche pour équilibrer les marges de séparation des colonnes qui ont la même valeur  mais évidemment en positif :
+    Bootstrap est essentiellement un fichier CSS. Il comporte de nombreuses classes que l’on peut utiliser directement dans les balises HTML. La version 4 a adopté définitivement Flexbox, que je vous ai présenté au précédent chapitre, parce que ce nouveau système est maintenant reconnu par tous les navigateurs. Avec Bootstrap vous n’avez pas réellement besoin d’approfondir le sujet parce que le système de grille masque en grande partie le système utilisé.
+
+    La première classe à connaître est row, qui représente une rangée.
+
+    Cette classe établit des marges négatives à droite et à gauche pour équilibrer les marges de séparation des colonnes qui ont la même valeur  mais évidemment en positif :
+    Bootstrap est essentiellement un fichier CSS. Il comporte de nombreuses classes que l’on peut utiliser directement dans les balises HTML. La version 4 a adopté définitivement Flexbox, que je vous ai présenté au précédent chapitre, parce que ce nouveau système est maintenant reconnu par tous les navigateurs. Avec Bootstrap vous n’avez pas réellement besoin d’approfondir le sujet parce que le système de grille masque en grande partie le système utilisé.
+
+    La première classe à connaître est row, qui représente une rangée.
+
+    Cette classe établit des marges négatives à droite et à gauche pour équilibrer les marges de séparation des colonnes qui ont la même valeur  mais évidemment en positif :
+    Bootstrap est essentiellement un fichier CSS. Il comporte de nombreuses classes que l’on peut utiliser directement dans les balises HTML. La version 4 a adopté définitivement Flexbox, que je vous ai présenté au précédent chapitre, parce que ce nouveau système est maintenant reconnu par tous les navigateurs. Avec Bootstrap vous n’avez pas réellement besoin d’approfondir le sujet parce que le système de grille masque en grande partie le système utilisé.
+
+    La première classe à connaître est row, qui représente une rangée.
+
+    Cette classe établit des marges négatives à droite et à gauche pour équilibrer les marges de séparation des colonnes qui ont la même valeur  mais évidemment en positif :
+    Bootstrap est essentiellement un fichier CSS. Il comporte de nombreuses classes que l’on peut utiliser directement dans les balises HTML. La version 4 a adopté définitivement Flexbox, que je vous ai présenté au précédent chapitre, parce que ce nouveau système est maintenant reconnu par tous les navigateurs. Avec Bootstrap vous n’avez pas réellement besoin d’approfondir le sujet parce que le système de grille masque en grande partie le système utilisé.
+
   </div>
+
+</div>
+
 
 
 

@@ -21,8 +21,8 @@ export class DocumentsService {
   //   return this.http.get(url);
   // }
 
-  getAlldocuments(url:string){
-    return this.http.get(this.host+url);
+  getAlldocuments(url:string,page:number,size:number=20){
+    return this.http.get(this.host+url+"?page="+page+"&size="+size);
   }
   getAllUsers(){
     return this.http.get(this.host+"/utilidsateurs");

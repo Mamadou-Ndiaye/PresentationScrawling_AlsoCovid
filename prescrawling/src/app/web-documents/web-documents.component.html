@@ -13,12 +13,12 @@
       <a class="navbar-brand" href="#">WebSiteName</a>
     </div>
     <ul class="nav navbar-nav">
-      <li><a  (click)="changeShow('/webDocumentOrderByCovid')" name="covid"  [(ngModel)]="covid" [ngClass]="covid==true?'active':'inactive clickable'" >Covid</a></li>
-      <li><a (click)="changeShow('/webDocumentOrderByhistorique')"  name="sanitaire" [ngClass]="sanitaire==true?'active':'inactive clickable'" >Sanitaire</a></li>
-      <li><a (click)="changeShow('/webDocumentOrderByNutrition')" name="nutrition" [ngClass]="nutrition==true?'active':'inactive clickable'">Nutrition</a></li>
-      <li><a (click)="changeShow('/webDocumentOrderByIdentite')" name="identite" [ngClass]="identite==true?'active':'inactive clickable '" >Identite</a></li>
-      <li><a (click)="changeShow('/webDocumentOrderByObjet')" name="objet" [ngClass]="objet==true?'active':'inactive clickable'">Objet</a></li>
-      <li><a (click)="changeShow('/webDocumentOrderByEnvironnement')" name="environnement" [ngClass]="environnement==true?'active':'inactive clickable'">Environnement</a></li>
+      <li><a  (click)="changeShow('/webDocumentOrderByCovid')" name="covid"  class="clickable"    [ngClass]="covid==true?'active':'inactive clickable'" >Covid</a></li>
+      <li><a (click)="changeShow('/webDocumentOrderByhistorique')"  name="sanitaire"  class="clickable" [ngClass]="sanitaire==true?'active':'inactive'" >Sanitaire</a></li>
+      <li><a (click)="changeShow('/webDocumentOrderByNutrition')" name="nutrition"  class="clickable" [ngClass]="nutrition==true?'active':'inactive'">Nutrition</a></li>
+      <li><a (click)="changeShow('/webDocumentOrderByIdentite')" name="identite"  class="clickable" [ngClass]="identite==true?'active':'inactive '" >Identite</a></li>
+      <li><a (click)="changeShow('/webDocumentOrderByObjet')" name="objet"  class="clickable" [ngClass]="objet==true?'active':'inactive'">Objet</a></li>
+      <li><a (click)="changeShow('/webDocumentOrderByEnvironnement')" name="environnement"  class="clickable" [ngClass]="environnement==true?'active':'inactive'">Environnement</a></li>
 
       <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">SUIVI COVID
@@ -51,43 +51,50 @@
 
   </div>
 </nav>
-
+<!--{{documents.totalPages|json}}-->
 
 <div class="row">
   <div class="panel-body">
     <div *ngIf="documents">
-      <div *ngFor=" let doc of documents">
+      <div *ngFor=" let doc of  documents.content">
 
         <div class="col-md-8">
 
           <div class="row">
             <div class="col-md-4">
-              <img class="img-thumbnail img-rounded btn" width="900px" height="500px" [src]="doc.img[0]"/>
+              <img class="img-thumbnail img-rounded btn" width="200px" height="300px" [src]="doc.img[0]"/>
             </div>
             <br class="col-md-8">
               <h4 class="text-center text-capitalize text-info"> {{doc.titre}}</h4>
               <span> {{doc.resume}}</span><p></p>
               <span> <a href="{{doc.url}}">{{doc.url}}</a></span>
 
+
             </div>
           </div>
 
+
         </div>
 
+      <ul  *ngIf="pages" class="nav nav-pills">
+        <li *ngFor="let p of pages; let  i=index" [ngClass]="i==currentPage? 'active':'' ">
+          <a class="clickable" (click)="onPageDocument(i)">{{i}}</a>
+        </li>
+      </ul>
+
+
         <div class="col-md-4" style="background: blue ">
-             <p>hello world</p>
+             <p>hello world AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
         </div>
+
+
+
 
       </div>
     </div>
   </div>
 
-<!--      <ul  *ngIf="pages" class="nav nav-pills">-->
-<!--        <li *ngFor="let p of pages; let  i=index" [ngClass]="i==currentPage? 'active':'' ">-->
-<!--          <a class="clickable" (click)="onPageProduct(i)">{{i}}</a>-->
-<!--        </li>-->
-<!--      </ul>-->
-<!---->
+
 
 
 

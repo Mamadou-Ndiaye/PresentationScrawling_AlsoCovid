@@ -1,8 +1,11 @@
 <!--[ngClass]="covid==true?'active':''"
 [ngClass]="sanitaire==true?'active':''"
+[ngClass]="nutrition==true?'active':'inactive'"
 
 [ngClass]="identite==true?'active':''"
 [ngClass]="nutrition==true?'active':''"
+
+[ngClass]="environnement==true?'active':'inactive'"
 
 
 -->
@@ -13,18 +16,21 @@
       <a class="navbar-brand" href="#">WebSiteName</a>
     </div>
     <ul class="nav navbar-nav">
-      <li><a  (click)="changeShow('/webDocumentOrderByCovid')" name="covid"  class="clickable"    [ngClass]="covid==true?'active':'inactive clickable'" >Covid</a></li>
-      <li><a (click)="changeShow('/webDocumentOrderByhistorique')"  name="sanitaire"  class="clickable" [ngClass]="sanitaire==true?'active':'inactive'" >Sanitaire</a></li>
-      <li><a (click)="changeShow('/webDocumentOrderByNutrition')" name="nutrition"  class="clickable" [ngClass]="nutrition==true?'active':'inactive'">Nutrition</a></li>
-      <li><a (click)="changeShow('/webDocumentOrderByIdentite')" name="identite"  class="clickable" [ngClass]="identite==true?'active':'inactive '" >Identite</a></li>
-      <li><a (click)="changeShow('/webDocumentOrderByObjet')" name="objet"  class="clickable" [ngClass]="objet==true?'active':'inactive'">Objet</a></li>
-      <li><a (click)="changeShow('/webDocumentOrderByEnvironnement')" name="environnement"  class="clickable" [ngClass]="environnement==true?'active':'inactive'">Environnement</a></li>
+      <li><a  (click)="changeShow('/webDocumentOrderByCovid')" name="covid"  class="clickable">Covid</a></li>
+      <li><a (click)="changeShow('/webDocumentOrderByhistorique')"  name="sanitaire"  class="clickable"   >Sanitaire</a></li>
+      <li><a (click)="changeShow('/webDocumentOrderByNutrition')" name="nutrition"  class="clickable" >Nutrition</a></li>
+      <li><a (click)="changeShow('/webDocumentOrderByIdentite')" name="identite"  class="clickable"  >Identite</a></li>
+      <li><a (click)="changeShow('/webDocumentOrderByObjet')" name="objet"  class="clickable"  >Objet</a></li>
+      <li><a (click)="changeShow('/webDocumentOrderByEnvironnement')" name="environnement"  class="clickable" >Environnement</a></li>
 
-      <li class="dropdown">
+<!--      <li><a class="clickable" (click)="onShowCovd()" >SUIVI COVID</a></li>-->
+
+            <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">SUIVI COVID
           <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Senegal</a></li>
+          <li><a class="clickable" (click)="onShowCovd()" >Afrique</a></li>
+          <li><a class="clickable" (click)="onShowCovdSenegal()">Senegal</a></li>
           <li><a href="#">Mali</a></li>
           <li><a href="#">Gabon</a></li>
         </ul>
@@ -45,76 +51,135 @@
 
 
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span>SignUp</a></li>
+<!--      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>-->
+      <li><a class="clickable" (click)="onLogout()"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
     </ul>
 
   </div>
 </nav>
 <!--{{documents.totalPages|json}}-->
+<!--{{documents.content[0].img.length|json}}-->
+<!--<div class="row mb-4 "  *ngFor=" let doc of  documents.content"    style="border:1px solid white; "  >-->
+<!--&lt;!&ndash;{{doc.img|json}}&ndash;&gt;-->
+<!--  <img class="img-thumbnail img-rounded btn img1"  [src]="doc.img"/>-->
+<!--</div>-->
+<!--<p>++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</p>-->
+<!--{{documents.content[0].img|json}}-->
 
-
-<div class="row">
-     <div class="col-sm-8" *ngIf="documents" >
-      <div class="row" *ngFor=" let doc of  documents.content">
-
-
-
-
-            <div class="col-md-4">
-              <img class="img-thumbnail img-rounded btn" width="200px" height="300px" [src]="doc.img[0]"/>
-            </div>
-            <div class="col-md-8">
-              <h4 class="text-center text-capitalize text-info"> {{doc.titre}}</h4>
-              <span> {{doc.resume}}</span><p></p>
-              <span> <a href="{{doc.url}}">{{doc.url}}</a></span>
-
+<div *ngIf="mode==false && senegal==false">
+<div class="container">
+<div class="row" style="background:  #e0FFFF ;  ">
+     <div class="container col-sm-8 mb-4" *ngIf="documents" >
+        <div class="row mb-4 "  *ngFor=" let doc of  documents.content"    style="border:1px solid white; "  >
+          <div class="row cadre">
+              <div class="col-md-4 border "   >
+                <img class="img-thumbnail img-rounded btn img1"  [src]="doc.img[numberAleatoire]"/>
+              </div>
+              <div class="col-md-8 ">
+                <h4 class="text-left text-capitalize text-info"> {{doc.titre}}</h4>
+                <p   class="text-justify"><span> {{doc.resume}}</span></p>
+                <span> <a href="{{doc.url}}">{{doc.url}}</a></span>
+             </div>
+          </div>
+       </div>
+         <div class="row">
+           <div class="col-sm-4">
+           </div>
+           <div class="col-sm-8">
+             <ul  *ngIf="pages" class="nav nav-pills">
+               <li *ngFor="let p of pages; let  i=index" [ngClass]="i==currentPage?'active':'' ">
+                 <a class="clickable" (click)="onPageDocument(i)">{{i}}</a>
+               </li>
+             </ul>
 
            </div>
 
-
-     </div>
-       <div class="row">
-         <div class="col-sm-4">
-
-
          </div>
-         <div class="col-sm-8">
-           <ul  *ngIf="pages" class="nav nav-pills">
-             <li *ngFor="let p of pages; let  i=index" [ngClass]="i==currentPage? 'active':'' ">
-               <a class="clickable" (click)="onPageDocument(i)">{{i}}</a>
-             </li>
-           </ul>
-
-         </div>
-
-       </div>
     </div>
-  <div class="col-md-4" style="background: blue ">
-    Bootstrap est essentiellement un fichier CSS. Il comporte de nombreuses classes que l’on peut utiliser directement dans les balises HTML. La version 4 a adopté définitivement Flexbox, que je vous ai présenté au précédent chapitre, parce que ce nouveau système est maintenant reconnu par tous les navigateurs. Avec Bootstrap vous n’avez pas réellement besoin d’approfondir le sujet parce que le système de grille masque en grande partie le système utilisé.
-    La première classe à connaître est row, qui représente une rangée.
-    Cette classe établit des marges négatives à droite et à gauche pour équilibrer les marges de séparation des colonnes qui ont la même valeur  mais évidemment en positif :
-    Bootstrap est essentiellement un fichier CSS. Il comporte de nombreuses classes que l’on peut utiliser directement dans les balises HTML. La version 4 a adopté définitivement Flexbox, que je vous ai présenté au précédent chapitre, parce que ce nouveau système est maintenant reconnu par tous les navigateurs. Avec Bootstrap vous n’avez pas réellement besoin d’approfondir le sujet parce que le système de grille masque en grande partie le système utilisé.
 
-    La première classe à connaître est row, qui représente une rangée.
+<!--  Gestion de la galery    style="background: #74b9ff " -->
+  <div class="col-md-4 mb-4">
 
-    Cette classe établit des marges négatives à droite et à gauche pour équilibrer les marges de séparation des colonnes qui ont la même valeur  mais évidemment en positif :
-    Bootstrap est essentiellement un fichier CSS. Il comporte de nombreuses classes que l’on peut utiliser directement dans les balises HTML. La version 4 a adopté définitivement Flexbox, que je vous ai présenté au précédent chapitre, parce que ce nouveau système est maintenant reconnu par tous les navigateurs. Avec Bootstrap vous n’avez pas réellement besoin d’approfondir le sujet parce que le système de grille masque en grande partie le système utilisé.
+    <div class="row text-info text-capitalize text-center" style="min-height : 500px ;" >
+      <br>
+      Gallerie images
+    <br>
 
-    La première classe à connaître est row, qui représente une rangée.
+      <span id="sl_play" class="sl_command"></span>
+      <span id="sl_pause" class="sl_command"></span>
 
-    Cette classe établit des marges négatives à droite et à gauche pour équilibrer les marges de séparation des colonnes qui ont la même valeur  mais évidemment en positif :
-    Bootstrap est essentiellement un fichier CSS. Il comporte de nombreuses classes que l’on peut utiliser directement dans les balises HTML. La version 4 a adopté définitivement Flexbox, que je vous ai présenté au précédent chapitre, parce que ce nouveau système est maintenant reconnu par tous les navigateurs. Avec Bootstrap vous n’avez pas réellement besoin d’approfondir le sujet parce que le système de grille masque en grande partie le système utilisé.
+      <span id="sl_i1" class="sl_command sl_i"></span>
+      <span id="sl_i2" class="sl_command sl_i"></span>
+      <span id="sl_i3" class="sl_command sl_i"></span>
+      <span id="sl_i4" class="sl_command sl_i"></span>
 
-    La première classe à connaître est row, qui représente une rangée.
+      <section id="slideshow">
+        <div class="container">
+          <div class="c_slider"></div>
+          <div class="slider"  >
+            <ng-container  *ngFor=" let doc of  documents.content"    style="border:1px solid white; ">
 
-    Cette classe établit des marges négatives à droite et à gauche pour équilibrer les marges de séparation des colonnes qui ont la même valeur  mais évidemment en positif :
-    Bootstrap est essentiellement un fichier CSS. Il comporte de nombreuses classes que l’on peut utiliser directement dans les balises HTML. La version 4 a adopté définitivement Flexbox, que je vous ai présenté au précédent chapitre, parce que ce nouveau système est maintenant reconnu par tous les navigateurs. Avec Bootstrap vous n’avez pas réellement besoin d’approfondir le sujet parce que le système de grille masque en grande partie le système utilisé.
+                <figure>
+                    <img class="img-thumbnail img-rounded btn img2"    [src]="doc.img" alt=""/>
+                </figure>
+
+            </ng-container>
+
+          </div>
+        </div>
+        <span id="timeline"></span>
+      </section>
+
+    </div>
+
+    <div class="row text-center text-info"  style="height : 300px ;">
+<!--      Gallerie videos-->
+    </div>
+
 
   </div>
-
+</div>
+</div>
 </div>
 
+ <br>
+
+<!--Cette partie s affiche si la valeur ce mode est egal a true-->
+<div *ngIf="mode">
+<div class="container ">
+
+<div class="row">
+
+<!--  <p><img class="aligncenter wp-image-915735 size-full" src="https://www.jeuneafrique.com/medias/2020/03/25/boutonarticle_rubrique_mt.jpg" alt="" width="1024" height="292" srcset="https://www.jeuneafrique.com/medias/2020/03/25/boutonarticle_rubrique_mt.jpg 1024w, https://www.jeuneafrique.com/medias/2020/03/25/boutonarticle_rubrique_mt-300x86.jpg 300w, https://www.jeuneafrique.com/medias/2020/03/25/boutonarticle_rubrique_mt-768x219.jpg 768w, https://www.jeuneafrique.com/medias/2020/03/25/boutonarticle_rubrique_mt-600x171.jpg 600w" sizes="(max-width: 1024px) 100vw, 1024px" /></p>-->
+  <p  style="width : 1024px ;"   >Mise à jour quotidiennement, notre carte évolutive dresse un panorama en temps réel de l’état d’avancée de la maladie.
+    Elle se concentre sur trois variables : le nombre de décès, le nombre total de cas déclarés depuis le début de l’épidémie,
+    et le nombre de guérisons recensées. En passant votre souris sur chaque pays, vous pourrez consulter le détail de ces informations par pays, mais aussi les différentes mesures de restriction mises en place.</p>
+
+     <p>La couleur de la carte <strong>est graduée selon le nombre de décès</strong>.</p>
+  <p><iframe style="border: none" src="https://e.infogram.com/a34cc9cd-5dc0-4bc4-873d-ffc258906857?src=embed" width="1000" height="850" frameborder="0" scrolling="no"></iframe></p>
+  <div style="padding: 8px 0;font-family: Arial!important;font-size: 13px!important;line-height: 15px!important;text-align: center;border-top: 1px solid #dadada;margin: 0 30px;width: 940px">
+    <a style="color: #989898!important;text-decoration: none!important" href="https://infogram.com/a34cc9cd-5dc0-4bc4-873d-ffc258906857" target="_blank" rel="noopener noreferrer">Nombre de cas de coronavirus en Afrique par pays</a><br />
+<!--    <a style="color: #989898!important;text-decoration: none!important" href="https://infogram.com" target="_blank" rel="nofollow noopener noreferrer">Infogram</a>-->
+  </div>
+  <p><em><strong>Si vous ne parvenez pas à lire la carte : <a href="https://infogram.com/nombre-de-cas-de-coronavirus-en-afrique-par-pays-1h7g6kv3v9j04oy?live">cliquez ici</a>.</strong> </em></p>
+
+</div>
+</div>
+</div>
+
+
+<div *ngIf="senegal">
+  <div class="container ">
+<div>
+  <p  style="width : 1024px ;"   >Mise à jour quotidiennement, notre carte évolutive dresse un panorama en temps réel de l’état d’avancée de la maladie.
+    Elle se concentre sur trois variables : le nombre de décès, le nombre total de cas déclarés depuis le début de l’épidémie,
+    et le nombre de guérisons recensées. En passant votre souris sur chaque pays, vous pourrez consulter le détail de ces informations par pays, mais aussi les différentes mesures de restriction mises en place.</p>
+
+  <iframe src="https://cartosantesen.maps.arcgis.com/apps/opsdashboard/index.html#/260c7842a77a48c191bf51c8b0a1d3f6" frameborder="0" style="width: 100%; height: 70vh;"></iframe>
+</div>
+  </div>
+</div>
 
 
 

@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Utilisateur} from "../classes/Utilisateur";
 import {forEachComment} from "tslint";
+import {ActivatedRoute, Router} from "@angular/router";
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +18,8 @@ export class AuthentificationService {
   users:Utilisateur[]=[];
   userTrue: Utilisateur[]=[];
 
-  constructor(private  http : HttpClient) { }
+  constructor(private  http : HttpClient ,private route: ActivatedRoute,
+              private router: Router) { }
 
   //on envoie une requete a la partie backend demander les utilisateurs
   getUtilisateurs() {
@@ -63,10 +66,20 @@ export class AuthentificationService {
       }
     })
   }
+  public  logout(){
 
+      this.router.navigateByUrl('/login');
+  }
+
+  // methode de mise a jour d un utilisareur
  public updateUtilisateur(user:Utilisateur){
 
     return this.http.put(this.host+"/updateUser/"+user.id,user)
+ }
+
+ public  createUser(user: Object): Observable<Object>
+ {
+   return this.http.post(this.host+"/utilisateurs", user);
  }
 
 

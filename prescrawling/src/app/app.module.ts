@@ -8,6 +8,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { LoginComponent } from './login/login.component';
 import { CategoriesComponent } from './categories/categories.component';
 import {FormsModule} from "@angular/forms";
+import {NgxImageGalleryModule} from "ngx-image-gallery";
 
 @NgModule({
   declarations: [

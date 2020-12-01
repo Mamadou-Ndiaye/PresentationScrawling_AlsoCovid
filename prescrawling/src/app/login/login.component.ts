@@ -12,18 +12,32 @@ import {Utilisateur} from "../classes/Utilisateur";
 })
 export class LoginComponent implements OnInit {
   model: any = {};
-  users:Utilisateur[]=[]
+  users:Utilisateur[]=[];
+  etat?:boolean=false;
+  profile:string[]=[];
+  user: Utilisateur = new Utilisateur();
+
+
+  // User
+  login?:String;
+
+  // Affichage du formulaire dùinscription
+  signUp:boolean=false;
   constructor( private route: ActivatedRoute,
                private router: Router,
                private authentificationService:AuthentificationService) { }
 
   ngOnInit(): void {
-    this.authentificationService.getUtlisateur()
+    this.authentificationService.getUtlisateur();
+    console.log(this.signUp);
+   // this.onSignUp();
 
   }
 
   onLogin(dataForm: any) {
-    console.log(dataForm)
+    console.log(dataForm);
+    this.signUp=false;
+    console.log(this.signUp);
     this.authentificationService.login(dataForm.username,dataForm.password);
     if(this.authentificationService.isLogin==true)
     {
@@ -45,10 +59,23 @@ export class LoginComponent implements OnInit {
     }
   }
 
+// Pour afficher (appeler) le formulaire inscription
+  onSignUp() {
+    this.signUp=true;
+    console.log(this.signUp);
+  }
 
-
-
-
-
+  // Methode d'inscription
+  save(dataForm: any) {
+    console.log("inscription "  + dataForm);
+    this.authentificationService.createUser(dataForm).subscribe(
+      data => console.log(data),
+        error => console.log(error));
+    this.signUp=false;
+    this.gotoCategorie();
+  }
+  gotoCategorie() {
+    this.router.navigateByUrl('/categories');
+  }
 
 }

@@ -24,7 +24,7 @@ export class CategoriesComponent implements OnInit {
 
   onCategories(dataForm: any) {
       this.documentsService.categoriesService(dataForm);
-      console.log(this.covid,this.sanitaire,this.identite,this.environnement,this.objet,this.nutrition)
+      console.log(this.covid,this.sanitaire,this.identite,this.environnement,this.objet,this.nutrition);
       this.router.navigateByUrl("/documents");
 
   }

@@ -1,47 +1,97 @@
+.container-fluid{
+  position: absolute;
+  left: 10%;
+
+}
+
+.police{
+   font-family: "Times New Roman";
+
+}
+
+/*.navbar-header {*/
+/*  position: absolute;*/
+/*  left: 30%;*/
+/*  transform: translatex(-50%);*/
+/*}*/
+
 .img1 {
   width: 80%;
   height:130px ;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+
 }
 .cadre{
    min-height: 150px;
-   padding-right: 2%;
 
 }
 
+/*#article{
+
+  background:  #E6E6FA ;
+}*/
+#art{
+  border:1px solid white;
+  font-style: italic;
+}
+#fontStyle{
+  font-style: italic;
+}
+/*
+#back{
+   background:  #E6E6FA ;
+}
+
+*/
+/*#bord{
+  border:1px solid white;
+}*/
+
+
 .img2 {
-  width: 500%;
+  width: 800%;
   height: 370px;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+.listCov {
+  background: red;
+  color: #FFFFFF;
+}
 
 
 
 
 
- /*====================================Gallerye image=============================================================*/
+
+/* Modal ou popu */
+.modal-dialog
+{
+  width: 80%;
+
+}
+
+/* Gestion de la gallery d'image */
+
+
 #slideshow {
   position: relative;
-  min-width: 600px;
-  min-height: 500px;
+  width: 900px;
+  height: 380px;
   padding: 15px;
   margin: 0 auto 2em;
-  /*  border: 1px solid #ddd;  */
-  /* background: #FFF;  */
-   /* CSS3 effects */
-/* background: linear-gradient(#FFF, #FFF 20%, #EEE 80%, #DDD);*/
-/*  border-radius: 2px 2px 2px 2px;
- box-shadow: 0 0 3px rgba(0,0,0, 0.2);*/
+  border: 1px solid #ddd;
+  background: #FFF;
+  /* CSS3 effects */
+  background: linear-gradient(#FFF, #FFF 20%, #EEE 80%, #DDD);
+  border-radius: 2px 2px 2px 2px;
+  box-shadow: 0 0 3px rgba(0,0,0, 0.2);
 }
 
 /* avanced box-shadow
-* tutorial @
-* https://www.creativejuiz.fr/blog/les-tutoriels/ombre-avancees-avec-css3-et-box-shadow
+ * tutorial @
+ * https://www.creativejuiz.fr/blog/les-tutoriels/ombre-avancees-avec-css3-et-box-shadow
 */
 #slideshow:before,
 #slideshow:after {
@@ -311,10 +361,6 @@
 #sl_i4:target ~ #slideshow .commands4								{ display: block; }
 #sl_i4:target ~ #slideshow .c_slider								{ background-position: -1920px 0, -1280px 0, -640px 0, 0 0; }
 #sl_i4:target ~ #slideshow .dots_commands li:first-child a:before	{ left:54px; }
-
-
-
-
 
 
 

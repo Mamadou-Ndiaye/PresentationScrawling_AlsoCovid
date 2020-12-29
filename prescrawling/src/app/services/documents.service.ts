@@ -24,8 +24,18 @@ export class DocumentsService {
   getAlldocuments(url:string,page:number,size:number=20){
     return this.http.get(this.host+url+"?page="+page+"&size="+size);
   }
+
+  public getDocumentbyKeyword(titre:string,page:number,size:number) {
+    http://localhost:8080/webDocuments/search/byTitre?titre=mala&page=1&size=2
+    return this.http.get(this.host +"/webDocuments/search/byTitre?titre="+titre+"&page="+page+"&size="+size);
+  }
+
   getAllUsers(){
     return this.http.get(this.host+"/utilidsateurs");
+  }
+
+  getAllArticles(page:number,size:number){
+    return this.http.get(this.host+"/articles?page="+page+"&size="+size);
   }
 
   public saveResssouce(url:any,data:any) {

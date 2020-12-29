@@ -9,13 +9,16 @@ import { LoginComponent } from './login/login.component';
 import { CategoriesComponent } from './categories/categories.component';
 import {FormsModule} from "@angular/forms";
 import {NgxImageGalleryModule} from "ngx-image-gallery";
+import { ArticlesComponent } from './articles/articles.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WebDocumentsComponent,
     LoginComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    ArticlesComponent,
+
   ],
   imports: [
     BrowserModule,

@@ -42,10 +42,12 @@ export class LoginComponent implements OnInit {
     if(this.authentificationService.isLogin==true)
     {
       if (this.authentificationService.etat){
+        this.authentificationService.saveAuthentificatedUser();
         this.router.navigateByUrl("/documents")
       }
       else{
        // this.authentificationService.userLogin.etat=true
+        this.authentificationService.saveAuthentificatedUser();
         this.authentificationService.updateUtilisateur(this.authentificationService.userLogin).subscribe(
           data=> this.router.navigateByUrl('/categories')
         )

@@ -59,7 +59,7 @@ export class AuthentificationService {
         this.etat=user.etat
         this.userLogin=user;
         this.token=btoa(JSON.stringify({username:user.login}) );
-        this.isLogin=true;
+        this.isLogin=true;  // il est donc bien s ùauthentifier
 
       }
       else if(this.isLogin!=true)

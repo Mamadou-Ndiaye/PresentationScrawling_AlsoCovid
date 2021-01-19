@@ -85,9 +85,6 @@ export class ArticlesComponent implements OnInit {
 
 
 
-
-
-
   constructor(private documentsService : DocumentsService,private  router:Router,private  authentificationService:AuthentificationService,private sanitizer: DomSanitizer) {
     this.url=["/webDocumentOrderByCovid","/webDocumentOrderByhistorique","/webDocumentOrderByIdentite",
       "/webDocumentOrderByEnvironnement","/webDocumentOrderByNutrition", "/webDocumentOrderByObjet"];
@@ -125,81 +122,6 @@ export class ArticlesComponent implements OnInit {
 
   }
 
-
-// On appelle cette foncion dans le component HTML et l affichage change en fonction de url passer en parametre dans la
-  // FONCTION changeShow(url)  en fonction du menu clique
-  public changeShow(x:string){
-
-    // this.status = !this.status;
-    this.router.navigateByUrl("/documents");
-
-    this.mode=false;
-    this.senegal=false;
-    this.article=false;
-    this.currentUrl=x;
-
-    this.modeByKeyWord=false;
-
-    this.background=true;
-    this.onPageDocument(this.currentPage)
-    this.documentsService.getAlldocuments(x,this.currentPage,this.size).subscribe(
-      data=>{
-        console.log(data)
-        this.documents= data;
-
-        // recuperons la taille du premier tabeau img qu on utilise dans la fonction gatNumberAleatoire pour generer un nombre aleat
-        this.img=this.documents.content[0].img.length;
-        this.numberAleatoire=Math.floor(Math.random() * (this.img - 0)) + 0
-        console.log("-------------number Aleatoire-------------------",this.numberAleatoire);
-        console.log("page courante = ",this.currentPage)
-        this.totalPages = this.documents.totalPages;
-
-
-        console.log("tableau image +++++",this.images);
-        this.pages=new  Array<number>(this.totalPages);
-        console.log("liste des documents",this.documents)
-      }, error => {console.log(error)}
-    )
-  }
-
-
-  // Pour le formulaire de recherche
-
-
-
-  onChercher(form: any) {
-    console.log(form);
-    this.currentPage=0;
-    this.currentKeyword=form.keyword;
-    this.modeByKeyWord=true;
-    console.log("Cherche par "+this.currentKeyword);
-    this.chercherDocument();
-
-  }
-
-
-
-  chercherDocument() {
-
-    this.documentsService.getDocumentbyKeyword(this.currentKeyword,this.currentPage,this.size)
-      .subscribe(data => {
-        this.documents = data;
-        console.log("documents "+this.documents);
-        // this.totalPages=data["page"].totalPages;
-        // this.pages=new  Array<number>(this.totalPages);
-
-      }, err => {console.log(err); });
-
-  }
-
-
-
-
-  getBackgroundColor(): string {
-    return 'red';
-  }
-
-
  //*********************  Pour articles (Science direct) *******************************//
   getArticles()
   {
@@ -224,6 +146,7 @@ export class ArticlesComponent implements OnInit {
     this.currentPage=0;
     this.currentKeyword=form.keyword;
     this.modeByKeyWord=true;
+    this.modeFiltre=false;
     console.log("Cherche par "+this.currentKeyword);
     this.chercherArticle();
 
@@ -243,36 +166,7 @@ export class ArticlesComponent implements OnInit {
   }
 
 
-  onLogout() {
-    this.authentificationService.logout();
-  }
 
-  onShowCovd() {
-    this.senegal=false;
-    this.article=false;
-    this.mode=true;
-  }
-
-  onShowCovdSenegal() {
-    this.mode=false;
-    this.article=false;
-    this.senegal=true;
-  }
-
-  onShowCovdBurkina() {
-    this.mode=false;
-    this.burkina=true;
-  }
-
-  onShowCovdMali() {
-    this.mode=false;
-    this.mali=true;
-  }
-
-
-  showPDF(i=0) {
-    this.currentPdf=i;
-  }
 
   onPageArticle(indice: number) {
     this.pageCourant=indice;
@@ -284,7 +178,7 @@ export class ArticlesComponent implements OnInit {
 
   toggleEditable(e :any) {
 
-
+      this.modeByKeyWord=false;
     // Recuperation des cases coches dans un tableau en selected pour les Dates (annees) et selectedType dans Type d article
 
     if (e.target.checked) {

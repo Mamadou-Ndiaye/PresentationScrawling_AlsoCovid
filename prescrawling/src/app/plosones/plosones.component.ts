@@ -6,11 +6,11 @@ import {AuthentificationService} from "../services/authentification.service";
 import {DomSanitizer} from "@angular/platform-browser";
 
 @Component({
-  selector: 'app-natures',
-  templateUrl: './natures.component.html',
-  styleUrls: ['./natures.component.css']
+  selector: 'app-plosones',
+  templateUrl: './plosones.component.html',
+  styleUrls: ['./plosones.component.css']
 })
-export class NaturesComponent implements OnInit {
+export class PlosonesComponent implements OnInit {
 
   environnement: any;
   covid: any;
@@ -20,8 +20,8 @@ export class NaturesComponent implements OnInit {
   sanitaire: any;
   documents: any;
 
-  natures: any;
-  public nature: boolean= false;
+  plosones: any;
+  public plosone: boolean= false;
 
 
   // Pour gerer l action active sur le menu vertical
@@ -95,25 +95,24 @@ export class NaturesComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.getNatures();
+    this.getPlosOnes();
     // Toutes les fonctions qui se trouvent dans cette classe ne sont pas forcément utilisé
     // en Generale c'est ceux qui utilise
   }
 
 
-
-  //*********************  Pour articles (Nature) *******************************//
-  getNatures()
+  //*********************  Pour articles (PlosOne) *******************************//
+  getPlosOnes()
   {
     this.senegal=false;
     this.mode=false;
-    this.nature=true;
-    this.documentsService.getAllNatures(this.pageCourant,this.taille).subscribe(
+    this.plosone=true;
+    this.documentsService.getAllPlosOne(this.pageCourant,this.taille).subscribe(
       data=>{
         console.log(data);
 
-        this.natures= data;
-        this.pagesTotal=this.natures.page.totalPages;
+        this.plosones= data;
+        this.pagesTotal=this.plosones.page.totalPages;
         console.log(this.pagesTotal);
         this.pagesNatures=new  Array<number>(this.pagesTotal);
       },error => { console.log(error)});
@@ -121,23 +120,23 @@ export class NaturesComponent implements OnInit {
 
   // recherche dans nature
 
-  onChercherByNature(form: any) {
+  onChercherByPlosone(form: any) {
     console.log(form);
     this.currentPage=0;
     this.currentKeyword=form.keyword;
     this.modeByKeyWord=true;
     this.modeFiltre=false;
     console.log("Cherche par "+this.currentKeyword);
-    this.chercherNature();
+    this.chercherPlosone();
 
   }
 
-  chercherNature() {
+  chercherPlosone() {
 
-    this.documentsService.getNaturebyKeyword(this.currentKeyword,this.currentPage,this.size)
+    this.documentsService.getPlosOnebyKeyword(this.currentKeyword,this.currentPage,this.size)
       .subscribe(data => {
-        this.natures = data;
-        console.log("documents "+this.natures);
+        this.plosones = data;
+        console.log("documents "+this.plosones);
         // this.totalPages=data["page"].totalPages;
         // this.pages=new  Array<number>(this.totalPages);
 
@@ -147,10 +146,9 @@ export class NaturesComponent implements OnInit {
 
 
 
-
-  onPageNature(indice: number) {
+  onPagePlosOne(indice: number) {
     this.pageCourant=indice;
-    this. getNatures();
+    this. getPlosOnes();
 
   }
 
@@ -236,7 +234,7 @@ export class NaturesComponent implements OnInit {
     if(this.selected.length!=0 && this.selectedType.length!=0)
     {
       console.log("Envoie dans la partie annee et type");
-      this.documentsService.getNaturesbyFilterTypeAndDate(this.selectedType,this.selected).subscribe(
+      this.documentsService.getPlosOnesbyFilterTypeAndDate(this.selectedType,this.selected).subscribe(
         data => {
           console.log(data);
           this.filtres = data;
@@ -248,7 +246,7 @@ export class NaturesComponent implements OnInit {
     else if(this.selected.length!=0 && this.selectedType.length==0)
     {
       console.log("Envoie dans la partie annee");
-      this.documentsService.getNaturebyFilterAnnee(this.selected).subscribe(
+      this.documentsService.getPlosOnebyFilterAnnee(this.selected).subscribe(
         data => {
           console.log(data);
           this.filtres = data;
@@ -260,7 +258,7 @@ export class NaturesComponent implements OnInit {
     else if(this.selected.length==0 && this.selectedType.length!=0)
     {
       console.log("Envoie dans la partie type");
-      this.documentsService.getNaturesbyFilterType(this.selectedType).subscribe(
+      this.documentsService.getPlosOnebyFilterType(this.selectedType).subscribe(
         data => {
           console.log(data);
           this.filtres = data;
@@ -270,7 +268,7 @@ export class NaturesComponent implements OnInit {
     }
 
   }
-  //*********************  Fin articles (Nature) *******************************//
+  //*********************  Fin articles (PlosOne) *******************************//
 
 
 }

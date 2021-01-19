@@ -1,116 +1,17 @@
-<!--[ngClass]="covid==true?'active':''"
-[ngClass]="sanitaire==true?'active':''"
-[ngClass]="nutrition==true?'active':'inactive'"
 
-[ngClass]="identite==true?'active':''"
-[ngClass]="nutrition==true?'active':''"
-
-[ngClass]="environnement==true?'active':'inactive'"
-
-<! --      <li><a (click)="changeShow('/webDocumentOrderByIdentite')" name="identite"  class="clickable"  >Identite</a></li>-->
-<!--      <li><a (click)="changeShow('/webDocumentOrderByObjet')" name="objet"  class="clickable"  >Objet</a></li>-->
-
-<!-- Test affichage-->
+<!-- Inclure bases c a dire lq bare de navigation q pqrtir du componenet bases   -->
+<app-bases></app-bases>
+<!-- Fin    -->
 
 
-<!--{{documents.totalPages|json}}-->
-<!--{{documents.content[0].img.length|json}}-->
-<!--<div class="row mb-4 "  *ngFor=" let doc of  documents.content"    style="border:1px solid white; "  >-->
-<!--&lt;!&ndash;{{doc.img|json}}&ndash;&gt;-->
-<!--  <img class="img-thumbnail img-rounded btn img1"  [src]="doc.img"/>-->
-<!--</div>-->
-<!--<p>++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</p>-->
-<!--{{documents.content[0].img|json}} style="background-color: darkgreen; color: #FFFFFF;"-->
-
-
-<!--{{articles._embedded.articles|json}}-->
-
-
-<!--{{documents._embedded.webDocuments | json}}   -->
-<!--{{documents.page.totalPages}}  -->
-
-
-
-<nav class="navbar  m-5" >
-  <div class="container-fluid  m-5" >
-    <div class="navbar-header   ">
-       <img  class="clickable"  (click)="changeShow('/webDocumentOrderByhistorique')" src="assets/image/logoPTR.jpg" width="40">
-    </div>
-    <ul class="nav navbar-nav ">
-      <li><a (click)="changeShow('/webDocumentOrderByhistorique')"  name="sanitaire"  class="clickable"   ><span class="glyphicon glyphicon-home "></span>Home</a></li>
-
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Info COVID
-          <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a class="clickable" (click)="onShowCovd()">Afrique</a></li>
-          <li><a class="clickable" (click)="onShowCovdSenegal()">Bénin</a></li>
-          <li><a class="clickable" (click)="onShowCovdSenegal()">Burkina Faso</a></li>
-          <li><a class="clickable" (click)="onShowCovdSenegal()">Gabon</a></li>
-          <li><a class="clickable" (click)="onShowCovdSenegal()">Mali</a></li>
-          <li><a class="clickable" (click)="onShowCovdSenegal()">Sénégal</a></li>
-
-        </ul>
-      </li>
-<!--      <li class="dropdown">-->
-<!--        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Multimédia-->
-<!--          <span class="caret "></span></a>-->
-<!--        <ul class="dropdown-menu">-->
-<!--          <li><a class="clickable" href="/documents/#image" >Image</a></li>-->
-<!--          <li  class="clickable"  data-toggle="modal" data-target="#mespdfs"><a>Articles pdf</a></li>-->
-<!--          <li  class="clickable"  data-toggle="modal" data-target="#mesvideos"><a> Videos </a></li>-->
-<!--        </ul>-->
-<!--      </li>-->
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Données
-          <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a class="clickable" href="/documents/#image" >WP1</a></li>
-          <li><a class="clickable" >WP2</a></li>
-          <li><a class="clickable" >WP3</a></li>
-          <li><a class="clickable" >WP4</a></li>
-        </ul>
-      </li>
-
-      <li><a (click)="changeShow('/webDocumentOrderByhistorique')"  name="sanitaire"  class="clickable"   >Produits</a></li>
-      <li><a (click)="changeShow('/webDocumentOrderByNutrition')" name="nutrition"  class="clickable" >Indicateurs</a></li>
-      <li><a (click)="getArticles()" name="nutrition"  class="clickable" >Articles</a></li>
-    </ul>
-
-    <!-- Formulaire de recherche -->
-
-    <form class="navbar-form navbar-left"  #f="ngForm" (ngSubmit)="onChercher(f.value)" >
-      <div class="input-group">
-        <input type="text" class="form-control" name="keyword" ngModel  placeholder="Search">
-        <div class="input-group-btn">
-          <button class="btn btn-default" type="submit">
-            <i class="glyphicon glyphicon-search"></i>
-          </button>
-        </div>
-      </div>
-    </form>
-
-
-
-<!--    <ul class="nav navbar-nav navbar-right">-->
-<!--      <li><a href="#"><span class="glyphicon glyphicon-user"></span>SignUp</a></li>-->
-<!--      &lt;!&ndash;      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>&ndash;&gt;-->
-<!--      <li><a class="clickable" (click)="onLogout()"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>-->
-<!--    </ul>-->
-
-  </div>
-</nav>
-
-
-<div *ngIf="mode==false && senegal==false &&  article==false ">
-  <div class="container">
-
+<div *ngIf="mode==false && senegal==false &&  article==false " >
+  <div class="container glyphicon-text-height  float">
 
     <div class="row back" >
       <!--  Espace de gauche   style="background: #74b9ff "  [ngClass]="nutrition==true?'active':'disabled'"  [ngClass]="sanitaire==true?'active':'disabled'"  [ngClass]="covid==true?'active':'disabled'"     [ngStyle]="{'backgroundColor':covid == 'true' ? 'yellow' : 'green' }"   -->
-      <div class="col-md-1 ">
+            <!--<div class="col-md-1 "  style="background: #74b9ff "  >
 
-      </div>
+            </div>-->
 
       <div class="col-md-2 ">
 
@@ -121,67 +22,55 @@
 <!--        </ul>-->
 
 
-          <div class="panel-heading">Maladie</div>
+          <div class="panel-heading" id="maladie">Maladie</div>
           <div class="form-check">
-            <label class="form-check-label police" for="exampleCheck1">Covid-19</label>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <input type="checkbox"  name="covid"   value="covid"  (change)="toggleEditable($event)" class="form-check-input" id="covid">
+            &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label class="form-check-label police"  for="covid"  >Covid-19</label>
           </div>
 
           <div class="form-check">
-            <label class="form-check-label police" for="exampleCheck1">Malaria</label>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
-            <input type="checkbox" class="form-check-input" id="exampleC2">
+            <input type="checkbox" name="malaria"  value="Malaria"  (change)="toggleEditable($event)" class="form-check-input" id="malaria">
+            &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+            <label class="form-check-label police" for="malaria"  >Malaria</label>
           </div>
           <div class="form-check">
-            <label class="form-check-label police" for="exampleCheck1">Tuberculose</label>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
-            <input type="checkbox" class="form-check-input" id="example3">
+            <input type="checkbox"  name="tuberculose"  value="tuberculosis"  (change)="toggleEditable($event)"  class="form-check-input" id="tuberculose">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label class="form-check-label police" for="tuberculose">Tuberculose</label>
           </div>
 
-          <div class="form-check">
-            <label class="form-check-label police" for="exampleCheck1">Autres</label>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
-            <input type="checkbox" class="form-check-input" id="example">
-          </div>
 
-          <div class="panel-heading">Années</div>
-          <div class="form-check">
-            <label class="form-check-label police" for="exampleCheck1">2020</label>&nbsp; &nbsp; &nbsp;
-            <input type="checkbox" class="form-check-input" id="Check1">
-          </div>
-
-          <div class="form-check">
-            <label class="form-check-label police" for="exampleCheck1">2019</label>&nbsp; &nbsp; &nbsp;
-            <input type="checkbox" class="form-check-input" id="Check2">
-          </div>
-          <div class="form-check">
-            <label class="form-check-label police" for="exampleCheck1">2018</label>&nbsp; &nbsp; &nbsp;
-            <input type="checkbox" class="form-check-input" id="Check3">
-          </div>
-
-        <div class="panel-heading">Format</div>
+     <!--   <div class="panel-heading text-left" id="format">Format</div>
         <div class="form-check">
-          <label class="form-check-label police " for="exampleCheck1">Vidéos</label>&nbsp; &nbsp;  &nbsp; &nbsp;
           <input type="checkbox" class="form-check-input" id="videos">
+          &nbsp;   &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;
+          <label class="form-check-label police " for="videos">Vidéos</label>
         </div>
 
         <div class="form-check">
-          <label class="form-check-label police " for="exampleCheck1">Images</label>&nbsp; &nbsp; &nbsp;&nbsp;
           <input type="checkbox" class="form-check-input" id="images">
+          &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <label class="form-check-label police " for="images">Images</label>
         </div>
         <div class="form-check">
-          <label class="form-check-label police " for="exampleCheck1">PDF</label>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
           <input type="checkbox" class="form-check-input" id="pdf">
+          &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;  &nbsp; &nbsp;&nbsp;&nbsp;
+          <label class="form-check-label police " for="pdf">PDF</label>
         </div>
 
-
+-->
       </div>
 
-      <div class="col-sm-8" *ngIf="documents"   >
-        <div class="row bord "  *ngFor=" let doc of  documents.content"    >
-          <div class="row cadre">
-            <div class="col-4 col-md-4  col-sm-4 "   >
-              <img class="img-thumbnail img-rounded btn img1"  [src]="doc.img[numberAleatoire]"/>
+       <ng-container *ngIf="modeByKeyWord==false && modeFiltre==false ">
+      <div class="col-sm-7 text-justify" *ngIf="documents"      >
+        <div class="row bord text-justify  "    *ngFor=" let doc of  documents.content"    >
+          <div class="row cadre text-justify"  >
+            <div class="col-4 col-md-4  col-sm-4 "     >
+              <img class="img-thumbnail img-rounded   img1 "      [src]="doc.img[numberAleatoire]"/>
             </div>
-            <div class="col-8 col-md-8 col-sm-8">
-               <h4 class=" text-capitalize text-info">  <a href="{{doc.url}}">{{doc.titre}}</a></h4>
+            <div class="col-8 col-md-8 col-sm-8" >
+               <h4 class=" text-capitalize text-info">  <a href="{{doc.url}}" target="_blank" >{{doc.titre}}</a></h4>
               <span class="text-justify"> {{doc.resume}}</span>
              <!-- <a href="{{doc.url}}">{{doc.url}}</a>-->
             </div>
@@ -203,9 +92,78 @@
 
         </div>
       </div>
+       </ng-container>
+
+      <ng-container *ngIf="documents && modeByKeyWord && modeFiltre==false"   style="background: #555555 ">
+        <div class="col-sm-7" *ngIf="documents"    >
+        <div class="row bord "  *ngFor=" let doc of  documents._embedded.webDocuments"    >
+          <div class="row cadre">
+            <div class="col-4 col-md-4  col-sm-4 "   >
+              <img class="img-thumbnail img-rounded btn img1"  [src]="doc.img[numberAleatoire]"/>
+            </div>
+            <div class="col-8 col-md-8 col-sm-8">
+              <h4 class=" text-capitalize text-info">  <a href="{{doc.url}}">{{doc.titre}}</a></h4>
+              <span class="text-justify"> {{doc.resume}}</span>
+              <!-- <a href="{{doc.url}}">{{doc.url}}</a>-->
+            </div>
+          </div>
+        </div>
+
+
+        <!-- HTML pagination-->
+        <div class="row"     >
+          <div class="col-sm-4">
+          </div>
+          <div class="col-sm-8">
+            <ul  *ngIf="pages" class="nav nav-pills">
+              <li *ngFor="let p of pages; let  i=index" [ngClass]="i==currentPage?'active':'' ">
+                <a class="clickable" (click)="onPageDocument(i)">{{i}}</a>
+              </li>
+            </ul>
+
+          </div>
+
+        </div>
+        </div>
+      </ng-container>
+
+
+      <ng-container *ngIf="filtres && modeFiltre   && modeByKeyWord ==false ">
+        <div class="col-sm-7" *ngIf="filtres"   >
+          <div class="row bord "  *ngFor=" let doc of  filtres"    >
+            <div class="row cadre">
+              <div class="col-4 col-md-4  col-sm-4 "   >
+                <img class="img-thumbnail img-rounded btn img1"  [src]="doc.img[numberAleatoire]"/>
+              </div>
+              <div class="col-8 col-md-8 col-sm-8">
+                <h4 class=" text-capitalize text-info">  <a href="{{doc.url}}"  target="_blank">{{doc.titre}}</a></h4>
+                <span class="text-justify"> {{doc.resume}}</span>
+                <!-- <a href="{{doc.url}}">{{doc.url}}</a>-->
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </ng-container>
+
+
+
 
       <!--  Espace droite   style="background: #74b9ff " -->
-      <div class="col-md-1 ">
+      <div class="col-md-3 "  >
+        <!-- Formulaire de recherche  class="navbar-form navbar-left" -->
+
+         <form   #f="ngForm" (ngSubmit)="onChercher(f.value)" >
+           <div class="input-group">
+             <input type="text" class="form-control" name="keyword" ngModel  placeholder="Search">
+             <div class="input-group-btn">
+               <button class="btn btn-default" type="submit">
+                 <i class="glyphicon glyphicon-search"></i>
+               </button>
+             </div>
+           </div>
+         </form>
 
       </div>
 
@@ -259,7 +217,7 @@
 </div>
 
 
-<!------------------------------- Affichqge liens pdf avec un popup(modal)  ------------------------>
+<!------------------------------- Affichage liens pdf avec un popup(modal)  ------------------------>
 <div class="container">
 
   <!-- Trigger the modal with a button -->
@@ -299,11 +257,8 @@
 
 
 
-<!------------------------------- Affichqge liens pdf avec un popup(modal)  ------------------------>
+<!------------------------------- Affichage liens videos avec un popup(modal)  ------------------------>
 <div class="container">
-
-  <!-- Trigger the modal with a button -->
-  <!--          <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Articles pdf</button>-->
 
   <!-- Modal -->
   <div class="modal fade" id="mesvideos" role="dialog">
@@ -319,7 +274,7 @@
           <p>
             <ng-container     *ngFor=" let doc of  documents.content "     >
               <div class="row"  *ngFor=" let video of  doc.videos ; let i = index"  >
-                <a  href= "{{video}}"> {{video}}  </a>
+                <a  href= "{{video}}" target="_blank"> {{video}}  </a>
                 <ng-container>
                   <iframe src="{{video }}"   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="embed-responsive-item" frameborder="0">  </iframe>
                 </ng-container>
@@ -339,43 +294,6 @@
 
 <!------------------------------- Fin affichage liens pdf avec un popup modal  ------------------------>
 <br>
-
-<div *ngIf="article  && mode==false"  id="article" >
-
-  <ng-container  *ngFor="let article of articles._embedded.articles"   >
-    <div class="row"    >
-            <div class="col-md-2 "   >
-
-            </div>
-            <div class="col-md-8 mb-2" id="art" >
-              <span> <span class="glyphicon glyphicon-star" aria-hidden="true"></span>{{article.type}}</span>
-              <h4 class=" text-capitalize"><a href="{{article.url}}">{{article.titre}}</a></h4>
-              <span class="fontStyle">{{article.book}},{{article.date}}</span><br>
-              <span  class="fontStyle"  >{{article.auteurs1}},{{article.auteurs2}},... <br> </span><br>
-           <!--   <span><a href="{{article.url}}"> {{article.url}} </a> <br></span><br>-->
-            </div>
-
-      <div class="col-md-2 "   >
-
-      </div>
-    </div>
-  </ng-container>
- <div class="row">
-   <div class="col-md-4">
-
-   </div>
-
-    <div class="col-sm-8 col-md-8">
-      <ul  *ngIf="pagesArticles" class="nav nav-pills">
-        <li *ngFor="let p of  pagesArticles; let  indice=index" [ngClass]="indice==pageCourant? 'active':'' ">
-          <a class="clickable" (click)="onPageArticle(indice)">{{indice}}</a>
-        </li>
-      </ul>
-    </div>
-
- </div>
-
-</div>
 
 
 <!--Cette partie s affiche si la valeur de mode est egal a true-->
@@ -402,6 +320,23 @@
     <iframe src="https://cartosantesen.maps.arcgis.com/apps/opsdashboard/index.html#/260c7842a77a48c191bf51c8b0a1d3f6" frameborder="0" style="width: 100%; height: 70vh;"></iframe>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+<!-- ---- <p>++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</p>-->
+<!--{{documents.content[0].img|json}} style="background-color: darkgreen; color: #FFFFFF;"-->
+
+<!--{{articles._embedded.articles|json}}-->
+
+<!--{{documents.page.totalPages}}  -->
+
+<!--{{filtres | json}}-->
 
 
 

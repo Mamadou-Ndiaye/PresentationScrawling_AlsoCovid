@@ -1,76 +1,7 @@
-<nav class="navbar  m-5" >
-  <div class="container-fluid  m-5" >
-    <div class="navbar-header   ">
-      <img  class="clickable"  (click)="changeShow('/webDocumentOrderByhistorique')" src="assets/image/logoPTR.jpg" width="40">
-    </div>
-    <ul class="nav navbar-nav ">
-      <li><a (click)="changeShow('/webDocumentOrderByhistorique')"  name="sanitaire"  class="clickable ffamily"   ><span class="glyphicon glyphicon-home "></span>Home</a></li>
+<!-- Inclure bases c a dire lq bare de navigation q pqrtir du componenet bases   -->
+<app-bases></app-bases>
 
-      <li class="dropdown">
-        <a class="dropdown-toggle ffamily" data-toggle="dropdown" href="#">Info COVID
-          <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a class="clickable ffamily" (click)="onShowCovd()">Afrique</a></li>
-          <li><a class="clickable ffamily" (click)="onShowCovdSenegal()">Bénin</a></li>
-          <li><a class="clickable ffamily" (click)="onShowCovdSenegal()">Burkina Faso</a></li>
-          <li><a class="clickable ffamily" (click)="onShowCovdSenegal()">Gabon</a></li>
-          <li><a class="clickable ffamily" (click)="onShowCovdSenegal()">Mali</a></li>
-          <li><a class="clickable ffamily" (click)="onShowCovdSenegal()">Sénégal</a></li>
-
-        </ul>
-      </li>
-
-      <li class="dropdown">
-        <a class="dropdown-toggle ffamily" data-toggle="dropdown" href="#">Données
-          <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a class="clickable ffamily" href="/documents/#image" >WP1</a></li>
-          <li><a class="clickable ffamily" >WP2</a></li>
-          <li><a class="clickable ffamily" >WP3</a></li>
-          <li><a class="clickable ffamily" >WP4</a></li>
-        </ul>
-      </li>
-
-      <li><a (click)="changeShow('/webDocumentOrderByhistorique')"  name="sanitaire"  class="clickable ffamily"   >Produits</a></li>
-      <li><a (click)="changeShow('/webDocumentOrderByNutrition')" name="nutrition"  class="clickable ffamily" >Indicateurs</a></li>
-      <!--      <li><a (click)="getArticles()" name="nutrition"  class="clickable" >Articles</a></li>-->
-
-      <li class="dropdown">
-        <a class="dropdown-toggle ffamily" data-toggle="dropdown" href="#">Articles
-          <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a class="clickable ffamily"  routerLink="/articles" >Science direct</a></li>
-          <li><a class="clickable ffamily" routerLink="/natures" >Nature</a></li>
-          <!--          <li><a class="clickable ffamily" routerLink="/plosones" >PlosOne</a></li>-->
-        </ul>
-      </li>
-
-    </ul>
-
-    <!-- Formulaire de recherche -->
-
-    <form class="navbar-form navbar-left"  #f="ngForm" (ngSubmit)="onChercherByArticle(f.value)" >
-      <div class="input-group">
-        <input type="text" class="form-control" name="keyword" ngModel  placeholder="Search">
-        <div class="input-group-btn">
-          <button class="btn btn-default" type="submit">
-            <i class="glyphicon glyphicon-search"></i>
-          </button>
-        </div>
-      </div>
-    </form>
-
-    <!--    <ul class="nav navbar-nav navbar-right">-->
-    <!--      <li><a href="#"><span class="glyphicon glyphicon-user"></span>SignUp</a></li>-->
-    <!--      &lt;!&ndash;      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>&ndash;&gt;-->
-    <!--      <li><a class="clickable" (click)="onLogout()"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>-->
-    <!--    </ul>-->
-
-  </div>
-</nav>
-
-<hr  class="bg-primary"  align="center" width="83%"  size="70" noshade/>
-
+<!-- Fin    -->
 
 
 <div class="row" *ngIf="article"  id="article" >
@@ -89,13 +20,13 @@
 
     <div class="form-check">
       <input type="checkbox" class="form-check-input" id="review" name="review"  value="Review"  (change)="toggleEditable($event)" >
-      &nbsp; &nbsp; &nbsp;
-      <label class="form-check-label police" for="review">Review articles</label>
+      &nbsp; &nbsp;
+      <label class="form-check-label police" for="review">Article de revue</label>
     </div>
     <div class="form-check">
       <input type="checkbox" class="form-check-input" id="book" name="books"  value="Book"  (change)="toggleEditable($event)" >
-      &nbsp;  &nbsp;  &nbsp;&nbsp;&nbsp;
-      <label class="form-check-label police" for="book">Book reviews</label>
+      &nbsp;  &nbsp;  &nbsp;&nbsp;
+      <label class="form-check-label police" for="book">Livre de revue</label>
     </div>
 
     <br>
@@ -163,7 +94,7 @@
 
     </ng-container>
 
-    <ng-container *ngIf="articles && modeByKeyWord">
+    <ng-container *ngIf="articles && modeByKeyWord  && modeFiltre==false ">
       <ng-container  *ngFor="let article of articles._embedded.articles"   >
       <div class="row"    >
 
@@ -180,8 +111,8 @@
 
       <!-- HTML pagination-->
       <div class="row"     >
-        <div class="col-sm-4">
-        </div>
+       <!-- <div class="col-sm-4">
+        </div>-->
         <div class="col-sm-8">
           <ul  *ngIf="pages" class="nav nav-pills">
             <li *ngFor="let p of pages; let  i=index" [ngClass]="i==currentPage?'active':'' ">
@@ -198,7 +129,7 @@
 
 
 
-    <ng-container *ngIf="filtres && modeFiltre">
+    <ng-container *ngIf="filtres && modeFiltre  &&  modeByKeyWord==false">
       <ng-container  *ngFor="let article of filtres"   >
         <div class="row"    >
 

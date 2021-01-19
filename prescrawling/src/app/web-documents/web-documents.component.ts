@@ -15,69 +15,79 @@ import {DomSanitizer} from "@angular/platform-browser";
 
 
 export class WebDocumentsComponent implements OnInit {
-   environnement: any;
-   covid: any;
-   objet: any;
-   nutrition: any;
-   identite: any;
-   sanitaire: any;
-   documents: any;
+  environnement: any;
+  covid: any;
+  objet: any;
+  nutrition: any;
+  identite: any;
+  sanitaire: any;
+  documents: any;
 
-   articles: any;
-  public article: boolean= false;
+  articles: any;
+  public article: boolean = false;
 
 
-   // Pour gerer l action active sur le menu vertical
-   //  status: boolean =false;
+  // Pour gerer l action active sur le menu vertical
+  //  status: boolean =false;
 
   // Pour afficher le div de suivi covid,changer affichage en fonction ce la valeur de mode
   // Si mode = false on affiche la partie de sans suivi covid et si c est true on affiche la partie suivi covid en restant dans le meme page
-  mode:boolean=false;
-   senegal:boolean=false;
-   burkina: boolean=false;
-  mali: boolean=false;
+  mode: boolean = false;
+  senegal: boolean = false;
+  burkina: boolean = false;
+  mali: boolean = false;
 
 
 //Gestion de la pagination de documents
-  public  size:number=20;
-  public  currentPage:number=0;
-  public  totalPages:number=0;
-  public  pages?:Array<number>;
+  public size: number = 20;
+  public currentPage: number = 0;
+  public totalPages: number = 0;
+  public pages?: Array<number>;
 
-  private images: string[]=[];
+  private images: string[] = [];
   //recuperer url courante
-  public currentUrl:any;
+  public currentUrl: any;
 
-  background: boolean=false;
+  background: boolean = false;
 
-  private url: string[]=[];
+  private url: string[] = [];
 
-   //Declaration d un element de WebDocument
-  docs:WebDocument[]=[];
+  //Declaration d un element de WebDocument
+  docs: WebDocument[] = [];
   private random: any;
   private img?: any;
-  public numberAleatoire: number=0;
+  public numberAleatoire: number = 0;
   //Affiche du iframe pdf
-   affPDF: boolean=false;
-  public  currentPdf:number=0;
-  ipdf: number=0;
+  affPDF: boolean = false;
+  public currentPdf: number = 0;
+  ipdf: number = 0;
   // Pagination article
-   pageCourant: number=0
-  public  taille:number=100;
-   pagesTotal:number=0;
-   pagesArticles?:Array<number>;
-   // Pour la recherche
-   currentKeyword?: any;
-   modeByKeyWord: boolean=false;
+  pageCourant: number = 0
+  public taille: number = 100;
+  pagesTotal: number = 0;
+  pagesArticles?: Array<number>;
+  // Pour la recherche
+  currentKeyword?: any;
+  modeByKeyWord: boolean = false;
+  pageableByCherche: boolean = false;
+
+  // Recherche multiple
+  theCheckbox: boolean=false;
+  selected: string[] = [];
+  unselected: string[] = [];
+  intersect: string[] = [];
+  deselectedValue?: string;
+  marked = false;
+  // i?: number;
+   filtres: any;
+  modeFiltre = false;
+  i=0;
 
 
 
-
-
-
-  constructor(private documentsService : DocumentsService,private  authentificationService:AuthentificationService,private sanitizer: DomSanitizer) {
-    this.url=["/webDocumentOrderByCovid","/webDocumentOrderByhistorique","/webDocumentOrderByIdentite",
-      "/webDocumentOrderByEnvironnement","/webDocumentOrderByNutrition", "/webDocumentOrderByObjet"];
+  constructor(private documentsService: DocumentsService, private  authentificationService: AuthentificationService, private sanitizer: DomSanitizer) {
+    this.url = ["/webDocumentOrderByCovid", "/webDocumentOrderByhistorique", "/webDocumentOrderByIdentite",
+      "/webDocumentOrderByEnvironnement", "/webDocumentOrderByNutrition", "/webDocumentOrderByObjet"];
 
   }
 
@@ -85,182 +95,185 @@ export class WebDocumentsComponent implements OnInit {
   ngOnInit(): void {
 
 
-  //  J envoie la requete au service qui va aller recuperer les donneesde la base et on le met dans  documents e
+    //  J envoie la requete au service qui va aller recuperer les donneesde la base et on le met dans  documents e
     this.onPageDocument(this.currentPage);
-    this.covid=this.documentsService.covid;
-   this.environnement=this.documentsService.environnement;
-    this.objet=this.documentsService.objet;
-    this.nutrition=this.documentsService.nutrition;
-    this.identite=this.documentsService.identite;
-    this.sanitaire=this.documentsService.sanitaire;
-    this.changeShow(this.url[0]);
-
-
-
+    this.covid = this.documentsService.covid;
+    this.environnement = this.documentsService.environnement;
+    this.objet = this.documentsService.objet;
+    this.nutrition = this.documentsService.nutrition;
+    this.identite = this.documentsService.identite;
+    this.sanitaire = this.documentsService.sanitaire;
+    this.changeShow(this.url[3]);
 
   }
 
 // Recuperer la page current  et on linjecte
   onPageDocument(i: number) {
-    this.currentPage=i;
-    this.modeByKeyWord=false;
-    this.documentsService.getAlldocuments(this.currentUrl,this.currentPage,this.size)
-      .subscribe(data=>{
-        console.log("voila le resultat de get",data)
-        console.log("page courrante est ",this.currentPage)
-        // this.totalPages = data["page"].totalPages;
+    this.currentPage = i;
+    this.documentsService.getAlldocuments(this.currentUrl, this.currentPage, this.size)
+      .subscribe(data => {
+        console.log("voila le resultat de get", data)
+        console.log("page courrante est ", this.currentPage)
+        this.documents = data;
 
-
-        this.documents= data;
+        // recuperons la taille du premier tabeau img qu on utilise dans la fonction gatNumberAleatoire pour generer un nombre aleat
+        this.img = this.documents.content[0].img.length;
+        this.numberAleatoire = Math.floor(Math.random() * (this.img - 0)) + 0
 
         this.totalPages = this.documents.totalPages;
-        this.pages=new  Array<number>(this.totalPages);
-        console.log("liste des documents",this.documents);
+        this.pages = new Array<number>(this.totalPages);
+        console.log("liste des documents", this.documents);
 
 
-        console.log("tableau image +++++",this.images);
-      }, error => {console.log(error)});
+        console.log("tableau image +++++", this.images);
+      }, error => {
+        console.log(error)
+      });
+
 
   }
 
 
 // On appelle cette foncion dans le component HTML et l affichage change en fonction de url passer en parametre dans la
   // FONCTION changeShow(url)  en fonction du menu clique
-  public changeShow(x:string){
+  public changeShow(x: string) {
 
-   // this.status = !this.status;
+    // this.status = !this.status;
 
-    this.mode=false;
-    this.senegal=false;
-    this.article=false;
-    this.currentUrl=x;
+    this.mode = false;
+    this.senegal = false;
+    this.article = false;
+    this.currentUrl = x;
 
-    this.modeByKeyWord=false;
+    this.modeByKeyWord = false;
 
-    this.background=true;
+    this.background = true;
     this.onPageDocument(this.currentPage)
-    this.documentsService.getAlldocuments(x,this.currentPage,this.size).subscribe(
-      data=>{
+    this.documentsService.getAlldocuments(x, this.currentPage, this.size).subscribe(
+      data => {
         console.log(data)
-        this.documents= data;
+        this.documents = data;
 
         // recuperons la taille du premier tabeau img qu on utilise dans la fonction gatNumberAleatoire pour generer un nombre aleat
-        this.img=this.documents.content[0].img.length;
-        this.numberAleatoire=Math.floor(Math.random() * (this.img - 0)) + 0
-        console.log("-------------number Aleatoire-------------------",this.numberAleatoire);
-        console.log("page courante = ",this.currentPage)
+        this.img = this.documents.content[0].img.length;
+        this.numberAleatoire = Math.floor(Math.random() * (this.img - 0)) + 0
+        console.log("-------------number Aleatoire-------------------", this.numberAleatoire);
+        console.log("page courante = ", this.currentPage)
         this.totalPages = this.documents.totalPages;
 
 
-        console.log("tableau image +++++",this.images);
-        this.pages=new  Array<number>(this.totalPages);
-        console.log("liste des documents",this.documents)
-      }, error => {console.log(error)}
+        console.log("tableau image +++++", this.images);
+        this.pages = new Array<number>(this.totalPages);
+        console.log("liste des documents", this.documents)
+      }, error => {
+        console.log(error)
+      }
     )
   }
 
 
   // Pour le formulaire de recherche
 
+
   onChercher(form: any) {
+    this.pageableByCherche = true;
     console.log(form);
-    this.currentPage=0;
-    this.currentKeyword=form.keyword;
-    this.modeByKeyWord=true;
-    console.log("Cherche par "+this.currentKeyword);
-    this.chercherProduit();
+    this.currentPage = 0;
+    this.currentKeyword = form.keyword;
+    this.modeByKeyWord = true;
+    this.modeFiltre=false;
+    console.log("Cherche par " + this.currentKeyword);
+    this.chercherDocument();
 
   }
 
-  chercherProduit() {
+  chercherDocument() {
 
-    this.documentsService.getDocumentbyKeyword(this.currentKeyword,this.currentPage,this.size)
+    this.documentsService.getDocumentbyKeyword(this.currentKeyword, this.currentPage, this.size)
       .subscribe(data => {
         this.documents = data;
-        console.log("documents "+this.documents);
+        console.log("documents " + this.documents);
+
+        // recuperons la taille du premier tabeau img qu on utilise dans la fonction gatNumberAleatoire pour generer un nombre aleat
+        this.img = this.documents.content[0].img.length;
+        this.numberAleatoire = Math.floor(Math.random() * (this.img - 0)) + 0
+
         // this.totalPages=data["page"].totalPages;
-        // this.pages=new  Array<number>(this.totalPages);
+        this.totalPages = this.documents.totalPages;
 
-      }, err => {console.log(err); });
+
+        console.log("tableau image +++++", this.images);
+        this.pages = new Array<number>(this.totalPages);
+        console.log("liste des documents", this.documents)
+
+      }, err => {
+        console.log(err);
+      });
+
+  }
+
+
+
+  //recherche multiple filtre
+
+
+  toggleEditable(e :any) {
+    this.modeByKeyWord=false;
+
+    if (e.target.checked) {
+      this.i++;
+          if(this.i!=0)
+          {
+            this.modeFiltre = true;
+          }
+      console.log("I is  " + this.i);
+      console.log("checked is " + e.target.checked);
+      this.theCheckbox=true;
+      this.selected.push(e.target.value);
+      this.marked= e.target.checked;
+      console.log("checkbox is "+ this.theCheckbox + " marked is  " + this.marked);
+      console.log("valeur du checkbox ++++++°°°°°° " + e.target.value);
+      console.log("Selected  ++++ " + this.selected);
+
+    }
+    else  {
+      this.i--;
+      console.log("I is  " + this.i);
+          if (this.i==0)
+          {
+            this.modeFiltre = false;
+            console.log(" ++++++++++++mode filtre ------------------- " + this.modeFiltre);
+          }
+      this.theCheckbox=false;
+      this.marked= e.target.checked;
+      this.unselected.push(e.target.value);
+      console.log("checkbox is "+ this.theCheckbox + " marked is  " + this.marked);
+      console.log("Case decoché tableau " + this.unselected);
+       let unchecked: string= e.target.value;
+      //const index: number = monTableau.indexOf("uncheked");
+      var index = this.selected.indexOf(unchecked);
+      if (index > -1) { this.selected.splice(index, 1); }
+      console.log("Bouton decoche et valeur is " ,e.target.value + " and index is " ,index);
+      console.log("checkbox is "+ this.theCheckbox);
+      console.log("restant du tableau tableau  " + this.selected);
+    }
+
+    if(this.selected.length!=0)
+    {
+      this.documentsService.getDocumentbyFilter(this.selected).subscribe(
+        data => {
+          console.log(data);
+          this.filtres = data;
+        }, error => {
+          console.log(error)
+        });
+
+    }
+    else
+      this.onPageDocument(this.currentPage);
+
+
 
   }
 
-
-
-
-  getBackgroundColor(): string {
-    return 'red';
-  }
-
-
-
-  getArticles()
-   {
-     this.senegal=false;
-     this.mode=false;
-     this.article=true;
-     this.documentsService.getAllArticles(this.pageCourant,this.taille).subscribe(
-       data=>{
-         console.log(data);
-
-         this.articles= data;
-         this.pagesTotal=this.articles.page.totalPages;
-         console.log(this.pagesTotal);
-         this.pagesArticles=new  Array<number>(this.pagesTotal);
-     },error => { console.log(error)});
-   }
-
-
-
-
-
-  // getNumberAleatoire(): number {
-  //
-  //    console.log("+++++++++++++++++++++++++voici un notre aleatoire+++++++++++++++++++++++++", Math.floor(Math.random() * (this.img - 0)) + 0)
-  //    return  Math.floor(Math.random() * (this.img - 0)) + 0;
-  //
-  // }
-
-
-
-  onLogout() {
-    this.authentificationService.logout();
-  }
-
-  onShowCovd() {
-    this.senegal=false;
-    this.article=false;
-    this.mode=true;
-  }
-
-  onShowCovdSenegal() {
-    this.mode=false;
-    this.article=false;
-    this.senegal=true;
-  }
-
-  onShowCovdBurkina() {
-    this.mode=false;
-    this.burkina=true;
-  }
-
-  onShowCovdMali() {
-    this.mode=false;
-    this.mali=true;
-  }
-
-  // showPDF(i:number) {
-  //   this.currentPdf=i;
-  //   // this.ipdf=this.currentPdf
-  //   // this.affPDF=true;
-  // }
-  showPDF(i=0) {
-    this.currentPdf=i;
-  }
-
-  onPageArticle(indice: number) {
-    this.pageCourant=indice;
-    this. getArticles();
-
-  }
 }

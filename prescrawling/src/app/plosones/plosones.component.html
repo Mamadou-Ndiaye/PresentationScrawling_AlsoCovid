@@ -4,8 +4,7 @@
 
 
 
-
-<div class="row" *ngIf="nature"  id="article" >
+<div class="row" *ngIf="plosone"  id="article" >
 
   <div class="col-md-1 "   >
 
@@ -14,20 +13,20 @@
 
     <div class="panel-heading" class="filtre">Type Article</div>
     <div class="form-check">
-      <input type="checkbox" class="form-check-input" id="researchArticle"  name="recherche"  value="article"  (change)="toggleEditable($event)" >
-      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-      <label class="form-check-label police" for="researchArticle">Articles</label>
+      <input type="checkbox" class="form-check-input" id="researchArticle"  name="recherche"  value="PLOS ONE"  (change)="toggleEditable($event)" >
+      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+      <label class="form-check-label police" for="researchArticle">PLOS ONE</label>
     </div>
 
     <div class="form-check">
-      <input type="checkbox" class="form-check-input" id="review" name="review"  value="News Feature"  (change)="toggleEditable($event)" >
-      &nbsp; &nbsp; &nbsp;&nbsp;
-      <label class="form-check-label police" for="review">News Feature</label>
+      <input type="checkbox" class="form-check-input" id="review" name="review"  value="PLOS Biology"  (change)="toggleEditable($event)" >
+      &nbsp; &nbsp; &nbsp;
+      <label class="form-check-label police" for="review">PLOS Biology</label>
     </div>
     <div class="form-check">
-      <input type="checkbox" class="form-check-input" id="book" name="books"  value="Correspondence"  (change)="toggleEditable($event)" >
-      &nbsp;  &nbsp;
-      <label class="form-check-label police" for="book">Correspondence</label>
+      <input type="checkbox" class="form-check-input" id="book" name="books"  value="PLOS Medicine"  (change)="toggleEditable($event)" >
+      &nbsp;   &nbsp;
+      <label class="form-check-label police" for="book">PLOS Medicine</label>
     </div>
 
     <br>
@@ -61,17 +60,19 @@
   </div>
 
 
+
   <div class="col-md-5 text-justify"    >
     <ng-container  *ngIf="  modeByKeyWord==false && modeFiltre==false "  >
-      <ng-container  *ngFor="let article of natures._embedded.natures"   >
+
+     <ng-container  *ngFor="let article of plosones._embedded.plosOnes"   >
         <div class="row">
 
           <div class="col-md-8" class="art" >
             <span> <span class="glyphicon glyphicon-star" aria-hidden="true"></span>{{article.type}}</span>
             <h4 class="text-capitalize  url" ><a href="{{article.url}}" target="_blank" >{{article.titre}}</a></h4>
             <span class="fontStyle">{{article.date}}</span><br>
-            <span  class="fontStyle"  >{{article.auteur1}},{{article.auteur2}} <br> </span><br>
-              <!-- <span><a href="{{article.url}}"> {{article.url}} </a> <br></span><br>-->
+            <span  class="fontStyle"  >{{article.auteurs}} <br> </span><br>
+           <!-- <span><a href="{{article.url}}"> {{article.url}} </a> <br></span><br>-->
           </div>
 
 
@@ -88,7 +89,7 @@
         <div class="col-sm-12 col-md-12">
           <ul  *ngIf="pagesNatures" class="nav nav-pills">
             <li *ngFor="let p of  pagesNatures; let  indice=index" [ngClass]="indice==pageCourant? 'active':'' ">
-              <a class="clickable" (click)="onPageNature(indice)">{{indice}}</a>
+              <a class="clickable" (click)="onPagePlosOne(indice)">{{indice}}</a>
             </li>
           </ul>
         </div>
@@ -97,16 +98,16 @@
 
     </ng-container>
 
-    <ng-container *ngIf="natures && modeByKeyWord   && modeFiltre==false">
+    <ng-container *ngIf="plosones && modeByKeyWord  && modeFiltre ==false ">
 
-      <ng-container  *ngFor="let article of natures._embedded.natures"   >
+      <ng-container  *ngFor="let article of plosones._embedded.plosOnes"   >
         <div class="row"    >
 
           <div class="col-md-8" class="art" >
             <span> <span class="glyphicon glyphicon-star" aria-hidden="true"></span>{{article.type}}</span>
             <h4 class=" text-capitalize"><a href="{{article.url}}" target="_blank" >{{article.titre}}</a></h4>
             <span class="fontStyle">{{article.date}}</span><br>
-            <span  class="fontStyle"  >{{article.auteur1}},{{article.auteur2}} <br> </span><br>
+            <span  class="fontStyle"  >{{article.auteurs}} <br> </span><br>
             <!--   <span><a href="{{article.url}}"> {{article.url}} </a> <br></span><br>-->
           </div>
 
@@ -120,7 +121,8 @@
           <div class="col-sm-8">
             <ul  *ngIf="pages" class="nav nav-pills">
               <li *ngFor="let p of pages; let  i=index" [ngClass]="i==currentPage?'active':'' ">
-                <a class="clickable" (click)="onPageNature(i)">{{i}}</a>
+                <a class="clickable" (click)="onPagePlosOne(i)">{{i}}</a>
+                <a class="clickable" (click)="onPagePlosOne(i)">{{i}}</a>
               </li>
             </ul>
 
@@ -136,7 +138,7 @@
 
 
 
-    <ng-container *ngIf="filtres && modeFiltre   && modeByKeyWord==false">
+    <ng-container *ngIf="filtres && modeFiltre   && modeByKeyWord==false ">
       <ng-container  *ngFor="let article of filtres"   >
         <div class="row"    >
 
@@ -158,7 +160,7 @@
 
   <div class="col-md-3 text-justify "   >
 
-    <form class="navbar-form navbar-left"  #f="ngForm" (ngSubmit)="onChercherByNature(f.value)" >
+    <form class="navbar-form navbar-left"  #f="ngForm" (ngSubmit)="onChercherByPlosone(f.value)" >
       <div class="input-group">
         <input type="text" class="form-control" name="keyword" ngModel  placeholder="Search">
         <div class="input-group-btn">
@@ -177,6 +179,7 @@
 
 
 </div>
+
 
 
 

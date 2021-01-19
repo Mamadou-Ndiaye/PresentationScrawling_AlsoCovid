@@ -1,0 +1,16 @@
+.url{
+  font-family: "Times New Roman";
+}
+
+.dropdown-menu > li > a:hover {
+  color: #FFFFFF;
+  background-image: none;
+  background-color: #2980b9;
+}
+hr {
+  height: 5px;
+  /* margin: -0.5em 0;*/
+  padding: 0;
+
+  border: 1px;
+}

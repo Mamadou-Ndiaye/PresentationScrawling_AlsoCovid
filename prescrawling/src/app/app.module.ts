@@ -10,6 +10,10 @@ import { CategoriesComponent } from './categories/categories.component';
 import {FormsModule} from "@angular/forms";
 import {NgxImageGalleryModule} from "ngx-image-gallery";
 import { ArticlesComponent } from './articles/articles.component';
+import { NaturesComponent } from './natures/natures.component';
+import { PlosonesComponent } from './plosones/plosones.component';
+import { BasesComponent } from './bases/bases.component';
+
 
 @NgModule({
   declarations: [
@@ -18,12 +22,17 @@ import { ArticlesComponent } from './articles/articles.component';
     LoginComponent,
     CategoriesComponent,
     ArticlesComponent,
+    NaturesComponent,
+    PlosonesComponent,
+    BasesComponent,
+
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, HttpClientModule, FormsModule
   ],
+  // on peut  definit ici les services de l app
   providers: [],
   bootstrap: [AppComponent]
 })

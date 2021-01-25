@@ -82,7 +82,7 @@
 
         <!--        </div>-->
 
-        <div class="col-sm-8 col-md-8">
+        <div class="col-sm-12 col-md-12">
           <ul  *ngIf="pagesArticles" class="nav nav-pills">
             <li *ngFor="let p of  pagesArticles; let  indice=index" [ngClass]="indice==pageCourant? 'active':'' ">
               <a class="clickable" (click)="onPageArticle(indice)">{{indice}}</a>
@@ -108,12 +108,13 @@
 
 
       </div>
+      </ng-container>
 
       <!-- HTML pagination-->
       <div class="row"     >
-       <!-- <div class="col-sm-4">
-        </div>-->
-        <div class="col-sm-8">
+        <!-- <div class="col-sm-4">
+         </div>-->
+        <div class="col-sm-12 col-md-12">
           <ul  *ngIf="pages" class="nav nav-pills">
             <li *ngFor="let p of pages; let  i=index" [ngClass]="i==currentPage?'active':'' ">
               <a class="clickable" (click)="onPageDocument(i)">{{i}}</a>
@@ -123,7 +124,6 @@
         </div>
 
       </div>
-      </ng-container>
 
     </ng-container>
 

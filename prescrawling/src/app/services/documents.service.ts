@@ -1,12 +1,18 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {environment} from "../../environments/environment.prod";
 
 @Injectable({
   providedIn: 'root'
 })
 export class DocumentsService {
 
-  public  host:string="http://localhost:8080";
+  //public  host:string="http://localhost:8080";
+
+ // public  host:string="https://alsocovid.herokuapp.com"
+  host = environment.host;
+
+
   public covid: boolean=false;
   public sanitaire: boolean=false;
   public identite: boolean=false;

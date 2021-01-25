@@ -1,8 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bd303f78-b463-43be-8b7d-03c5fa3c985a" name="Default Changelist" comment="">
+    <list default="true" id="1ef1f759-246d-4bb6-a3f7-709730bc9e3d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/scrawling.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/__ngcc_entry_points__.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/__ngcc_entry_points__.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/.browserslistrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/angular.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/e2e/protractor.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/e2e/src/app.e2e-spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/e2e/src/app.po.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/e2e/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/karma.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/app-routing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/app.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/app.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/app.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/app.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/app.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/articles/articles.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/articles/articles.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/articles/articles.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/articles/articles.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/bases/bases.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/bases/bases.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/bases/bases.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/bases/bases.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/categories/categories.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/categories/categories.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/categories/categories.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/categories/categories.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/classes/Utilisateur.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/classes/WebDocument.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/login/login.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/login/login.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/login/login.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/login/login.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/natures/natures.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/natures/natures.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/natures/natures.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/natures/natures.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/plosones/plosones.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/plosones/plosones.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/plosones/plosones.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/plosones/plosones.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/services/authentification.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/services/authentification.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/services/authguard.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/services/authguard.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/services/documents.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/services/documents.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/web-documents/web-documents.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/web-documents/web-documents.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/web-documents/web-documents.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/web-documents/web-documents.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/src/assets/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/src/assets/image/logoPTR.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/src/environments/environment.prod.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/src/environments/environment.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/src/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/src/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/src/main.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/src/polyfills.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/src/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/src/test.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/tsconfig.app.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/tsconfig.spec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescrawling/tslint.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,8 +83,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
-  <component name="ProjectId" id="1kZYtbKsQaIAIFl1FJ0h2YWYbAJ" />
+  <component name="ProjectId" id="1kq8iofAWcwtbzBeUj9newrWbF9" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -23,77 +96,230 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/prescrawling" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../highTech/highTechFrontend" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.tslint" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="ts.external.directory.path" value="D:\DevAppPers\fronted\scrawling\prescrawling\node_modules\typescript\lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\DevAppPers\fronted\scrawling\prescrawling\src\assets\image" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.Angular CLI Server">
+    <configuration name="E2E Tests (prescrawling)" type="JavaScriptTestRunnerProtractor">
+      <config-file value="$PROJECT_DIR$/e2e/protractor.conf.js" />
+      <node-interpreter value="project" />
+      <protractor-options value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular CLI Server" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="bd303f78-b463-43be-8b7d-03c5fa3c985a" name="Default Changelist" comment="" />
-      <created>1605894481892</created>
+      <changelist id="1ef1f759-246d-4bb6-a3f7-709730bc9e3d" name="Default Changelist" comment="" />
+      <created>1606416890352</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1605894481892</updated>
-      <workItem from="1605894483252" duration="951000" />
-      <workItem from="1605909901886" duration="666000" />
-      <workItem from="1605949277195" duration="1145000" />
-      <workItem from="1605990130140" duration="614000" />
-      <workItem from="1606033266974" duration="808000" />
-      <workItem from="1606034156765" duration="599000" />
-      <workItem from="1606072838650" duration="1235000" />
-      <workItem from="1606081142125" duration="3651000" />
-      <workItem from="1606115894527" duration="1767000" />
-      <workItem from="1606122371164" duration="38071000" />
-      <workItem from="1606203577048" duration="2979000" />
-      <workItem from="1606208749191" duration="45867000" />
-      <workItem from="1606327254782" duration="4673000" />
-      <workItem from="1606385552657" duration="2752000" />
-      <workItem from="1606389550544" duration="691000" />
-      <workItem from="1606391664995" duration="16789000" />
-      <workItem from="1606416708826" duration="191000" />
-      <workItem from="1606470796329" duration="38000" />
-      <workItem from="1606819739222" duration="70000" />
-      <workItem from="1607690080253" duration="64000" />
-      <workItem from="1608645638214" duration="603000" />
-      <workItem from="1608718950442" duration="365000" />
-      <workItem from="1609451742069" duration="34000" />
-      <workItem from="1610365065437" duration="10000" />
+      <updated>1606416890352</updated>
+      <workItem from="1606416898491" duration="143000" />
+      <workItem from="1606417070446" duration="1272000" />
+      <workItem from="1606470534025" duration="27620000" />
+      <workItem from="1606556537074" duration="20299000" />
+      <workItem from="1606609272719" duration="2479000" />
+      <workItem from="1606655936177" duration="8414000" />
+      <workItem from="1606734224456" duration="18585000" />
+      <workItem from="1606765139681" duration="1587000" />
+      <workItem from="1606774174098" duration="8823000" />
+      <workItem from="1606819685452" duration="19757000" />
+      <workItem from="1606906402473" duration="16939000" />
+      <workItem from="1606933963871" duration="9211000" />
+      <workItem from="1607171176108" duration="62987000" />
+      <workItem from="1607689913537" duration="4643000" />
+      <workItem from="1607948654331" duration="27056000" />
+      <workItem from="1608207048025" duration="6695000" />
+      <workItem from="1608475728888" duration="20734000" />
+      <workItem from="1608631032344" duration="8829000" />
+      <workItem from="1608719079145" duration="5944000" />
+      <workItem from="1608977578660" duration="44543000" />
+      <workItem from="1609362010574" duration="138000" />
+      <workItem from="1609451710359" duration="34909000" />
+      <workItem from="1609779664114" duration="95000" />
+      <workItem from="1609786600663" duration="18402000" />
+      <workItem from="1609930044227" duration="22259000" />
+      <workItem from="1610187743688" duration="3252000" />
+      <workItem from="1610364899669" duration="16963000" />
+      <workItem from="1610463708670" duration="3848000" />
+      <workItem from="1610497846410" duration="2211000" />
+      <workItem from="1610539428082" duration="7601000" />
+      <workItem from="1610659440109" duration="17350000" />
+      <workItem from="1610921011326" duration="1787000" />
+      <workItem from="1610924124876" duration="2297000" />
+      <workItem from="1610979212605" duration="4759000" />
+      <workItem from="1611059268423" duration="5167000" />
+      <workItem from="1611228118196" duration="1177000" />
+      <workItem from="1611400259595" duration="1905000" />
+      <workItem from="1611444084555" duration="2583000" />
+      <workItem from="1611526188824" duration="7190000" />
     </task>
+    <task id="LOCAL-00001" summary="G">
+      <created>1609240422633</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1609240422634</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Gestion des articles Science Direct">
+      <created>1609240976563</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1609240976563</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Gestion des articles nature">
+      <created>1610541609715</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1610541609715</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Gestion des articles science direct">
+      <created>1610541876440</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1610541876440</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Gestion des articles plosOnes">
+      <created>1611073419148</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1611073419148</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Gestion de la bare de navigation pour optimisation du code  dans le component de base">
+      <created>1611163161161</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1611163161161</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Deploiment sur heroku &#10;Injection de l URL de la partie backend dans  environment.prod.ts and replace url connexion to host=environnement.host dans nos differents services">
+      <created>1611533275875</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1611533275875</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="G" />
+    <MESSAGE value="Gestion des articles Science Direct" />
+    <MESSAGE value="Gestion des articles nature" />
+    <MESSAGE value="Gestion des articles science direct" />
+    <MESSAGE value="Gestion des articles plosOnes" />
+    <MESSAGE value="Gestion de la bare de navigation pour optimisation du code  dans le component de base" />
+    <MESSAGE value="Deploiment sur heroku &#10;Injection de l URL de la partie backend dans  environment.prod.ts and replace url connexion to host=environnement.host dans nos differents services" />
+    <option name="LAST_COMMIT_MESSAGE" value="Deploiment sur heroku &#10;Injection de l URL de la partie backend dans  environment.prod.ts and replace url connexion to host=environnement.host dans nos differents services" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="441" y="167" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606144589668">
+    <state x="137" y="20" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1610465443082">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="441" y="167" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1606144589668" />
-    <state x="715" y="100" width="533" height="528" key="DiffContextDialog" timestamp="1606116836409">
+    <state x="137" y="20" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1610465443082" />
+    <state x="306" y="0" key="CommitChangelistDialog2" timestamp="1611533269075">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="715" y="100" width="533" height="528" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1606116836409" />
-    <state x="724" y="106" key="FileChooserDialogImpl" timestamp="1606416888180">
+    <state x="306" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1611533269075" />
+    <state x="237" y="61" key="DiffContextDialog" timestamp="1611533229248">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="724" y="106" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1606416888180" />
-    <state x="368" y="7" key="SettingsEditor" timestamp="1606125454958">
+    <state x="237" y="61" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1611533229248" />
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1611448187822">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="368" y="7" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1606125454958" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1606146815811">
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1611448187822" />
+    <state width="1323" height="204" key="GridCell.Tab.0.bottom" timestamp="1611018516440">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1606146815811" />
-    <state x="477" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1606391936269">
+    <state width="1323" height="204" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1611018516440" />
+    <state width="1323" height="204" key="GridCell.Tab.0.center" timestamp="1611018516428">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="477" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1606391936269" />
+    <state width="1323" height="204" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1611018516428" />
+    <state width="1323" height="204" key="GridCell.Tab.0.left" timestamp="1611018516428">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="204" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1611018516428" />
+    <state width="1323" height="204" key="GridCell.Tab.0.right" timestamp="1611018516428">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="204" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1611018516428" />
+    <state x="184" y="7" key="SettingsEditor" timestamp="1611534635086">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="184" y="7" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1611534635086" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1607425884902">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1607425884902" />
+    <state x="275" y="98" key="Vcs.Push.Dialog.v2" timestamp="1611533290088">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="98" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1611533290088" />
+    <state x="378" y="188" width="740" height="351" key="com.intellij.ide.util.TipDialog" timestamp="1611444901408">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="378" y="188" width="740" height="351" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1611444901408" />
+    <state x="492" y="281" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1609241046412">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="492" y="281" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1609241046412" />
+    <state x="65" y="0" width="1191" height="728" key="new project wizard" timestamp="1608305172935">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="65" y="0" width="1191" height="728" key="new project wizard/0.0.1366.728@0.0.1366.728" timestamp="1608305172935" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1610400786783">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1610400786783" />
   </component>
 </project>

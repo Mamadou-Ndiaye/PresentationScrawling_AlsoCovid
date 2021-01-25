@@ -9,8 +9,8 @@ export class DocumentsService {
 
   //public  host:string="http://localhost:8080";
 
- // public  host:string="https://alsocovid.herokuapp.com"
-  host = environment.host;
+   public  host:string="https://alsocovid.herokuapp.com"
+ // host = environment.host;
 
 
   public covid: boolean=false;

@@ -4,7 +4,7 @@
 <!-- Fin    -->
 
 
-<div *ngIf="mode==false && senegal==false &&  article==false " >
+<div *ngIf="mode==false &&  article==false " >
   <div class="container glyphicon-text-height  float">
 
     <div class="row back" >
@@ -30,25 +30,7 @@
           </div>
 
 
-     <!--   <div class="panel-heading text-left" id="format">Format</div>
-        <div class="form-check">
-          <input type="checkbox" class="form-check-input" id="videos">
-          &nbsp;   &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;
-          <label class="form-check-label police " for="videos">Vidéos</label>
-        </div>
 
-        <div class="form-check">
-          <input type="checkbox" class="form-check-input" id="images">
-          &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <label class="form-check-label police " for="images">Images</label>
-        </div>
-        <div class="form-check">
-          <input type="checkbox" class="form-check-input" id="pdf">
-          &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;  &nbsp; &nbsp;&nbsp;&nbsp;
-          <label class="form-check-label police " for="pdf">PDF</label>
-        </div>
-
--->
       </div>
 
        <ng-container *ngIf="modeByKeyWord==false && modeFiltre==false ">
@@ -207,16 +189,16 @@
 
 
 <!------------------------------- Affichage liens pdf avec un popup(modal)  ------------------------>
-<div class="container">
+<!--<div class="container">
 
-  <!-- Trigger the modal with a button -->
-  <!--          <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Articles pdf</button>-->
+  &lt;!&ndash; Trigger the modal with a button &ndash;&gt;
+  &lt;!&ndash;          <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Articles pdf</button>&ndash;&gt;
 
-  <!-- Modal -->
+  &lt;!&ndash; Modal &ndash;&gt;
   <div class="modal fade" id="mespdfs" role="dialog">
     <div class="modal-dialog">
 
-      <!-- Modal content-->
+      &lt;!&ndash; Modal content&ndash;&gt;
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -239,76 +221,7 @@
     </div>
   </div>
 
-</div>
-
-<!------------------------------- Fin affichage liens pdf avec un popup modal  ------------------------>
-
-
-
-
-<!------------------------------- Affichage liens videos avec un popup(modal)  ------------------------>
-<div class="container">
-
-  <!-- Modal -->
-  <div class="modal fade" id="mesvideos" role="dialog">
-    <div class="modal-dialog">
-
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Videos</h4>
-        </div>
-        <div class="modal-body">
-          <p>
-            <ng-container     *ngFor=" let doc of  documents.content "     >
-              <div class="row"  *ngFor=" let video of  doc.videos ; let i = index"  >
-                <a  href= "{{video}}" target="_blank"> {{video}}  </a>
-                <ng-container>
-                  <iframe src="{{video }}"   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="embed-responsive-item" frameborder="0">  </iframe>
-                </ng-container>
-              </div>
-            </ng-container>
-          </p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-</div>
-
-<!------------------------------- Fin affichage liens pdf avec un popup modal  ------------------------>
-<br>
-
-
-<!--Cette partie s affiche si la valeur de mode est egal a true-->
-<div *ngIf="mode">
-  <div class="container ">
-
-    <div class="row">
-      <!--  <p><img class="aligncenter wp-image-915735 size-full" src="https://www.jeuneafrique.com/medias/2020/03/25/boutonarticle_rubrique_mt.jpg" alt="" width="1024" height="292" srcset="https://www.jeuneafrique.com/medias/2020/03/25/boutonarticle_rubrique_mt.jpg 1024w, https://www.jeuneafrique.com/medias/2020/03/25/boutonarticle_rubrique_mt-300x86.jpg 300w, https://www.jeuneafrique.com/medias/2020/03/25/boutonarticle_rubrique_mt-768x219.jpg 768w, https://www.jeuneafrique.com/medias/2020/03/25/boutonarticle_rubrique_mt-600x171.jpg 600w" sizes="(max-width: 1024px) 100vw, 1024px" /></p>-->
-      <p  style="width : 1024px ;"   >Mise à jour quotidiennement, notre carte évolutive dresse un panorama en temps réel de l’état d’avancée de la maladie.
-        Elle se concentre sur trois variables : le nombre de décès, le nombre total de cas déclarés depuis le début de l’épidémie,
-        et le nombre de guérisons recensées. En passant votre souris sur chaque pays, vous pourrez consulter le détail de ces informations par pays, mais aussi les différentes mesures de restriction mises en place.</p>
-      <p>La couleur de la carte <strong>est graduée selon le nombre de décès</strong>.</p>
-      <p><iframe style="border: none"   src="http://covid-19-africa.sen.ovh/"frameborder="0" width="1100" height="850" frameborder="0" scrolling="no"></iframe></p>
-    </div>
-  </div>
-</div>
-
-
-<div *ngIf="senegal  && mode==false">
-  <div class="container ">
-    <p  style="width : 1024px ;"   >Mise à jour quotidiennement, notre carte évolutive dresse un panorama en temps réel de l’état d’avancée de la maladie.
-      Elle se concentre sur trois variables : le nombre de décès, le nombre total de cas déclarés depuis le début de l’épidémie,
-      et le nombre de guérisons recensées. En passant votre souris sur chaque pays, vous pourrez consulter le détail de ces informations par pays, mais aussi les différentes mesures de restriction mises en place.</p>
-    <iframe src="https://cartosantesen.maps.arcgis.com/apps/opsdashboard/index.html#/260c7842a77a48c191bf51c8b0a1d3f6" frameborder="0" style="width: 100%; height: 70vh;"></iframe>
-  </div>
-</div>
+</div>-->
 
 
 
@@ -317,15 +230,6 @@
 
 
 
-
-<!-- ---- <p>++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</p>-->
-<!--{{documents.content[0].img|json}} style="background-color: darkgreen; color: #FFFFFF;"-->
-
-<!--{{articles._embedded.articles|json}}-->
-
-<!--{{documents.page.totalPages}}  -->
-
-<!--{{filtres | json}}-->
 
 
 

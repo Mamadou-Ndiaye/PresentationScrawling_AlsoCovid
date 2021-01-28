@@ -7,6 +7,8 @@ import {AuthguardService} from "./services/authguard.service";
 import {ArticlesComponent} from "./articles/articles.component";
 import {NaturesComponent} from "./natures/natures.component";
 import {PlosonesComponent} from "./plosones/plosones.component";
+import {InfocovidComponent} from "./infocovid/infocovid.component";
+import {InfocovidsenegalComponent} from "./infocovidsenegal/infocovidsenegal.component";
 // ,canActivate : [AuthguardService]
 const routes: Routes = [
   {path:'',component: WebDocumentsComponent},
@@ -16,7 +18,9 @@ const routes: Routes = [
   {path: "articles",component: ArticlesComponent},
   {path: "natures",component: NaturesComponent},
   {path: "plosones",component: PlosonesComponent},
-  {path: "bases",component: PlosonesComponent}
+  {path: "bases",component: PlosonesComponent},
+  {path: "infocovids",component: InfocovidComponent},
+  {path: "infocovidsenegal",component: InfocovidsenegalComponent}
 
 
 ];

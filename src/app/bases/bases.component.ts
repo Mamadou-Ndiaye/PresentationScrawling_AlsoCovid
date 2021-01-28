@@ -89,19 +89,19 @@ export class BasesComponent implements OnInit {
 
 
     //  J envoie la requete au service qui va aller recuperer les donneesde la base et on le met dans  documents e
-    this.onPageDocument(this.currentPage);
+    /*this.onPageDocument(this.currentPage);
     this.covid = this.documentsService.covid;
     this.environnement = this.documentsService.environnement;
     this.objet = this.documentsService.objet;
     this.nutrition = this.documentsService.nutrition;
     this.identite = this.documentsService.identite;
     this.sanitaire = this.documentsService.sanitaire;
-    this.changeShow(this.url[0]);
+    this.changeShow(this.url[0]);*/
 
   }
 
 // Recuperer la page current  et on linjecte
-  onPageDocument(i: number) {
+ /* onPageDocument(i: number) {
     this.currentPage = i;
     this.documentsService.getAlldocuments(this.currentUrl, this.currentPage, this.size)
       .subscribe(data => {
@@ -198,19 +198,8 @@ export class BasesComponent implements OnInit {
       });
 
   }
+*/
 
-
-  onShowCovd() {
-    this.senegal = false;
-    this.article = false;
-    this.mode = true;
-  }
-
-  onShowCovdSenegal() {
-    this.mode = false;
-    this.article = false;
-    this.senegal = true;
-  }
 
 
 }

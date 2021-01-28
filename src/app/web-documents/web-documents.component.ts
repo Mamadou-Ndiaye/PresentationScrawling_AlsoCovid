@@ -33,9 +33,6 @@ export class WebDocumentsComponent implements OnInit {
   // Pour afficher le div de suivi covid,changer affichage en fonction ce la valeur de mode
   // Si mode = false on affiche la partie de sans suivi covid et si c est true on affiche la partie suivi covid en restant dans le meme page
   mode: boolean = false;
-  senegal: boolean = false;
-  burkina: boolean = false;
-  mali: boolean = false;
 
 
 //Gestion de la pagination de documents
@@ -141,7 +138,7 @@ export class WebDocumentsComponent implements OnInit {
     // this.status = !this.status;
 
     this.mode = false;
-    this.senegal = false;
+
     this.article = false;
     this.currentUrl = x;
 

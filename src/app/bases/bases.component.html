@@ -1,33 +1,25 @@
 <nav class="navbar  m-5" >
   <div class="container-fluid  m-5" >
     <div class="navbar-header   ">
-      <img  class="clickable"  (click)="changeShow('/webDocumentOrderByhistorique')" src="assets/image/logoPTR.jpg" width="40">
+      <img  class="clickable"   src="assets/image/logoPTR.jpg" width="40">
     </div>
     <ul class="nav navbar-nav ">
-      <li><a (click)="changeShow('/webDocumentOrderByhistorique')"  routerLink="/documents"  name="sanitaire"  class="clickable ffamily"   ><span class="glyphicon glyphicon-home "></span>Home</a></li>
+      <li><a   routerLink="/documents"  name="sanitaire"  class="clickable ffamily"   ><span class="glyphicon glyphicon-home "></span>Home</a></li>
 
       <li class="dropdown">
         <a class="dropdown-toggle ffamily" data-toggle="dropdown" href="#">Info COVID
           <span class="caret"></span></a>
         <ul class="dropdown-menu  bg-info">
-          <li><a class="clickable ffamily" (click)="onShowCovd()" >Afrique</a></li>
-          <li><a class="clickable ffamily" (click)="onShowCovdSenegal()">Bénin</a></li>
-          <li><a class="clickable ffamily" (click)="onShowCovdSenegal()">Burkina Faso</a></li>
-          <li><a class="clickable ffamily" (click)="onShowCovdSenegal()">Gabon</a></li>
-          <li><a class="clickable ffamily" (click)="onShowCovdSenegal()">Mali</a></li>
-          <li><a class="clickable ffamily" (click)="onShowCovdSenegal()">Sénégal</a></li>
+          <li><a class="clickable ffamily"  routerLink="/infocovids" >Afrique</a></li>
+          <li><a class="clickable ffamily" >Bénin</a></li>
+          <li><a class="clickable ffamily" >Burkina Faso</a></li>
+          <li><a class="clickable ffamily" >Gabon</a></li>
+          <li><a class="clickable ffamily" >Mali</a></li>
+          <li><a class="clickable ffamily" routerLink="/infocovidsenegal">Sénégal</a></li>
 
         </ul>
       </li>
-      <!--      <li class="dropdown">-->
-      <!--        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Multimédia-->
-      <!--          <span class="caret "></span></a>-->
-      <!--        <ul class="dropdown-menu">-->
-      <!--          <li><a class="clickable" href="/documents/#image" >Image</a></li>-->
-      <!--          <li  class="clickable"  data-toggle="modal" data-target="#mespdfs"><a>Articles pdf</a></li>-->
-      <!--          <li  class="clickable"  data-toggle="modal" data-target="#mesvideos"><a> Videos </a></li>-->
-      <!--        </ul>-->
-      <!--      </li>-->
+
       <li class="dropdown">
         <a class="dropdown-toggle ffamily" data-toggle="dropdown" href="#">Données
           <span class="caret"></span></a>
@@ -39,8 +31,8 @@
         </ul>
       </li>
 
-      <li><a (click)="changeShow('/webDocumentOrderByhistorique')"  name="sanitaire"  class="clickable ffamily"   >Produits</a></li>
-      <li><a (click)="changeShow('/webDocumentOrderByNutrition')" name="nutrition"  class="clickable ffamily" >Indicateurs</a></li>
+      <li><a   name="sanitaire"  class="clickable ffamily"   >Produits</a></li>
+      <li><a   name="nutrition"  class="clickable ffamily" >Indicateurs</a></li>
 
       <li class="dropdown">
         <a class="dropdown-toggle ffamily" data-toggle="dropdown" href="#">Articles

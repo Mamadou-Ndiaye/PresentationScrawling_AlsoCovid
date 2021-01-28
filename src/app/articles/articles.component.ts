@@ -139,7 +139,13 @@ export class ArticlesComponent implements OnInit {
       },error => { console.log(error)});
   }
 
-  // recherche dans article
+  onPageArticle(indice: number) {
+    this.pageCourant=indice;
+    this. getArticles();
+
+  }
+
+  //**************************** recherche dans article**************//
 
   onChercherByArticle(form: any) {
     console.log(form);
@@ -165,14 +171,6 @@ export class ArticlesComponent implements OnInit {
 
   }
 
-
-
-
-  onPageArticle(indice: number) {
-    this.pageCourant=indice;
-    this. getArticles();
-
-  }
 
   //recherche multiple filtre en fonction de DAte et de Type
 

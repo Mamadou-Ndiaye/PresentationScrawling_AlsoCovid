@@ -13,7 +13,7 @@ import { ArticlesComponent } from './articles/articles.component';
 import { NaturesComponent } from './natures/natures.component';
 import { PlosonesComponent } from './plosones/plosones.component';
 import { BasesComponent } from './bases/bases.component';
-import {NgxPaginationModule} from "ngx-pagination";
+
 import { InfocovidComponent } from './infocovid/infocovid.component';
 import { InfocovidsenegalComponent } from './infocovidsenegal/infocovidsenegal.component';
 
@@ -35,7 +35,7 @@ import { InfocovidsenegalComponent } from './infocovidsenegal/infocovidsenegal.c
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, HttpClientModule, FormsModule, NgxPaginationModule
+    AppRoutingModule, HttpClientModule, FormsModule
   ],
   // on peut  definit ici les services de l app
   providers: [],

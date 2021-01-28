@@ -4,12 +4,11 @@
   "scripts": {
     "ng": "ng",
     "heroku-postbuild": "ng build --prod ; npm install -g http-server-spa",
-    "start": "ng serve  --host 0.0.0.0",
+    "start": "http-server-spa dist/prescrawling index.html $PORT",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "start": "http-server-spa dist/prescrawling index.html $PORT"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
@@ -26,6 +25,7 @@
     "jquery": "^3.5.1",
     "lodash": "^4.17.20",
     "ngx-image-gallery": "^2.0.5",
+    "ngx-pagination": "^5.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

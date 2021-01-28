@@ -1,80 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1ef1f759-246d-4bb6-a3f7-709730bc9e3d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/scrawling.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="1ef1f759-246d-4bb6-a3f7-709730bc9e3d" name="Default Changelist" comment="Change url dans le service directement">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/__ngcc_entry_points__.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/__ngcc_entry_points__.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/.browserslistrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/angular.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/e2e/protractor.conf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/e2e/src/app.e2e-spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/e2e/src/app.po.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/e2e/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/karma.conf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/app-routing.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/app.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/app.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/app.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/app.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/app.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/articles/articles.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/articles/articles.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/articles/articles.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/articles/articles.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/bases/bases.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/bases/bases.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/bases/bases.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/bases/bases.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/categories/categories.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/categories/categories.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/categories/categories.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/categories/categories.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/classes/Utilisateur.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/classes/WebDocument.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/login/login.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/login/login.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/login/login.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/login/login.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/natures/natures.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/natures/natures.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/natures/natures.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/natures/natures.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/plosones/plosones.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/plosones/plosones.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/plosones/plosones.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/plosones/plosones.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/services/authentification.service.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/services/authentification.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/services/authguard.service.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/services/authguard.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/services/documents.service.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/services/documents.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/web-documents/web-documents.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/web-documents/web-documents.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/web-documents/web-documents.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/src/app/web-documents/web-documents.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/src/assets/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/src/assets/image/logoPTR.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/src/environments/environment.prod.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/src/environments/environment.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/src/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/src/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/src/main.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/src/polyfills.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/src/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/src/test.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/tsconfig.app.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/tsconfig.spec.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescrawling/tslint.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +28,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../highTech/highTechFrontend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../JHipter/exempleJhipters" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
@@ -180,7 +112,10 @@
       <workItem from="1611228118196" duration="1177000" />
       <workItem from="1611400259595" duration="1905000" />
       <workItem from="1611444084555" duration="2583000" />
-      <workItem from="1611526188824" duration="7190000" />
+      <workItem from="1611526188824" duration="10584000" />
+      <workItem from="1611573219197" duration="20566000" />
+      <workItem from="1611830504892" duration="253000" />
+      <workItem from="1611831388803" duration="1861000" />
     </task>
     <task id="LOCAL-00001" summary="G">
       <created>1609240422633</created>
@@ -231,7 +166,42 @@
       <option name="project" value="LOCAL" />
       <updated>1611533275875</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Changement de repertoire d i nitialisation de github">
+      <created>1611534849757</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1611534849757</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Delette / in host of environment.prod.ts">
+      <created>1611536489237</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1611536489256</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Change url dans le service directement">
+      <created>1611537522761</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1611537522761</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Change pagination de 8 a 12 pour le col">
+      <created>1611590161994</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1611590161994</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Ajout de component Info Covid">
+      <created>1611832689344</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1611832689344</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -258,25 +228,30 @@
     <MESSAGE value="Gestion des articles plosOnes" />
     <MESSAGE value="Gestion de la bare de navigation pour optimisation du code  dans le component de base" />
     <MESSAGE value="Deploiment sur heroku &#10;Injection de l URL de la partie backend dans  environment.prod.ts and replace url connexion to host=environnement.host dans nos differents services" />
-    <option name="LAST_COMMIT_MESSAGE" value="Deploiment sur heroku &#10;Injection de l URL de la partie backend dans  environment.prod.ts and replace url connexion to host=environnement.host dans nos differents services" />
+    <MESSAGE value="Changement de repertoire d i nitialisation de github" />
+    <MESSAGE value="Delette / in host of environment.prod.ts" />
+    <MESSAGE value="Change url dans le service directement" />
+    <MESSAGE value="Change pagination de 8 a 12 pour le col" />
+    <MESSAGE value="Ajout de component Info Covid" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout de component Info Covid" />
   </component>
   <component name="WindowStateProjectService">
     <state x="137" y="20" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1610465443082">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="137" y="20" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1610465443082" />
-    <state x="306" y="0" key="CommitChangelistDialog2" timestamp="1611533269075">
+    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1611832685838">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="306" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1611533269075" />
+    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1611832685838" />
     <state x="237" y="61" key="DiffContextDialog" timestamp="1611533229248">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="237" y="61" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1611533229248" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1611448187822">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1611755631830">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1611448187822" />
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1611755631830" />
     <state width="1323" height="204" key="GridCell.Tab.0.bottom" timestamp="1611018516440">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -293,22 +268,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="204" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1611018516428" />
-    <state x="184" y="7" key="SettingsEditor" timestamp="1611534635086">
+    <state x="184" y="7" key="SettingsEditor" timestamp="1611573244661">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="184" y="7" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1611534635086" />
+    <state x="184" y="7" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1611573244661" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1607425884902">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1607425884902" />
-    <state x="275" y="98" key="Vcs.Push.Dialog.v2" timestamp="1611533290088">
+    <state x="275" y="98" key="Vcs.Push.Dialog.v2" timestamp="1611832704351">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="98" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1611533290088" />
-    <state x="378" y="188" width="740" height="351" key="com.intellij.ide.util.TipDialog" timestamp="1611444901408">
+    <state x="275" y="98" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1611832704351" />
+    <state x="378" y="188" width="740" height="351" key="com.intellij.ide.util.TipDialog" timestamp="1611831388185">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="378" y="188" width="740" height="351" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1611444901408" />
+    <state x="378" y="188" width="740" height="351" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1611831388185" />
     <state x="492" y="281" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1609241046412">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

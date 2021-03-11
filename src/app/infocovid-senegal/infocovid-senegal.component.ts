@@ -3,22 +3,16 @@ import {DocumentsService} from "../services/documents.service";
 import {ConfigportService} from "../services/configport.service";
 
 @Component({
-  selector: 'app-infocovid',
-  templateUrl: './infocovid.component.html',
-  styleUrls: ['./infocovid.component.css']
+  selector: 'app-infocovid-senegal',
+  templateUrl: './infocovid-senegal.component.html',
+  styleUrls: ['./infocovid-senegal.component.css']
 })
-export class InfocovidComponent implements OnInit {
+export class InfocovidSenegalComponent implements OnInit {
 
-
-  public  hostafriq=this.configportService.urlafrique;
-
-
+   hostsenegal=this.configportService.urlsenegal;
   constructor(public configportService:ConfigportService) { }
 
   ngOnInit(): void {
-
   }
-
-
 
 }

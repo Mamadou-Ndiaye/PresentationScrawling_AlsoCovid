@@ -4,7 +4,7 @@
 
 
 
-
+s
 <div class="row" *ngIf="nature"  id="article" >
 
   <div class="col-md-1 "   >
@@ -85,10 +85,19 @@
 
         <!--        </div>-->
 
+
         <div class="col-sm-12 col-md-12">
           <ul  *ngIf="pagesNatures" class="nav nav-pills">
             <li *ngFor="let p of  pagesNatures; let  indice=index" [ngClass]="indice==pageCourant? 'active':'' ">
-              <a class="clickable" (click)="onPageNature(indice)">{{indice}}</a>
+              <ng-container *ngIf="indice<=0">
+                <a class="clickable" (click)="onPageNature(indice)">Prev</a>
+              </ng-container>
+                <ng-container *ngIf="indice>0 && indice<=9">
+                  <a class="clickable" (click)="onPageNature(indice)">{{indice}}</a>
+                </ng-container>
+              <ng-container *ngIf="indice>9 && indice<=10" >
+                   <a class="clickable" (click)="onPageNature(indice)"> Next</a>
+              </ng-container>
             </li>
           </ul>
         </div>

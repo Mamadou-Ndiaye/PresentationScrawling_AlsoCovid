@@ -9,7 +9,7 @@
 
     <div class="row back" >
 
-      <div class="col-md-2 ">
+      <div class="col-md-2 col-xs-12 col-sm-2 ">
 
           <div class="panel-heading" id="maladie">Maladie</div>
           <div class="form-check">
@@ -34,13 +34,13 @@
       </div>
 
        <ng-container *ngIf="modeByKeyWord==false && modeFiltre==false ">
-      <div class="col-sm-7 text-justify" *ngIf="documents"      >
+      <div class="col-sm-7 col-xs-12 col-md-7 text-justify" *ngIf="documents"      >
         <div class="row bord text-justify  "    *ngFor=" let doc of  documents.content"    >
           <div class="row cadre text-justify"  >
-            <div class="col-4 col-md-4  col-sm-4 "     >
+            <div class="col-4 col-md-4 col-sm-4  col-xs-12  "     >
               <img class="img-thumbnail img-rounded   img1 "      [src]="doc.img[numberAleatoire]"/>
             </div>
-            <div class="col-8 col-md-8 col-sm-8" >
+            <div class="col-8 col-md-8 col-sm-8 col-xs-12 " >
                <h4 class=" text-capitalize text-info">  <a href="{{doc.url}}" target="_blank" >{{doc.titre}}</a></h4>
               <span class="text-justify"> {{doc.resume}}</span>
              <!-- <a href="{{doc.url}}">{{doc.url}}</a>-->
@@ -50,9 +50,9 @@
 
         <!-- HTML pagination-->
         <div class="row"   >
-          <div class="col-sm-4">
+          <div class="col-sm-4 col-xs-12 col-md-4">
           </div>
-          <div class="col-sm-8">
+          <div class="col-sm-8 col-xs-12 col-md-8">
             <ul  *ngIf="pages" class="nav nav-pills">
               <li *ngFor="let p of pages; let  i=index" [ngClass]="i==currentPage?'active':'' ">
                 <a class="clickable" (click)="onPageDocument(i)">{{i}}</a>
@@ -66,13 +66,13 @@
        </ng-container>
 
       <ng-container *ngIf="documents && modeByKeyWord && modeFiltre==false"   style="background: #555555 ">
-        <div class="col-sm-7" *ngIf="documents"    >
+        <div class="col-sm-7 col-xs-12 col-md-7" *ngIf="documents"    >
         <div class="row bord "  *ngFor=" let doc of  documents._embedded.webDocuments"    >
           <div class="row cadre">
-            <div class="col-4 col-md-4  col-sm-4 "   >
+            <div class="col-4 col-md-4 col-xs-12  col-sm-4 "   >
               <img class="img-thumbnail img-rounded btn img1"  [src]="doc.img[numberAleatoire]"/>
             </div>
-            <div class="col-8 col-md-8 col-sm-8">
+            <div class="col-8 col-md-8  col-xs-12 col-sm-8">
               <h4 class=" text-capitalize text-info">  <a href="{{doc.url}}">{{doc.titre}}</a></h4>
               <span class="text-justify"> {{doc.resume}}</span>
               <!-- <a href="{{doc.url}}">{{doc.url}}</a>-->
@@ -83,9 +83,17 @@
 
         <!-- HTML pagination-->
         <div class="row"     >
-          <div class="col-sm-4">
+          <div class="col-sm-4 col-md-4 col-xs-12">
+
+            <pagination-controls
+              previousLabel="Prev"
+              nextLabel="Next"
+              [responsive]="true"
+              (pageChange)="handlePageChange($event)"
+            ></pagination-controls>
+
           </div>
-          <div class="col-sm-8">
+          <div class="col-sm-8 col-xs-12 col-md-8">
             <ul  *ngIf="pages" class="nav nav-pills">
               <li *ngFor="let p of pages; let  i=index" [ngClass]="i==currentPage?'active':'' ">
                 <a class="clickable" (click)="onPageDocument(i)">{{i}}</a>
@@ -100,13 +108,13 @@
 
 
       <ng-container *ngIf="filtres && modeFiltre   && modeByKeyWord ==false ">
-        <div class="col-sm-7" *ngIf="filtres"   >
+        <div class="col-sm-7 col-md-7 col-xs-12" *ngIf="filtres"   >
           <div class="row bord "  *ngFor=" let doc of  filtres"    >
             <div class="row cadre">
-              <div class="col-4 col-md-4  col-sm-4 "   >
+              <div class="col-4 col-md-4  col-sm-4 col-xs-12 "   >
                 <img class="img-thumbnail img-rounded btn img1"  [src]="doc.img[numberAleatoire]"/>
               </div>
-              <div class="col-8 col-md-8 col-sm-8">
+              <div class="col-8 col-md-8 col-sm-8 col-xs-12 ">
                 <h4 class=" text-capitalize text-info">  <a href="{{doc.url}}"  target="_blank">{{doc.titre}}</a></h4>
                 <span class="text-justify"> {{doc.resume}}</span>
                 <!-- <a href="{{doc.url}}">{{doc.url}}</a>-->
@@ -122,7 +130,7 @@
 
 
       <!--  Espace droite   style="background: #74b9ff " -->
-      <div class="col-md-3 "  >
+      <div class="col-md-3 col-xs-12 col-sm-3 "  >
         <!-- Formulaire de recherche  class="navbar-form navbar-left" -->
 
          <form   #f="ngForm" (ngSubmit)="onChercher(f.value)" >
@@ -143,7 +151,7 @@
 
 
     <!--  Gestion de la galery    style="background: #74b9ff " -->
-    <div  id="image" class="row">
+  <!--  <div  id="image" class="row">
 
       <div class="row text-info text-capitalize text-center" >
         <br>
@@ -182,7 +190,7 @@
 
       </div>
 
-    </div>
+    </div>-->
 
   </div>
 </div>

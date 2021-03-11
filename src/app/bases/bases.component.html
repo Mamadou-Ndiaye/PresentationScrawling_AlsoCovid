@@ -1,7 +1,7 @@
-<nav class="navbar  m-5" >
-  <div class="container-fluid  m-5" >
+<div class="container">
+<nav class="navbar  " >
     <div class="navbar-header   ">
-      <img  class="clickable"   src="assets/image/logoPTR.jpg" width="40">
+      <img  class="clickable"   src="../assets/image/logoPTR.jpg" width="40">
     </div>
     <ul class="nav navbar-nav ">
       <li><a   routerLink="/documents"  name="sanitaire"  class="clickable ffamily"   ><span class="glyphicon glyphicon-home "></span>Home</a></li>
@@ -11,11 +11,11 @@
           <span class="caret"></span></a>
         <ul class="dropdown-menu  bg-info">
           <li><a class="clickable ffamily"  routerLink="/infocovids" >Afrique</a></li>
-          <li><a class="clickable ffamily" >Bénin</a></li>
-          <li><a class="clickable ffamily" >Burkina Faso</a></li>
-          <li><a class="clickable ffamily" >Gabon</a></li>
-          <li><a class="clickable ffamily" >Mali</a></li>
-          <li><a class="clickable ffamily" routerLink="/infocovidsenegal">Sénégal</a></li>
+          <li><a class="clickable ffamily"  routerLink="/infocovidBenin" >Bénin</a></li>
+          <li><a class="clickable ffamily"  routerLink="/infocovidBurkina" >Burkina Faso</a></li>
+          <li><a class="clickable ffamily"  routerLink="/infocovidGabon" >Gabon</a></li>
+          <li><a class="clickable ffamily"  routerLink="/infocovidMali"  >Mali</a></li>
+          <li><a class="clickable ffamily"  routerLink="/infocovidSenegal">Sénégal</a></li>
 
         </ul>
       </li>
@@ -41,7 +41,6 @@
           <li><a class="clickable ffamily"  routerLink="/articles" >Science direct</a></li>
           <li><a class="clickable ffamily" routerLink="/natures" >Nature</a></li>
           <li><a class="clickable ffamily" routerLink="/plosones" >Plos one</a></li>
-
         </ul>
       </li>
 
@@ -67,9 +66,10 @@
     <!--      <li><a class="clickable" (click)="onLogout()"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>-->
     <!--    </ul>-->
 
-  </div>
+
 
 </nav>
+</div>
 
 <hr  class="bg-primary"  align="center" width="83%"  size="70" noshade/>
 <br/>

@@ -8,7 +8,12 @@ import {ArticlesComponent} from "./articles/articles.component";
 import {NaturesComponent} from "./natures/natures.component";
 import {PlosonesComponent} from "./plosones/plosones.component";
 import {InfocovidComponent} from "./infocovid/infocovid.component";
-import {InfocovidsenegalComponent} from "./infocovidsenegal/infocovidsenegal.component";
+
+import {InfocovidBeninComponent} from "./infocovid-benin/infocovid-benin.component";
+import {InfocovidBurkinaComponent} from "./infocovid-burkina/infocovid-burkina.component";
+import {InfocovidGabonComponent} from "./infocovid-gabon/infocovid-gabon.component";
+import {InfocovidSenegalComponent} from "./infocovid-senegal/infocovid-senegal.component";
+import {InfocovidMaliComponent} from "./infocovid-mali/infocovid-mali.component";
 // ,canActivate : [AuthguardService]
 const routes: Routes = [
   {path:'',component: WebDocumentsComponent},
@@ -20,8 +25,11 @@ const routes: Routes = [
   {path: "plosones",component: PlosonesComponent},
   {path: "bases",component: PlosonesComponent},
   {path: "infocovids",component: InfocovidComponent},
-  {path: "infocovidsenegal",component: InfocovidsenegalComponent}
-
+  {path: "infocovidBenin",component: InfocovidBeninComponent},
+  {path: "infocovidBurkina",component: InfocovidBurkinaComponent},
+  {path: "infocovidMali",component: InfocovidMaliComponent},
+  {path: "infocovidGabon",component: InfocovidGabonComponent},
+  {path: "infocovidSenegal",component: InfocovidSenegalComponent}
 
 ];
 

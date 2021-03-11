@@ -59,7 +59,7 @@ export class NaturesComponent implements OnInit {
   public  currentPdf:number=0;
   ipdf: number=0;
   // Pagination article
-  pageCourant: number=0
+  pageCourant: number=1
   public  taille:number=100;
   pagesTotal:number=0;
   pagesNatures?:Array<number>;
@@ -117,6 +117,11 @@ export class NaturesComponent implements OnInit {
         console.log(this.pagesTotal);
         this.pagesNatures=new  Array<number>(this.pagesTotal);
       },error => { console.log(error)});
+  }
+
+  handlePageChange(event: number): void {
+    this.pageCourant = event;
+    this.getNatures();
   }
 
   // recherche dans nature
@@ -271,6 +276,7 @@ export class NaturesComponent implements OnInit {
 
   }
   //*********************  Fin articles (Nature) *******************************//
+
 
 
 }

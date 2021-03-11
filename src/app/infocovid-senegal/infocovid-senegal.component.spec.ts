@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InfocovidsenegalComponent } from './infocovidsenegal.component';
+import { InfocovidSenegalComponent } from './infocovid-senegal.component';
 
-describe('InfocovidsenegalComponent', () => {
-  let component: InfocovidsenegalComponent;
-  let fixture: ComponentFixture<InfocovidsenegalComponent>;
+describe('InfocovidSenegalComponent', () => {
+  let component: InfocovidSenegalComponent;
+  let fixture: ComponentFixture<InfocovidSenegalComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ InfocovidsenegalComponent ]
+      declarations: [ InfocovidSenegalComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(InfocovidsenegalComponent);
+    fixture = TestBed.createComponent(InfocovidSenegalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

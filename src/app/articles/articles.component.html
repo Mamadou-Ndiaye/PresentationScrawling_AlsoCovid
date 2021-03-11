@@ -9,7 +9,7 @@
   <div class="col-md-1 "   >
 
   </div>
-  <div class="col-md-2 "   >
+  <div class="col-md-2 col-xs-12 "   >
 
     <div class="panel-heading" class="filtre">Type Article</div>
     <div class="form-check">
@@ -58,13 +58,14 @@
 
 
   </div>
-  <div class="col-md-5 text-justify"    >
+  <div class="col-md-5 col-xs-12 text-justify"    >
     <ng-container  *ngIf="  modeByKeyWord==false && modeFiltre==false "     >
         <ng-container  *ngFor="let article of articles._embedded.articles"   >
           <div class="row">
 
-            <div class="col-md-8" class="art" >
-              <span> <span class="glyphicon glyphicon-star" aria-hidden="true"></span>{{article.type}}</span>
+            <div class="col-md-8 col-xs-12" class="art" >
+              <!--  <span class="glyphicon glyphicon-star" aria-hidden="true"></span> -->
+              <span>{{article.type}}</span>
               <h4 class="text-capitalize  url" ><a href="{{article.url}}"  target="_blank" >{{article.titre}}</a></h4>
               <span class="fontStyle">{{article.book}},{{article.date}}</span><br>
               <span  class="fontStyle"  >{{article.auteurs1}},{{article.auteurs2}},... <br> </span><br>
@@ -82,10 +83,18 @@
 
         <!--        </div>-->
 
-        <div class="col-sm-12 col-md-12">
+        <div class="col-sm-12 col-md-12 col-xs-12">
           <ul  *ngIf="pagesArticles" class="nav nav-pills">
             <li *ngFor="let p of  pagesArticles; let  indice=index" [ngClass]="indice==pageCourant? 'active':'' ">
-              <a class="clickable" (click)="onPageArticle(indice)">{{indice}}</a>
+              <ng-container *ngIf="indice<=0">
+                <a class="clickable" (click)="onPageArticle(indice)">Prev</a>
+              </ng-container>
+              <ng-container *ngIf="indice>0 && indice<=20">
+                <a class="clickable" (click)="onPageArticle(indice)">{{indice}}</a>
+              </ng-container>
+              <ng-container *ngIf="indice>20 && indice<=21" >
+                <a class="clickable" (click)="onPageArticle(indice)"> Next</a>
+              </ng-container>
             </li>
           </ul>
         </div>
@@ -98,8 +107,8 @@
       <ng-container  *ngFor="let article of articles._embedded.articles"   >
       <div class="row"    >
 
-        <div class="col-md-8" class="art" >
-          <span> <span class="glyphicon glyphicon-star" aria-hidden="true"></span>{{article.type}}</span>
+        <div class="col-md-8 col-xs-12" class="art" >
+          <span>{{article.type}}</span>
           <h4 class=" text-capitalize"><a href="{{article.url}}" target="_blank" >{{article.titre}}</a></h4>
           <span class="fontStyle">{{article.book}},{{article.date}}</span><br>
           <span  class="fontStyle"  >{{article.auteurs1}},{{article.auteurs2}},... <br> </span><br>
@@ -114,7 +123,7 @@
       <div class="row"     >
         <!-- <div class="col-sm-4">
          </div>-->
-        <div class="col-sm-12 col-md-12">
+        <div class="col-sm-12 col-md-12 col-xs-12">
           <ul  *ngIf="pages" class="nav nav-pills">
             <li *ngFor="let p of pages; let  i=index" [ngClass]="i==currentPage?'active':'' ">
               <a class="clickable" (click)="onPageDocument(i)">{{i}}</a>
@@ -133,8 +142,8 @@
       <ng-container  *ngFor="let article of filtres"   >
         <div class="row"    >
 
-          <div class="col-md-8" class="art" >
-            <span> <span class="glyphicon glyphicon-star" aria-hidden="true"></span>{{article.type}}</span>
+          <div class="col-md-8 col-xs-12" class="art" >
+            <span> {{article.type}}</span>
             <h4 class=" text-capitalize"><a href="{{article.url}}" target="_blank" >{{article.titre}}</a></h4>
             <span class="fontStyle">{{article.book}},{{article.date}}</span><br>
             <span  class="fontStyle"  >{{article.auteurs1}},{{article.auteurs2}},... <br> </span><br>
@@ -149,7 +158,7 @@
 
   </div>
 
-  <div class="col-md-3 text-justify" >
+  <div class="col-md-3 col-xs-12 text-justify" >
 
     <form class="navbar-form navbar-left"  #f="ngForm" (ngSubmit)="onChercherByArticle(f.value)" >
       <div class="input-group">

@@ -37,7 +37,7 @@ export class WebDocumentsComponent implements OnInit {
 
 //Gestion de la pagination de documents
   public size: number = 20;
-  public currentPage: number = 0;
+  public currentPage: number = 1;
   public totalPages: number = 0;
   public pages?: Array<number>;
 
@@ -112,22 +112,22 @@ export class WebDocumentsComponent implements OnInit {
         console.log("voila le resultat de get", data)
         console.log("page courrante est ", this.currentPage)
         this.documents = data;
-
         // recuperons la taille du premier tabeau img qu on utilise dans la fonction gatNumberAleatoire pour generer un nombre aleat
         this.img = this.documents.content[0].img.length;
         this.numberAleatoire = Math.floor(Math.random() * (this.img - 0)) + 0
-
         this.totalPages = this.documents.totalPages;
         this.pages = new Array<number>(this.totalPages);
         console.log("liste des documents", this.documents);
-
 
         console.log("tableau image +++++", this.images);
       }, error => {
         console.log(error)
       });
+  }
 
-
+  handlePageChange(event: number): void {
+    this.currentPage = event;
+    this.onPageDocument(this.i);
   }
 
 
@@ -272,5 +272,7 @@ export class WebDocumentsComponent implements OnInit {
 
 
   }
+
+
 
 }

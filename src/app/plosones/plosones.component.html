@@ -14,18 +14,18 @@
     <div class="panel-heading" class="filtre">Type Article</div>
     <div class="form-check">
       <input type="checkbox" class="form-check-input" id="researchArticle"  name="recherche"  value="PLOS ONE"  (change)="toggleEditable($event)" >
-      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+      &nbsp;
       <label class="form-check-label police" for="researchArticle">PLOS ONE</label>
     </div>
 
     <div class="form-check">
       <input type="checkbox" class="form-check-input" id="review" name="review"  value="PLOS Biology"  (change)="toggleEditable($event)" >
-      &nbsp; &nbsp; &nbsp;
+      &nbsp;
       <label class="form-check-label police" for="review">PLOS Biology</label>
     </div>
     <div class="form-check">
       <input type="checkbox" class="form-check-input" id="book" name="books"  value="PLOS Medicine"  (change)="toggleEditable($event)" >
-      &nbsp;   &nbsp;
+      &nbsp;
       <label class="form-check-label police" for="book">PLOS Medicine</label>
     </div>
 
@@ -34,24 +34,24 @@
 
     <div class="form-check">
       <input type="checkbox" class="form-check-input" id="annee2021"  name="an2021"  value="2021"  (change)="toggleEditable($event)" >
-      &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;
       <label class="form-check-label police" for="annee2021">2021</label>
     </div>
 
     <div class="form-check">
       <input type="checkbox" class="form-check-input" id="annee2020"  name="an2020"  value="2020"  (change)="toggleEditable($event)" >
-      &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;
       <label class="form-check-label police" for="annee2020">2020</label>
     </div>
 
     <div class="form-check">
       <input type="checkbox" class="form-check-input" id="annee2019" name="an2019"  value="2019"  (change)="toggleEditable($event)" >
-      &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;
       <label class="form-check-label police" for="annee2019">2019</label>
     </div>
     <div class="form-check">
       <input type="checkbox" class="form-check-input" id="annee2018" name="an2018"  value="2018"  (change)="toggleEditable($event)" >
-      &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;
       <label class="form-check-label police" for="annee2018">2018</label>
     </div>
 
@@ -68,7 +68,7 @@
         <div class="row">
 
           <div class="col-md-8" class="art" >
-            <span> <span class="glyphicon glyphicon-star" aria-hidden="true"></span>{{article.type}}</span>
+            <span>{{article.type}}</span>
             <h4 class="text-capitalize  url" ><a href="{{article.url}}" target="_blank" >{{article.titre}}</a></h4>
             <span class="fontStyle">{{article.date}}</span><br>
             <span  class="fontStyle"  >{{article.auteurs}} <br> </span><br>
@@ -104,7 +104,7 @@
         <div class="row"    >
 
           <div class="col-md-8" class="art" >
-            <span> <span class="glyphicon glyphicon-star" aria-hidden="true"></span>{{article.type}}</span>
+            <span>{{article.type}}</span>
             <h4 class=" text-capitalize"><a href="{{article.url}}" target="_blank" >{{article.titre}}</a></h4>
             <span class="fontStyle">{{article.date}}</span><br>
             <span  class="fontStyle"  >{{article.auteurs}} <br> </span><br>
@@ -121,7 +121,6 @@
           <div class="col-sm-8">
             <ul  *ngIf="pages" class="nav nav-pills">
               <li *ngFor="let p of pages; let  i=index" [ngClass]="i==currentPage?'active':'' ">
-                <a class="clickable" (click)="onPagePlosOne(i)">{{i}}</a>
                 <a class="clickable" (click)="onPagePlosOne(i)">{{i}}</a>
               </li>
             </ul>
@@ -143,7 +142,7 @@
         <div class="row"    >
 
           <div class="col-md-8" class="art" >
-            <span> <span class="glyphicon glyphicon-star" aria-hidden="true"></span>{{article.type}}</span>
+            <span>{{article.type}}</span>
             <h4 class=" text-capitalize"><a href="{{article.url}}" target="_blank" >{{article.titre}}</a></h4><br>
             <span class="fontStyle">{{article.date}}</span><br>
             <span  class="fontStyle"  >{{article.auteur1}},{{article.auteur2}} <br> </span><br>

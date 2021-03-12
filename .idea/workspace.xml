@@ -3,9 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="1ef1f759-246d-4bb6-a3f7-709730bc9e3d" name="Default Changelist" comment="Delete Ngx">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/infocovid/infocovid.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/infocovid/infocovid.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/services/configport.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/services/configport.service.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/services/configport.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/services/configport.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/articles/articles.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/articles/articles.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/bases/bases.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/bases/bases.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/natures/natures.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/natures/natures.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/plosones/plosones.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/plosones/plosones.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/plosones/plosones.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/plosones/plosones.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/services/documents.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/services/documents.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/web-documents/web-documents.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/web-documents/web-documents.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +145,7 @@
       <workItem from="1614767000347" duration="2352000" />
       <workItem from="1615381140676" duration="606000" />
       <workItem from="1615419202557" duration="728000" />
-      <workItem from="1615459717147" duration="3209000" />
+      <workItem from="1615459717147" duration="25269000" />
     </task>
     <task id="LOCAL-00001" summary="G">
       <created>1609240422633</created>

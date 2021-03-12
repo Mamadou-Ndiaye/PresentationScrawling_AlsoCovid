@@ -1,71 +1,28 @@
 import { Component, OnInit } from '@angular/core';
-import {WebDocument} from "../classes/WebDocument";
 import {DocumentsService} from "../services/documents.service";
-import {Router} from "@angular/router";
-import {AuthentificationService} from "../services/authentification.service";
-import {DomSanitizer} from "@angular/platform-browser";
 
 @Component({
-  selector: 'app-plosones',
-  templateUrl: './plosones.component.html',
-  styleUrls: ['./plosones.component.css']
+  selector: 'app-elsevier',
+  templateUrl: './elsevier.component.html',
+  styleUrls: ['./elsevier.component.css']
 })
-export class PlosonesComponent implements OnInit {
+export class ElsevierComponent implements OnInit {
 
-  environnement: any;
-  covid: any;
-  objet: any;
-  nutrition: any;
-  identite: any;
-  sanitaire: any;
-  documents: any;
+  public  taille:number=100;
 
-  plosones: any;
-  public plosone: boolean= false;
-
-
-  // Pour gerer l action active sur le menu vertical
-  //  status: boolean =false;
-
-  // Pour afficher le div de suivi covid,changer affichage en fonction ce la valeur de mode
-  // Si mode = false on affiche la partie de sans suivi covid et si c est true on affiche la partie suivi covid en restant dans le meme page
-  mode:boolean=false;
-  senegal:boolean=false;
-  burkina: boolean=false;
-  mali: boolean=false;
-
-
-//Gestion de la pagination de documents
+  elsevier: any;
+  elseviers: any;
+  pagesElseviers?:Array<number>;
+  pageCourant: number=0;
+  pages: any;
   public  size:number=20;
   public  currentPage:number=0;
-  public  totalPages:number=0;
-  public  pages?:Array<number>;
-
-  private images: string[]=[];
-  //recuperer url courante
-  public currentUrl:any;
-
-  background: boolean=false;
-
-  private url: string[]=[];
-
-  //Declaration d un element de WebDocument
-  docs:WebDocument[]=[];
-  private random: any;
-  private img?: any;
-  public numberAleatoire: number=0;
-  //Affiche du iframe pdf
-  affPDF: boolean=false;
-  public  currentPdf:number=0;
-  ipdf: number=0;
-  // Pagination article
-  pageCourant: number=0;
-  public  taille:number=100;
   pagesTotal:number=0;
-  pagesNatures?:Array<number>;
+
   // Pour la recherche
   currentKeyword?: any;
   modeByKeyWord: boolean=false;
+
 
   // Recherche multiple
   theCheckbox: boolean=false;
@@ -80,63 +37,49 @@ export class PlosonesComponent implements OnInit {
   modeFiltre = false;
   i=0;
 
-
-
-
-
-
-
-  constructor(private documentsService : DocumentsService,private  router:Router,private  authentificationService:AuthentificationService,private sanitizer: DomSanitizer) {
-    this.url=["/webDocumentOrderByCovid","/webDocumentOrderByhistorique","/webDocumentOrderByIdentite",
-      "/webDocumentOrderByEnvironnement","/webDocumentOrderByNutrition", "/webDocumentOrderByObjet"];
-
-  }
-
+  constructor(public  documentsService:DocumentsService) { }
 
   ngOnInit(): void {
-
-    this.getPlosOnes();
-    // Toutes les fonctions qui se trouvent dans cette classe ne sont pas forcément utilisé
-    // en Generale c'est ceux qui utilise
+    this.getElsevier();
   }
 
-
-  //*********************  Pour articles (PlosOne) *******************************//
-  getPlosOnes()
+  //*********************  Pour articles (Elsevier) *******************************//
+  getElsevier()
   {
-    this.senegal=false;
-    this.mode=false;
-    this.plosone=true;
-    this.documentsService.getAllPlosOne(this.pageCourant,this.taille).subscribe(
+    this.elsevier=true;
+    this.documentsService.getAllElsevier(this.pageCourant,this.taille).subscribe(
       data=>{
         console.log(data);
 
-        this.plosones= data;
-        this.pagesTotal=this.plosones.page.totalPages;
+        this.elseviers= data;
+        this.pagesTotal=this.elseviers.page.totalPages;
         console.log(this.pagesTotal);
-        this.pagesNatures=new  Array<number>(this.pagesTotal);
+        this.pagesElseviers=new  Array<number>(this.pagesTotal);
       },error => { console.log(error)});
   }
 
-  // recherche dans nature
+  onPageElsevier(indice: number) {
+    this.pageCourant=indice;
+    this. getElsevier();
 
-  onChercherByPlosone(form: any) {
+  }
+
+  onChercherByElsevier(form: any) {
     console.log(form);
     this.currentPage=0;
     this.currentKeyword=form.keyword;
     this.modeByKeyWord=true;
     this.modeFiltre=false;
     console.log("Cherche par "+this.currentKeyword);
-    this.chercherPlosone();
-
+    this.chercherElsevier();
   }
 
-  chercherPlosone() {
+  chercherElsevier() {
 
-    this.documentsService.getPlosOnebyKeyword(this.currentKeyword,this.currentPage,this.size)
+    this.documentsService.getElsevierbyKeyword(this.currentKeyword,this.currentPage,this.size)
       .subscribe(data => {
-        this.plosones = data;
-        console.log("documents "+this.plosones);
+        this.elseviers = data;
+        console.log("documents "+this.elseviers);
         // this.totalPages=data["page"].totalPages;
         // this.pages=new  Array<number>(this.totalPages);
 
@@ -144,19 +87,8 @@ export class PlosonesComponent implements OnInit {
 
   }
 
-
-
-  onPagePlosOne(indice: number) {
-    this.pageCourant=indice;
-    this. getPlosOnes();
-
-  }
-
-  //recherche multiple filtre en fonction de DAte et de Type
-
   toggleEditable(e :any) {
-
-     this.modeFiltre=false;
+    this.modeFiltre=false;
     // Recuperation des cases coches dans un tableau en selected pour les Dates (annees) et selectedType dans Type d article
 
     if (e.target.checked) {
@@ -234,7 +166,7 @@ export class PlosonesComponent implements OnInit {
     if(this.selected.length!=0 && this.selectedType.length!=0)
     {
       console.log("Envoie dans la partie annee et type");
-      this.documentsService.getPlosOnesbyFilterTypeAndDate(this.selectedType,this.selected).subscribe(
+      this.documentsService.getElsevierbyFilterTypeAndDate(this.selectedType,this.selected).subscribe(
         data => {
           console.log(data);
           this.filtres = data;
@@ -246,7 +178,7 @@ export class PlosonesComponent implements OnInit {
     else if(this.selected.length!=0 && this.selectedType.length==0)
     {
       console.log("Envoie dans la partie annee");
-      this.documentsService.getPlosOnebyFilterAnnee(this.selected).subscribe(
+      this.documentsService.getElsevierbyFilterAnnee(this.selected).subscribe(
         data => {
           console.log(data);
           this.filtres = data;
@@ -258,7 +190,7 @@ export class PlosonesComponent implements OnInit {
     else if(this.selected.length==0 && this.selectedType.length!=0)
     {
       console.log("Envoie dans la partie type");
-      this.documentsService.getPlosOnebyFilterType(this.selectedType).subscribe(
+      this.documentsService.getElsevierbyFilterType(this.selectedType).subscribe(
         data => {
           console.log(data);
           this.filtres = data;
@@ -268,7 +200,7 @@ export class PlosonesComponent implements OnInit {
     }
 
   }
-  //*********************  Fin articles (PlosOne) *******************************//
+
 
 
 }

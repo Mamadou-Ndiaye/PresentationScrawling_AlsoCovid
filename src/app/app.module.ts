@@ -21,6 +21,8 @@ import { InfocovidBeninComponent } from './infocovid-benin/infocovid-benin.compo
 import { InfocovidBurkinaComponent } from './infocovid-burkina/infocovid-burkina.component';
 import { InfocovidMaliComponent } from './infocovid-mali/infocovid-mali.component';
 import { InfocovidGabonComponent } from './infocovid-gabon/infocovid-gabon.component';
+import { ElsevierComponent } from './elsevier/elsevier.component';
+import { PubmedComponent } from './pubmed/pubmed.component';
 
 
 @NgModule({
@@ -39,6 +41,8 @@ import { InfocovidGabonComponent } from './infocovid-gabon/infocovid-gabon.compo
     InfocovidBurkinaComponent,
     InfocovidMaliComponent,
     InfocovidGabonComponent,
+    ElsevierComponent,
+    PubmedComponent,
 
 
   ],

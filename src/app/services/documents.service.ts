@@ -181,6 +181,73 @@ export class DocumentsService {
   //***.......................Fin pour Articles de Natures..............................***//
 
 
+  //***........ Parties du services qui traitent les fonctionnalites Elsevier  ...............***//
 
+  // Rechercher en fonction de  titre  pour les articles  par mot cle ,renvoie au formulaire de recherche
+  public getElsevierbyKeyword(titre:string,page:number,size:number) {
+    // http://localhost:8080/elseviers/search/byTitre?titre=mala&page=1&size=2
+    return this.http.get(this.host +"/elseviers/search/byTitre?titre="+titre+"&page="+page+"&size="+size);
+  }
+
+  // Recuperer les articles de Science Direct( Article)
+  getAllElsevier(page:number,size:number){
+    return this.http.get(this.host+"/elseviers?page="+page+"&size="+size);
+  }
+
+  //***........ Recherche multiple dans Elsevier
+
+  //... Recherche par Date et Type
+  public getElsevierbyFilterTypeAndDate(type:string[],annee:string[]) {
+    // http://localhost:8080/byFiltreElsevier?type=art&annee=2020
+    return this.http.get(this.host +"/byFiltrePlosOne?type="+type+"&annee="+annee);
+  }
+  //... Recherche par Date
+  public getElsevierbyFilterAnnee(annee:string[]) {
+    // http://localhost:8080/byFiltreElsevierAnnee?annee=2021,2019
+    return this.http.get(this.host +"/byFiltreElsevierAnnee?annee="+annee);
+  }
+  //... Recherche par Type
+  public getElsevierbyFilterType(type:string[]) {
+    // http://localhost:8080/byFiltreElsevierType?type=articl
+    return this.http.get(this.host +"/byFiltreElsevierType?type="+type);
+  }
+
+  //***.......................Fin pour Articles de Elsevier..............................***//
+
+
+
+  //***........ Parties du services qui traitent les fonctionnalites PubMed  ...............***//
+
+  // Rechercher en fonction de  titre  pour les articles  par mot cle ,renvoie au formulaire de recherche
+  public getPubmedbyKeyword(titre:string,page:number,size:number) {
+    // http://localhost:8080/pubMeds/search/byTitre?titre=mala&page=1&size=2
+    return this.http.get(this.host +"/pubMeds/search/byTitre?titre="+titre+"&page="+page+"&size="+size);
+  }
+
+  // Recuperer les articles de pub Med( Article)
+  getAllPubmed(page:number,size:number){
+    return this.http.get(this.host+"/pubMeds?page="+page+"&size="+size);
+  }
+
+  //***........ Recherche multiple dans Pubmed
+
+  //... Recherche par Date et Type
+  /*public getElsevierbyFilterTypeAndDate(type:string[],annee:string[]) {
+    // http://localhost:8080/byFiltreElsevier?type=art&annee=2020
+    return this.http.get(this.host +"/byFiltrePlosOne?type="+type+"&annee="+annee);
+  }*/
+  //... Recherche par Date
+  public getPubmedbyFilterAnnee(annee:string[]) {
+    // http://localhost:8080/byFiltrePubmedAnnee?annee=2021,2019
+    // http://localhost:8080/byFiltrePubMedAnnee?annee=2020
+    return this.http.get(this.host +"/byFiltrePubMedAnnee?annee="+annee);
+  }
+  //... Recherche par Type
+  public getPubmedbyFilterType(type:string[]) {
+    // http://localhost:8080/byFiltrePubmedType?type=articl
+    return this.http.get(this.host +"/byFiltrePubmedType?type="+type);
+  }
+
+  //***.......................Fin pour Articles de Pubmed..............................***//
 
 }

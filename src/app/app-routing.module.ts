@@ -14,6 +14,8 @@ import {InfocovidBurkinaComponent} from "./infocovid-burkina/infocovid-burkina.c
 import {InfocovidGabonComponent} from "./infocovid-gabon/infocovid-gabon.component";
 import {InfocovidSenegalComponent} from "./infocovid-senegal/infocovid-senegal.component";
 import {InfocovidMaliComponent} from "./infocovid-mali/infocovid-mali.component";
+import {ElsevierComponent} from "./elsevier/elsevier.component";
+import {PubmedComponent} from "./pubmed/pubmed.component";
 // ,canActivate : [AuthguardService]
 const routes: Routes = [
   {path:'',component: WebDocumentsComponent},
@@ -23,6 +25,8 @@ const routes: Routes = [
   {path: "articles",component: ArticlesComponent},
   {path: "natures",component: NaturesComponent},
   {path: "plosones",component: PlosonesComponent},
+  {path: "elseviers",component: ElsevierComponent},
+  {path: "pubmeds",component: PubmedComponent},
   {path: "bases",component: PlosonesComponent},
   {path: "infocovids",component: InfocovidComponent},
   {path: "infocovidBenin",component: InfocovidBeninComponent},

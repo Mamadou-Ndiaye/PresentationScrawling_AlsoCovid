@@ -1,36 +1,34 @@
+
 <!-- Inclure bases c a dire lq bare de navigation q pqrtir du componenet bases   -->
 <app-bases></app-bases>
 <!-- Fin    -->
 
-
-
-s
-<div class="row" *ngIf="nature"  id="article" >
+<div class="row" *ngIf="pubmed"  id="article" >
 
   <div class="col-md-1 "   >
 
   </div>
   <div class="col-md-2 "   >
 
-    <div class="panel-heading" class="filtre">Type Article</div>
+   <!-- <div class="panel-heading" class="filtre">Type Article</div>
     <div class="form-check">
-      <input type="checkbox" class="form-check-input" id="researchArticle"  name="recherche"  value="article"  (change)="toggleEditable($event)" >
+      <input type="checkbox" class="form-check-input" id="researchArticle"  name="recherche"  value="Journal of Astronomy"  (change)="toggleEditable($event)" >
       &nbsp;
-      <label class="form-check-label police" for="researchArticle">Articles</label>
+      <label class="form-check-label police" for="researchArticle">Journal of Astronomy</label>
     </div>
 
     <div class="form-check">
-      <input type="checkbox" class="form-check-input" id="review" name="review"  value="News Feature"  (change)="toggleEditable($event)" >
+      <input type="checkbox" class="form-check-input" id="review" name="review"  value="Journal of Modern Neurosurgery"  (change)="toggleEditable($event)" >
       &nbsp;
-      <label class="form-check-label police" for="review">News Feature</label>
+      <label class="form-check-label police" for="review">Journal of Neurosurgery</label>
     </div>
     <div class="form-check">
-      <input type="checkbox" class="form-check-input" id="book" name="books"  value="Correspondence"  (change)="toggleEditable($event)" >
+      <input type="checkbox" class="form-check-input" id="book" name="books"  value="Journal of Human Resource"  (change)="toggleEditable($event)" >
       &nbsp;
-      <label class="form-check-label police" for="book">Correspondence</label>
+      <label class="form-check-label police" for="book">Journal of Human Resource</label>
     </div>
 
-    <br>
+    <br>-->
     <div class="panel-heading text-center" class="filtre">Années</div>
 
     <div class="form-check">
@@ -61,17 +59,19 @@ s
   </div>
 
 
+
   <div class="col-md-5 text-justify"    >
     <ng-container  *ngIf="  modeByKeyWord==false && modeFiltre==false "  >
-      <ng-container  *ngFor="let article of natures._embedded.natures"   >
+
+      <ng-container  *ngFor="let article of pubmeds._embedded.pubMeds"   >
         <div class="row">
 
           <div class="col-md-8" class="art" >
-            <span>{{article.type}}</span>
+            <!--<span>{{article.type}}</span>-->
             <h4 class="text-capitalize  url" ><a href="{{article.url}}" target="_blank" >{{article.titre}}</a></h4>
             <span class="fontStyle">{{article.date}}</span><br>
-            <span  class="fontStyle"  >{{article.auteur1}},{{article.auteur2}} <br> </span><br>
-              <!-- <span><a href="{{article.url}}"> {{article.url}} </a> <br></span><br>-->
+            <span  class="fontStyle"  >{{article.auteurs}} <br> </span><br>
+            <!-- <span><a href="{{article.url}}"> {{article.url}} </a> <br></span><br>-->
           </div>
 
 
@@ -85,18 +85,17 @@ s
 
         <!--        </div>-->
 
-
         <div class="col-sm-12 col-md-12">
-          <ul  *ngIf="pagesNatures" class="nav nav-pills">
-            <li *ngFor="let p of  pagesNatures; let  indice=index" [ngClass]="indice==pageCourant? 'active':'' ">
+          <ul  *ngIf="pagesPubmeds" class="nav nav-pills">
+            <li *ngFor="let p of  pagesPubmeds; let  indice=index" [ngClass]="indice==pageCourant? 'active':'' ">
               <ng-container *ngIf="indice<=0">
-                <a class="clickable" (click)="onPageNature(indice)">Prev</a>
+                <a class="clickable" (click)="onPagePubmed(indice)">Prev</a>
               </ng-container>
-                <ng-container *ngIf="indice>0 && indice<=9">
-                  <a class="clickable" (click)="onPageNature(indice)">{{indice}}</a>
-                </ng-container>
-              <ng-container *ngIf="indice>9 && indice<=10" >
-                   <a class="clickable" (click)="onPageNature(indice)"> Next</a>
+              <ng-container *ngIf="indice>0 && indice<=20">
+                <a class="clickable" (click)="onPagePubmed(indice)">{{indice}}</a>
+              </ng-container>
+              <ng-container *ngIf="indice>20 && indice<=21" >
+                <a class="clickable" (click)="onPagePubmed(indice)"> Next</a>
               </ng-container>
             </li>
           </ul>
@@ -106,16 +105,16 @@ s
 
     </ng-container>
 
-    <ng-container *ngIf="natures && modeByKeyWord   && modeFiltre==false">
+    <ng-container *ngIf="pubmeds && modeByKeyWord  && modeFiltre ==false ">
 
-      <ng-container  *ngFor="let article of natures._embedded.natures"   >
+      <ng-container  *ngFor="let article of pubmeds._embedded.pubMeds"   >
         <div class="row"    >
 
           <div class="col-md-8" class="art" >
-            <span> {{article.type}}</span>
+           <!-- <span>{{article.type}}</span>-->
             <h4 class=" text-capitalize"><a href="{{article.url}}" target="_blank" >{{article.titre}}</a></h4>
             <span class="fontStyle">{{article.date}}</span><br>
-            <span  class="fontStyle"  >{{article.auteur1}},{{article.auteur2}} <br> </span><br>
+            <span  class="fontStyle"  >{{article.auteurs}} <br> </span><br>
             <!--   <span><a href="{{article.url}}"> {{article.url}} </a> <br></span><br>-->
           </div>
 
@@ -129,7 +128,7 @@ s
           <div class="col-sm-8">
             <ul  *ngIf="pages" class="nav nav-pills">
               <li *ngFor="let p of pages; let  i=index" [ngClass]="i==currentPage?'active':'' ">
-                <a class="clickable" (click)="onPageNature(i)">{{i}}</a>
+                <a class="clickable" (click)="onPagePubmed(i)">{{i}}</a>
               </li>
             </ul>
 
@@ -145,15 +144,15 @@ s
 
 
 
-    <ng-container *ngIf="filtres && modeFiltre   && modeByKeyWord==false">
+    <ng-container *ngIf="filtres && modeFiltre   && modeByKeyWord==false ">
       <ng-container  *ngFor="let article of filtres"   >
         <div class="row"    >
 
           <div class="col-md-8" class="art" >
-            <span> {{article.type}}</span>
+          <!--  <span>{{article.type}}</span>-->
             <h4 class=" text-capitalize"><a href="{{article.url}}" target="_blank" >{{article.titre}}</a></h4><br>
             <span class="fontStyle">{{article.date}}</span><br>
-            <span  class="fontStyle"  >{{article.auteur1}},{{article.auteur2}} <br> </span><br>
+            <span  class="fontStyle"  >{{article.auteurs}} <br> </span><br>
             <!--   <span><a href="{{article.url}}"> {{article.url}} </a> <br></span><br>-->
           </div>
         </div>
@@ -167,7 +166,7 @@ s
 
   <div class="col-md-3 text-justify "   >
 
-    <form class="navbar-form navbar-left"  #f="ngForm" (ngSubmit)="onChercherByNature(f.value)" >
+    <form class="navbar-form navbar-left"  #f="ngForm" (ngSubmit)="onChercherByPubmed(f.value)" >
       <div class="input-group">
         <input type="text" class="form-control" name="keyword" ngModel  placeholder="Search">
         <div class="input-group-btn">
@@ -186,13 +185,3 @@ s
 
 
 </div>
-
-
-
-
-
-
-
-
-
-

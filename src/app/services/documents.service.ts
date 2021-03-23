@@ -155,12 +155,12 @@ export class DocumentsService {
     return this.http.get(this.host +"/plosOnes/search/byTitre?titre="+titre+"&page="+page+"&size="+size);
   }
 
-  // Recuperer les articles de Science Direct( Article)
+  // Recuperer les articles de PlosOne( Article)
   getAllPlosOne(page:number,size:number){
     return this.http.get(this.host+"/plosOnes?page="+page+"&size="+size);
   }
 
-  //***........ Recherche multiple dans Nature
+  //***........ Recherche multiple dans PlosOne
 
   //... Recherche par Date et Type
   public getPlosOnesbyFilterTypeAndDate(type:string[],annee:string[]) {
@@ -178,7 +178,7 @@ export class DocumentsService {
     return this.http.get(this.host +"/byFiltrePlosOneType?type="+type);
   }
 
-  //***.......................Fin pour Articles de Natures..............................***//
+  //***.......................Fin pour Articles de PlosOne..............................***//
 
 
   //***........ Parties du services qui traitent les fonctionnalites Elsevier  ...............***//
@@ -248,6 +248,41 @@ export class DocumentsService {
     return this.http.get(this.host +"/byFiltrePubmedType?type="+type);
   }
 
-  //***.......................Fin pour Articles de Pubmed..............................***//
+  //***.......................Fin pour Articles de Who..............................***//
+
+
+  //***........ Parties du services qui traitent les fonctionnalites Who  ...............***//
+
+  // Rechercher en fonction de  titre  pour les articles  par mot cle ,renvoie au formulaire de recherche
+  public getWhobyKeyword(titre:string,page:number,size:number) {
+    // http://localhost:8080/whoes/search/byTitre?titre=mala&page=1&size=2
+    return this.http.get(this.host +"/whoes/search/byTitre?titre="+titre+"&page="+page+"&size="+size);
+  }
+
+  // Recuperer les articles de Who( Article)
+  getAllWhos(page:number,size:number){
+    return this.http.get(this.host+"/whoes?page="+page+"&size="+size);
+  }
+
+  //***........ Recherche multiple dans WHo
+
+  //... Recherche par Date et Titre
+  public getWhobyFilterTitreAndDate(titre:string[],annee:string[]) {
+    // http://localhost:8080/byFiltreWho?titre=art&annee=2020
+    return this.http.get(this.host +"/byFiltreWho?titre="+titre+"&annee="+annee);
+  }
+  //... Recherche par Date
+  public getWhobyFilterAnnee(annee:string[]) {
+    // http://localhost:8080/byFiltreWhoAnnee?annee=2021,2019
+    return this.http.get(this.host +"/byFiltreWhoAnnee?annee="+annee);
+  }
+  //... Recherche par Titre
+  public getWhobyFilterTitre(titre:string[]) {
+    // http://localhost:8080/byFiltreWhoTitre?titre=articl
+    return this.http.get(this.host +"/byFiltreWhoTitre?titre="+titre);
+  }
+
+  //***.......................Fin pour Articles de Who..............................***//
+
 
 }

@@ -10,15 +10,17 @@ import {PlosonesComponent} from "./plosones/plosones.component";
 import {InfocovidComponent} from "./infocovid/infocovid.component";
 
 import {InfocovidBeninComponent} from "./infocovid-benin/infocovid-benin.component";
-import {InfocovidBurkinaComponent} from "./infocovid-burkina/infocovid-burkina.component";
-import {InfocovidGabonComponent} from "./infocovid-gabon/infocovid-gabon.component";
 import {InfocovidSenegalComponent} from "./infocovid-senegal/infocovid-senegal.component";
-import {InfocovidMaliComponent} from "./infocovid-mali/infocovid-mali.component";
 import {ElsevierComponent} from "./elsevier/elsevier.component";
 import {PubmedComponent} from "./pubmed/pubmed.component";
+import {WhoComponent} from "./who/who.component";
 // ,canActivate : [AuthguardService]
 const routes: Routes = [
-  {path:'',component: WebDocumentsComponent},
+  {path:"",component: WhoComponent},
+  {path:"whos",component: WhoComponent},
+ // {path:"",component: WebDocumentsComponent},
+  // Pour enlever lapage de connexion il suffit d'enlever la page par defaut de Login comme composant de depart
+  //{path: "",component: LoginComponent}, // route par de faut donc on fait appel a LoginComponent au demarrage de l application
   {path:"documents",component:WebDocumentsComponent},
   {path: "login",component: LoginComponent},
   {path: "categories",component: CategoriesComponent},
@@ -30,9 +32,6 @@ const routes: Routes = [
   {path: "bases",component: PlosonesComponent},
   {path: "infocovids",component: InfocovidComponent},
   {path: "infocovidBenin",component: InfocovidBeninComponent},
-  {path: "infocovidBurkina",component: InfocovidBurkinaComponent},
-  {path: "infocovidMali",component: InfocovidMaliComponent},
-  {path: "infocovidGabon",component: InfocovidGabonComponent},
   {path: "infocovidSenegal",component: InfocovidSenegalComponent}
 
 ];

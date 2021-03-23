@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Utilisateur} from "../classes/Utilisateur";
-import {forEachComment} from "tslint";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Observable} from "rxjs";
 

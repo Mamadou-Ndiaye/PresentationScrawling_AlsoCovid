@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
   // User
   login?:String;
 
-  // Affichage du formulaire dùinscription
+  // Affichage du formulaire d'inscription
   signUp:boolean=false;
   constructor( private route: ActivatedRoute,
                private router: Router,
@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit {
        // this.authentificationService.userLogin.etat=true
         this.authentificationService.saveAuthentificatedUser();
         this.authentificationService.updateUtilisateur(this.authentificationService.userLogin).subscribe(
-          data=> this.router.navigateByUrl('/categories')
+          data=> this.router.navigateByUrl('/documents')  // / categories
         )
 
       }
@@ -72,12 +72,16 @@ export class LoginComponent implements OnInit {
     console.log("inscription "  + dataForm);
     this.authentificationService.createUser(dataForm).subscribe(
       data => console.log(data),
-        error => console.log(error));
-    this.signUp=false;
+        error => console.log(error)
+    );
+    this.signUp=false; // on ferme le formulaire d inscription
     this.gotoCategorie();
   }
+
+
   gotoCategorie() {
-    this.router.navigateByUrl('/categories');
+    //this.router.navigateByUrl('/categories'); // on ne passe plus dans categeries
+    this.router.navigateByUrl('/documents');
   }
 
 }

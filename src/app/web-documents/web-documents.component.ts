@@ -25,6 +25,7 @@ export class WebDocumentsComponent implements OnInit {
 
   articles: any;
   public article: boolean = false;
+  // Pour affichage
 
 
   // Pour gerer l action active sur le menu vertical
@@ -37,7 +38,7 @@ export class WebDocumentsComponent implements OnInit {
 
 //Gestion de la pagination de documents
   public size: number = 20;
-  public currentPage: number = 1;
+  public currentPage: number = 0;
   public totalPages: number = 0;
   public pages?: Array<number>;
 
@@ -79,10 +80,12 @@ export class WebDocumentsComponent implements OnInit {
    filtres: any;
   modeFiltre = false;
   i=0;
+  //
+  public timestamp: number=0;
 
 
 
-  constructor(private documentsService: DocumentsService, private  authentificationService: AuthentificationService, private sanitizer: DomSanitizer) {
+  constructor(public documentsService: DocumentsService, public  authentificationService: AuthentificationService, private sanitizer: DomSanitizer) {
     this.url = ["/webDocumentOrderByCovid", "/webDocumentOrderByhistorique", "/webDocumentOrderByIdentite",
       "/webDocumentOrderByEnvironnement", "/webDocumentOrderByNutrition", "/webDocumentOrderByObjet"];
 
@@ -271,6 +274,11 @@ export class WebDocumentsComponent implements OnInit {
 
 
 
+  }
+
+
+  getTS() {
+    return this.timestamp;
   }
 
 

@@ -18,11 +18,9 @@ import { BasesComponent } from './bases/bases.component';
 import { InfocovidComponent } from './infocovid/infocovid.component';
 import { InfocovidSenegalComponent } from './infocovid-senegal/infocovid-senegal.component';
 import { InfocovidBeninComponent } from './infocovid-benin/infocovid-benin.component';
-import { InfocovidBurkinaComponent } from './infocovid-burkina/infocovid-burkina.component';
-import { InfocovidMaliComponent } from './infocovid-mali/infocovid-mali.component';
-import { InfocovidGabonComponent } from './infocovid-gabon/infocovid-gabon.component';
 import { ElsevierComponent } from './elsevier/elsevier.component';
 import { PubmedComponent } from './pubmed/pubmed.component';
+import { WhoComponent } from './who/who.component';
 
 
 @NgModule({
@@ -38,11 +36,9 @@ import { PubmedComponent } from './pubmed/pubmed.component';
     InfocovidComponent,
     InfocovidSenegalComponent,
     InfocovidBeninComponent,
-    InfocovidBurkinaComponent,
-    InfocovidMaliComponent,
-    InfocovidGabonComponent,
     ElsevierComponent,
     PubmedComponent,
+    WhoComponent,
 
 
   ],

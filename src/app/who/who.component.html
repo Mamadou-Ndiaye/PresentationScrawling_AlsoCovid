@@ -1,0 +1,180 @@
+
+<!-- Inclure bases c a dire lq bare de navigation q pqrtir du componenet bases   -->
+<app-bases></app-bases>
+<!-- Fin  &&  article==false     -->
+
+
+
+<div *ngIf="mode==false " >
+  <div class="container glyphicon-text-height  float">
+
+    <div class="row back" >
+
+      <div class="col-md-2 col-xs-12 col-sm-2 ">
+
+        <div  id="maladie">Maladies(fréquentes)</div>
+        <div class="form-check">
+          <input type="checkbox"  name="covid"   value="covid"  (change)="toggleEditable($event)" class="form-check-input" id="covid">
+          &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <label class="form-check-label police"  for="covid"  >Covid-19</label>
+        </div>
+
+        <div class="form-check">
+          <input type="checkbox" name="malaria"  value="Malaria"  (change)="toggleEditable($event)" class="form-check-input" id="malaria">
+          &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+          <label class="form-check-label police" for="malaria"  >Malaria</label>
+        </div>
+        <div class="form-check">
+          <input type="checkbox"  name="tuberculose"  value="tuberculosis"  (change)="toggleEditable($event)"  class="form-check-input" id="tuberculose">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <label class="form-check-label police" for="tuberculose">Tuberculose</label>
+        </div>
+
+        <br>
+        <div class="panel-heading text-center" class="filtre">Années</div>
+
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="annee2021"  name="an2021"  value="2021"  (change)="toggleEditable($event)" >
+          &nbsp;
+          <label class="form-check-label police" for="annee2021">2021</label>
+        </div>
+
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="annee2020"  name="an2020"  value="2020"  (change)="toggleEditable($event)" >
+          &nbsp;
+          <label class="form-check-label police" for="annee2020">2020</label>
+        </div>
+
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="annee2019" name="an2019"  value="2019"  (change)="toggleEditable($event)" >
+          &nbsp;
+          <label class="form-check-label police" for="annee2019">2019</label>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="annee2018" name="an2018"  value="2018"  (change)="toggleEditable($event)" >
+          &nbsp;
+          <label class="form-check-label police" for="annee2018">2018</label>
+        </div>
+
+
+
+      </div>
+
+      <ng-container *ngIf="modeByKeyWord==false && modeFiltre==false ">
+        <div class="col-sm-7 col-xs-12 col-md-7 text-justify" *ngIf="documents"      >
+          <div class="row bord text-justify  "    *ngFor=" let doc of documents._embedded.whoes" >
+            <div class="row cadre text-justify"  >
+              <div class="col-4 col-md-4 col-sm-4  col-xs-12  "     >
+                <!-- <img class="img-thumbnail img-rounded   img1 "      [src]="doc.img[numberAleatoire]"/>-->
+                <img class="img-thumbnail img-rounded  img1"  [src]="this.documentsService.host+'/imageOms/'+doc.id+'?ts='+getTS()"/>
+              </div>
+              <div class="col-8 col-md-8 col-sm-8 col-xs-12 " >
+                <h4 class=" text-capitalize text-info">  <a href="{{doc.url}}" target="_blank" >{{doc.titre}}</a></h4>
+                <span class="text-justify"> {{doc.resume}}</span>
+               <!-- <a href="{{doc.url}}">{{doc.url}}</a>-->
+              </div>
+            </div>
+          </div>
+
+<!--          &lt;!&ndash; HTML pagination&ndash;&gt;-->
+          <div class="row"   >
+            <div class="col-sm-12 col-xs-12 col-md-12">
+              <ul  *ngIf="pages" class="nav nav-pills">
+                <li *ngFor="let p of pages; let  i=index" [ngClass]="i==currentPage?'active':'' ">
+                  <a class="clickable" (click)="onPageDocument(i)">{{i}}</a>
+                </li>
+              </ul>
+
+            </div>
+
+          </div>
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="documents && modeByKeyWord && modeFiltre==false"   style="background: #555555 ">
+        <div class="col-sm-7 col-xs-12 col-md-7" *ngIf="documents"    >
+          <div class="row bord "  *ngFor=" let doc of  documents._embedded.whoes"    >
+            <div class="row cadre">
+              <div class="col-4 col-md-4 col-xs-12  col-sm-4 "   >
+               <!-- <img class="img-thumbnail img-rounded btn img1"  [src]="doc.img[numberAleatoire]"/>-->
+                <img class="img-thumbnail img-rounded  img1"  [src]="this.documentsService.host+'/imageOms/'+doc.id+'?ts='+getTS()"/>
+              </div>
+              <div class="col-8 col-md-8  col-xs-12 col-sm-8">
+                <h4 class=" text-capitalize text-info">  <a href="{{doc.url}}">{{doc.titre}}</a></h4>
+                <span class="text-justify"> {{doc.resume}}</span>
+            <!--    &lt;!&ndash; <a href="{{doc.url}}">{{doc.url}}</a>&ndash;&gt;-->
+              </div>
+            </div>
+          </div>
+
+
+        <!--  &lt;!&ndash; HTML pagination&ndash;&gt;-->
+          <div class="row"     >
+            <div class="col-sm-4 col-md-4 col-xs-12">
+
+<!--              <pagination-controls-->
+<!--                previousLabel="Prev"-->
+<!--                nextLabel="Next"-->
+<!--                [responsive]="true"-->
+<!--                (pageChange)="handlePageChange($event)"-->
+<!--              ></pagination-controls>-->
+
+            </div>
+            <div class="col-sm-8 col-xs-12 col-md-8">
+              <ul  *ngIf="pages" class="nav nav-pills">
+                <li *ngFor="let p of pages; let  i=index" [ngClass]="i==currentPage?'active':'' ">
+                  <a class="clickable" (click)="onPageDocument(i)">{{i}}</a>
+                </li>
+              </ul>
+
+            </div>
+
+          </div>
+        </div>
+      </ng-container>
+
+
+      <ng-container *ngIf="filtres && modeFiltre   && modeByKeyWord ==false ">
+        <div class="col-sm-7 col-md-7 col-xs-12" *ngIf="filtres"   >
+          <div class="row bord "  *ngFor=" let doc of  filtres"    >
+            <div class="row cadre">
+              <div class="col-4 col-md-4  col-sm-4 col-xs-12 "   >
+                <img class="img-thumbnail img-rounded  img1"  [src]="this.documentsService.host+'/imageOms/'+doc.id+'?ts='+getTS()"/>
+              </div>
+              <div class="col-8 col-md-8 col-sm-8 col-xs-12 ">
+                <h4 class=" text-capitalize text-info">  <a href="{{doc.url}}"  target="_blank">{{doc.titre}}</a></h4>
+                <span class="text-justify"> {{doc.resume}}</span>
+   <!--             &lt;!&ndash; <a href="{{doc.url}}">{{doc.url}}</a>&ndash;&gt;-->
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </ng-container>
+
+
+
+
+    <!--  &lt;!&ndash;  Espace droite   style="background: #74b9ff " &ndash;&gt;-->
+      <div class="col-md-3 col-xs-12 col-sm-3 "  >
+    <!--    &lt;!&ndash; Formulaire de recherche  class="navbar-form navbar-left" &ndash;&gt;-->
+
+        <form   #f="ngForm" (ngSubmit)="onChercher(f.value)" >
+          <div class="input-group">
+            <input type="text" class="form-control" name="keyword" ngModel  placeholder="Search">
+            <div class="input-group-btn">
+              <button class="btn btn-default" type="submit">
+                <i class="glyphicon glyphicon-search"></i>
+              </button>
+            </div>
+          </div>
+        </form>
+
+      </div>
+
+
+    </div>
+
+
+  </div>

@@ -1,0 +1,119 @@
+<!-- Inclure bases c a dire lq bare de navigation q pqrtir du componenet bases   -->
+<app-bases></app-bases>
+<!-- Fin    -->
+
+
+<div class="container">
+  <div class="container">
+    <div class="container">
+      <div class="container">
+
+
+
+<div class="container  ">
+
+  <div class="container">
+    <div class="row">
+      <span >Télécharger le fichier au format </span>
+      <a href="./../assets/image/resultats.json"  download="resultats.json">
+        <span > Json </span>
+      </a>
+      <span > Ou </span>
+      <a href="./../assets/image/data.csv"  download="resultats.csv">
+        <span > Csv </span>
+      </a>
+      <span > Ou </span>
+      <a href="./../assets/image/data.xlsx"  download="resultats.xlsx">
+        <span > Xlsx </span>
+      </a>
+
+    </div>
+
+
+  </div>
+  <br>
+  <div class="row">
+    <div style="overflow-x:auto;" class="col-xs-12 col-sm-12 col-md-12  ">
+
+      <div class="table-wrapper-scroll-y my-custom-scrollbar">
+
+
+    <table  *ngIf="res" class="table table-bordered  table-striped ">
+      <thead>
+      <tr>
+        <th>Sexe</th>
+        <th style="width:50%;">Age</th>
+        <th>Statut matrimonial</th>
+        <th>Groupe_socio culturel</th>
+        <th>Profession</th>
+        <th  width="70%">Secteur_activite</th>
+        <th>Religion</th>
+        <th>Nombre resident</th>
+        <th>Frequence_aeration logement</th>
+        <th>Frequence brasseur</th>
+        <th>Frequence Climatiseur</th>
+        <th>Source_eau</th>
+        <th>Dispositif_lavage mains</th>
+        <th>Periode incurbation</th>
+        <th>Commune</th>
+        <th>Nutrition_preventive</th>
+        <th>Infecter_sans_presenter symptome</th>
+        <th>Pas_symptome_mais transmet_covid</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor=" let p of res">
+
+        <td>{{p.donnee_socio.sexe}}</td>
+        <td>{{p.donnee_socio.age}}</td>
+        <td>{{p.donnee_socio.statut_matrimonial}}</td>
+        <td>{{p.donnee_socio.groupe_socio_culturel}}</td>
+        <td>{{p.donnee_socio.profession.replaceAll('/',' ')}}</td>
+        <td>{{p.donnee_socio.secteur_activite.replaceAll('/',' ')}}</td>
+        <td>{{p.donnee_socio.religion}}</td>
+        <td>{{p.loge.nombre_resident}}</td>
+        <td>{{p.loge.frequence_aeration_logement}}</td>
+        <td>{{p.loge.frequence_brasseur}}</td>
+        <td>{{p.loge.frequence_climatiseur}}</td>
+        <td>{{p.loge.source_eau}}</td>
+        <td>{{p.loge.dispositif_lavage_mains}}</td>
+        <td>{{p.connaissanceCov19.periode_incubation}}</td>
+        <td>{{p.donnee_Geo.zone_de_residence.commune}}</td>
+        <td>{{p.historique.nutriment_preventifs_consommer}}</td>
+        <td>{{p.connaissanceCov19.information_infection.infecter_sans_presenter_symptome}}</td>
+        <td>{{p.connaissanceCov19.information_infection.pas_symptome_mais_transmet_covid}}</td>
+      </tr>
+      </tbody>
+    </table>
+      </div>
+    </div>
+
+  </div>
+ <br>
+  <div class="row">
+    <div class="col-xs-4 col-sm-6"><img  class="clickable"   src="../assets/image/niveauEtude.PNG" width="100%" ></div>
+    <div class="col-xs-4 col-sm-6"><img  class="clickable"   src="../assets/image/religion.PNG" width="100%" ></div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-6"> <img  class="clickable"   src="../assets/image/statut_covid.PNG" width="100%" ></div>
+    <div class="col-xs-6 col-md-6"><img  class="clickable"   src="../assets/image/statut_matri.PNG" width="100%" ></div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-6 col-md-6"><img  class="clickable"   src="../assets/image/Masque.PNG" width="100%" ></div>
+    <div class="col-xs-12 col-sm-6 col-md-6"> <img  class="clickable"   src="../assets/image/Genre.PNG" width="100%" ></div>
+  </div>
+
+</div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<br> <br> <br>
+
+
+
+

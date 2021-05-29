@@ -10,7 +10,7 @@ export class DocumentsService {
   public  host:string="http://localhost:8080";
 
 
-
+  //public   host:string="https://alsocovid19.ucad.sn:8443/ALSOCOVID";
   //public   host:string="http://172.16.1.117:8080/ALSOCOVID";
 
   // public  host:string="https://alsocovid.herokuapp.com";
@@ -286,3 +286,4 @@ export class DocumentsService {
 
 
 }
+

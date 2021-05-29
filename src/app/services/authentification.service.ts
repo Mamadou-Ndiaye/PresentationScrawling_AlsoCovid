@@ -10,7 +10,7 @@ import {Observable} from "rxjs";
 export class AuthentificationService {
   public  host:string="http://localhost:8080";
   public isLogin:boolean=false;
-  // Etat pour recuperer l etat de user current afin de injecter dans dans la classe login.ts
+  // Etat pour recuperer l etat de user current afin de injecter dans la classe login.ts
   // Pour faire le test afin de le redirige dans la partie souhaite
   public etat?:boolean;
   public userLogin=new Utilisateur();
@@ -58,7 +58,7 @@ export class AuthentificationService {
         this.etat=user.etat
         this.userLogin=user;
         this.token=btoa(JSON.stringify({username:user.login}) );
-        this.isLogin=true;  // il est donc bien s ùauthentifier
+        this.isLogin=true;  // il est donc bien s authentifier
 
       }
       else if(this.isLogin!=true)

@@ -21,6 +21,8 @@ import { InfocovidBeninComponent } from './infocovid-benin/infocovid-benin.compo
 import { ElsevierComponent } from './elsevier/elsevier.component';
 import { PubmedComponent } from './pubmed/pubmed.component';
 import { WhoComponent } from './who/who.component';
+import { Wp1Component } from './wp1/wp1.component';
+import { Wp2Component } from './wp2/wp2.component';
 
 
 @NgModule({
@@ -39,6 +41,8 @@ import { WhoComponent } from './who/who.component';
     ElsevierComponent,
     PubmedComponent,
     WhoComponent,
+    Wp1Component,
+    Wp2Component
 
 
   ],

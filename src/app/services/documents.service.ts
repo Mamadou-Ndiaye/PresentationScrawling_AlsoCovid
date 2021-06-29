@@ -16,6 +16,10 @@ export class DocumentsService {
   // public  host:string="https://alsocovid.herokuapp.com";
  // host = environment.host;///
 
+  public  dataSearch: any ;
+  public  dataSearchArticle: any;
+  public  isOpen : boolean= false;
+
 
   public covid: boolean=false;
   public sanitaire: boolean=false;

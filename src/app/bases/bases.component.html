@@ -59,7 +59,7 @@
 
     <!-- Formulaire de recherche -->
 
-    <!--<form class="navbar-form navbar-left"  #f="ngForm" (ngSubmit)="onChercher(f.value)" >
+    <form class="navbar-form navbar-left"  #f="ngForm" (ngSubmit)="onChercher(f.value)" >
       <div class="input-group">
         <input type="text" class="form-control" name="keyword" ngModel  placeholder="Search">
         <div class="input-group-btn">
@@ -68,7 +68,7 @@
           </button>
         </div>
       </div>
-    </form>-->
+    </form>
 
     <!--    <ul class="nav navbar-nav navbar-right">-->
     <!--      <li><a href="#"><span class="glyphicon glyphicon-user"></span>SignUp</a></li>-->
@@ -92,4 +92,253 @@
 
 </router-outlet>
 
+<!--
+{{ elseviers | json}}
 
+{{ natures | json }}
+{{ dataSearchArticle| json }}
+
+{{dataSearchWho | json }}
+-->
+
+<div class = "row" >
+  <div class = "col-xs-8 col-md-offset-2">
+
+    <div class="row">
+
+      <ng-container *ngIf="dataSearchWho && this.documentsService.isOpen"   style="background: #555555 ">
+
+        <div class="col-sm-10 col-xs-10 col-md-10" *ngIf="dataSearchWho"    >
+          <div class="row bord "  *ngFor=" let doc of  dataSearchWho._embedded.whoes"    >
+            <div class="row cadre">
+              <div class="col-4 col-md-4 col-xs-12  col-sm-4 "   >
+                <!-- <img class="img-thumbnail img-rounded btn img1"  [src]="doc.img[numberAleatoire]"/>-->
+                <img class="img-thumbnail img-rounded  img1"  [src]="this.documentsService.host+'/imageOms/'+doc.id+'?ts='+getTS()"/>
+              </div>
+              <div class="col-8 col-md-8  col-xs-12 col-sm-8">
+                <h4 class=" text-capitalize text-info">  <a href="{{doc.url}}">{{doc.titre}}</a></h4>
+                <span class="text-justify"> {{doc.resume}}</span>
+              </div>
+            </div>
+          </div>
+
+
+          <!--  &lt;!&ndash; HTML pagination&ndash;&gt;-->
+          <div class="row"     >
+            <div class="col-sm-4 col-md-4 col-xs-12">
+
+            </div>
+            <div class="col-sm-8 col-xs-12 col-md-8">
+<!--              <ul  *ngIf="pages" class="nav nav-pills">-->
+<!--                <li *ngFor="let p of pages; let  i=index" [ngClass]="i==currentPage?'active':'' ">-->
+<!--                  <a class="clickable" (click)="onPageDocument(i)">{{i}}</a>-->
+<!--                </li>-->
+<!--              </ul>-->
+
+            </div>
+
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>
+
+<!--  Affichage Resultats de Recherche articles qui correspond a ScienceDirect    -->
+
+<div class = "row" >
+  <div class = "col-xs-8 col-md-offset-2">
+
+    <div class="row">
+
+      <ng-container *ngIf="dataSearchArticle && this.documentsService.isOpen"   style="background: #555555 ">
+
+        <ng-container  *ngFor="let article of dataSearchArticle._embedded.articles"   >
+          <div class="row">
+
+            <div class="col-md-8 col-xs-12" class="art" >
+              <!--  <span class="glyphicon glyphicon-star" aria-hidden="true"></span> -->
+              <span>{{article.type}}</span>
+              <h4 class="text-capitalize  url" ><a href="{{article.url}}"  target="_blank" >{{article.titre}}</a></h4>
+              <span class="fontStyle">{{article.book}},{{article.date}}</span><br>
+              <span  class="fontStyle"  >{{article.auteurs1}},{{article.auteurs2}},... <br> </span><br>
+              <!--   <span><a href="{{article.url}}"> {{article.url}} </a> <br></span><br>-->
+            </div>
+
+
+          </div>
+
+        </ng-container>
+
+      </ng-container>
+    </div>
+  </div>
+</div>
+
+<!-- ============== Fin affichage  ScienceDirect =============== -->
+
+
+<!-- ============== affichage resultats de recherche de natures   =============== -->
+
+<div class = "row" >
+  <div class = "col-xs-8 col-md-offset-2">
+
+    <div class="row">
+
+      <ng-container *ngIf="natures && this.documentsService.isOpen"   style="background: #555555 ">
+
+        <ng-container  *ngFor="let article of natures._embedded.natures"   >
+          <div class="row">
+
+            <div class="col-md-8" class="art" >
+              <span>{{article.type}}</span>
+              <h4 class="text-capitalize  url" ><a href="{{article.url}}" target="_blank" >{{article.titre}}</a></h4>
+              <span class="fontStyle">{{article.date}}</span><br>
+              <span  class="fontStyle"  >{{article.auteur1}},{{article.auteur2}} <br> </span><br>
+              <!-- <span><a href="{{article.url}}"> {{article.url}} </a> <br></span><br>-->
+            </div>
+
+
+          </div>
+
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
+</div>
+
+<!-- ============== Fin affichage natures  =============== -->
+
+
+
+<!-- ============== affichage resultats de recherche de Elseviers   =============== -->
+
+<div class = "row" >
+  <div class = "col-xs-8 col-md-offset-2">
+
+    <div class="row">
+
+      <ng-container *ngIf="elseviers && this.documentsService.isOpen"   style="background: #555555 ">
+
+        <ng-container  *ngFor="let article of elseviers._embedded.elseviers"   >
+          <div class="row">
+
+            <div class="col-md-8" class="art" >
+              <span>{{article.type}}</span>
+              <h4 class="text-capitalize  url" ><a href="{{article.url}}" target="_blank" >{{article.titre}}</a></h4>
+              <span class="fontStyle">{{article.date}}</span><br>
+              <span  class="fontStyle"  >{{article.auteurs}} <br> </span><br>
+              <!-- <span><a href="{{article.url}}"> {{article.url}} </a> <br></span><br>-->
+            </div>
+
+
+          </div>
+
+        </ng-container>
+
+
+
+      </ng-container>
+    </div>
+  </div>
+</div>
+
+<!-- ============== Fin affichage Elseviers   =============== -->
+
+
+<!-- ============== affichage resultats de recherche de Elseviers   =============== -->
+
+<div class = "row" >
+  <div class = "col-xs-8 col-md-offset-2">
+
+    <div class="row">
+
+      <ng-container *ngIf="elseviers && this.documentsService.isOpen"   style="background: #555555 ">
+
+        <ng-container  *ngFor="let article of elseviers._embedded.elseviers"   >
+          <div class="row">
+
+            <div class="col-md-8" class="art" >
+              <span>{{article.type}}</span>
+              <h4 class="text-capitalize  url" ><a href="{{article.url}}" target="_blank" >{{article.titre}}</a></h4>
+              <span class="fontStyle">{{article.date}}</span><br>
+              <span  class="fontStyle"  >{{article.auteurs}} <br> </span><br>
+              <!-- <span><a href="{{article.url}}"> {{article.url}} </a> <br></span><br>-->
+            </div>
+
+
+          </div>
+
+        </ng-container>
+
+
+
+      </ng-container>
+    </div>
+  </div>
+</div>
+
+<!-- ============== Fin affichage natures  =============== -->
+
+
+
+
+
+<!-- ============== affichage resultats de recherche pubMeds  =============== -->
+
+<div class = "row" >
+  <div class = "col-xs-8 col-md-offset-2">
+
+    <div class="row">
+
+      <ng-container *ngIf="pubmeds && this.documentsService.isOpen"   style="background: #555555 ">
+        <ng-container  *ngFor="let article of pubmeds._embedded.pubMeds"   >
+          <div class="row"    >
+
+            <div class="col-md-8" class="art" >
+              <!-- <span>{{article.type}}</span>-->
+              <h4 class=" text-capitalize"><a href="{{article.url}}" target="_blank" >{{article.titre}}</a></h4>
+              <span class="fontStyle">{{article.date}}</span><br>
+              <span  class="fontStyle"  >{{article.auteurs}} <br> </span><br>
+              <!--   <span><a href="{{article.url}}"> {{article.url}} </a> <br></span><br>-->
+            </div>
+          </div>
+
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
+</div>
+
+<!-- ============== Fin affichage pubMeds =============== -->
+
+
+<!-- ============== affichage resultats de recherche plosOne  =============== -->
+
+<div class = "row" >
+  <div class = "col-xs-8 col-md-offset-2">
+
+    <div class="row">
+
+      <ng-container *ngIf="plosones && this.documentsService.isOpen"   style="background: #555555 ">
+        <ng-container  *ngFor="let article of plosones._embedded.plosOnes"   >
+          <div class="row">
+
+            <div class="col-md-8" class="art" >
+              <span>{{article.type}}</span>
+              <h4 class="text-capitalize  url" ><a href="{{article.url}}" target="_blank" >{{article.titre}}</a></h4>
+              <span class="fontStyle">{{article.date}}</span><br>
+              <span  class="fontStyle"  >{{article.auteurs}} <br> </span><br>
+              <!-- <span><a href="{{article.url}}"> {{article.url}} </a> <br></span><br>-->
+            </div>
+
+
+          </div>
+
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
+</div>
+
+<!-- ============== Fin affichage plosOne =============== -->

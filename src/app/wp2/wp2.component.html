@@ -42,28 +42,27 @@
       <thead>
       <tr>
         <th>Sexe</th>
-        <th style="width:50%;">Age</th>
+        <th style="width:50%;">Âge</th>
         <th>Statut matrimonial</th>
-        <th>Groupe_socio culturel</th>
+        <th>Groupe socio culturel</th>
         <th>Profession</th>
-        <th  width="70%">Secteur_activite</th>
-        <th>Religion</th>
-        <th>Nombre resident</th>
-        <th>Frequence_aeration logement</th>
-        <th>Frequence brasseur</th>
-        <th>Frequence Climatiseur</th>
-        <th>Source_eau</th>
-        <th>Dispositif_lavage mains</th>
-        <th>Periode incurbation</th>
+        <th  width="70%">Secteur d'activité professionnel</th>
+        <th>Confession religieuse</th>
+        <th>Nombre de personnes dans le logement principal</th>
+        <th>Fréquence d'aération du logement</th>
+        <th>Fréquence d'utilisation du brasseur</th>
+        <th>Fréquence d'utilisation du climatiseur</th>
+        <th>Source d'eau utilisée</th>
+        <th>Dispositif de lavage mains utilisé</th>
+        <th>Période  d'incurbation du virus</th>
         <th>Commune</th>
-        <th>Nutrition_preventive</th>
-        <th>Infecter_sans_presenter symptome</th>
-        <th>Pas_symptome_mais transmet_covid</th>
+        <th>Nutrition préventive</th>
+        <th>Être infecter sans présenter de symptôme ?</th>
+        <th>Possibilité de transmettre le  virus sans présenter de symptôme ?</th>
       </tr>
       </thead>
       <tbody>
       <tr *ngFor=" let p of res">
-
         <td>{{p.donnee_socio.sexe}}</td>
         <td>{{p.donnee_socio.age}}</td>
         <td>{{p.donnee_socio.statut_matrimonial}}</td>

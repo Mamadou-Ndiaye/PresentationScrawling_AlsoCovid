@@ -46,6 +46,8 @@ export class ElsevierComponent implements OnInit {
   //*********************  Pour articles (Elsevier) *******************************//
   getElsevier()
   {
+    this.documentsService.isOpen= false;
+
     this.elsevier=true;
     this.documentsService.getAllElsevier(this.pageCourant,this.taille).subscribe(
       data=>{

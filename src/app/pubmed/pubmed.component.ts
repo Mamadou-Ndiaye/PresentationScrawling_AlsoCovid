@@ -48,6 +48,8 @@ export class PubmedComponent implements OnInit {
   //*********************  Pour articles (Elsevier) *******************************//
   getPubmed()
   {
+    this.documentsService.isOpen= false;
+
     this.pubmed=true;
     this.documentsService.getAllPubmed(this.pageCourant,this.taille).subscribe(
       data=>{
@@ -76,14 +78,14 @@ export class PubmedComponent implements OnInit {
       {
         this.modeFiltre = true;
       }
-      console.log("I is  " + this.i);
-      console.log("checked is " + e.target.checked);
+     // console.log("I is  " + this.i);
+     // console.log("checked is " + e.target.checked);
       this.theCheckbox=true;
       this.selected.push(e.target.value);
       this.marked= e.target.checked;
-      console.log("checkbox is "+ this.theCheckbox + " marked is  " + this.marked);
-      console.log("valeur du checkbox ++++++°°°°°° " + e.target.value);
-      console.log("Selected  ++++ " + this.selected);
+      //console.log("checkbox is "+ this.theCheckbox + " marked is  " + this.marked);
+      //console.log("valeur du checkbox ++++++°°°°°° " + e.target.value);
+      // console.log("Selected  ++++ " + this.selected);
 
     }
     else  {
@@ -97,8 +99,8 @@ export class PubmedComponent implements OnInit {
       this.theCheckbox=false;
       this.marked= e.target.checked;
       this.unselected.push(e.target.value);
-      console.log("checkbox is "+ this.theCheckbox + " marked is  " + this.marked);
-      console.log("Case decoché tableau " + this.unselected);
+      //console.log("checkbox is "+ this.theCheckbox + " marked is  " + this.marked);
+     // console.log("Case decoché tableau " + this.unselected);
       let unchecked: string= e.target.value;
       //const index: number = monTableau.indexOf("uncheked");
       var index = this.selected.indexOf(unchecked);
@@ -136,7 +138,7 @@ export class PubmedComponent implements OnInit {
     this.currentKeyword=form.keyword;
     this.modeByKeyWord=true;
     this.modeFiltre=false;
-    console.log("Cherche par "+this.currentKeyword);
+    //console.log("Cherche par "+this.currentKeyword);
     this.chercherPubmed();
   }
 

@@ -2,6 +2,9 @@
 <app-bases></app-bases>
 <!-- Fin    -->
 
+<ng-container *ngIf="this.documentsService.isOpen==false" >
+
+
 
 
 <div class="row" *ngIf="nature"  id="article" >
@@ -175,7 +178,7 @@
   </div>
 
   <div class="col-md-3 text-justify "   >
-
+<!--
     <form class="navbar-form navbar-left"  #f="ngForm" (ngSubmit)="onChercherByNature(f.value)" >
       <div class="input-group">
         <input type="text" class="form-control" name="keyword" ngModel  placeholder="Search">
@@ -186,7 +189,7 @@
         </div>
       </div>
     </form>
-
+    -->
   </div>
   <div class="col-md-1 "   >
 
@@ -196,6 +199,7 @@
 
 </div>
 
+</ng-container>
 
 
 

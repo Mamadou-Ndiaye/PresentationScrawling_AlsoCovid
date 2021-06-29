@@ -19,8 +19,18 @@ export class BasesComponent implements OnInit {
   sanitaire: any;
   documents: any;
 
+  dataSearchWho : any = null ;
+  dataSearchArticle: any;
   articles: any;
+  pubmeds: any;
+  natures: any;
+  elseviers : any;
+  plosones : any;
+
   public article: boolean = false;
+
+  public timestamp: number=0;
+
 
 
   // Pour afficher le div de suivi covid,changer affichage en fonction ce la valeur de mode
@@ -76,9 +86,13 @@ export class BasesComponent implements OnInit {
   modeFiltre = false;
   i=0;
 
+  body?: any;
+  private result?: string;
+  private $scope: any;
 
 
-  constructor(private documentsService: DocumentsService, private  authentificationService: AuthentificationService, private sanitizer: DomSanitizer) {
+
+  constructor(public documentsService: DocumentsService, private  authentificationService: AuthentificationService, private sanitizer: DomSanitizer) {
     this.url = ["/webDocumentOrderByCovid", "/webDocumentOrderByhistorique", "/webDocumentOrderByIdentite",
       "/webDocumentOrderByEnvironnement", "/webDocumentOrderByNutrition", "/webDocumentOrderByObjet"];
 
@@ -88,118 +102,157 @@ export class BasesComponent implements OnInit {
   ngOnInit(): void {
 
 
-    //  J envoie la requete au service qui va aller recuperer les donneesde la base et on le met dans  documents e
-    /*this.onPageDocument(this.currentPage);
-    this.covid = this.documentsService.covid;
-    this.environnement = this.documentsService.environnement;
-    this.objet = this.documentsService.objet;
-    this.nutrition = this.documentsService.nutrition;
-    this.identite = this.documentsService.identite;
-    this.sanitaire = this.documentsService.sanitaire;
-    this.changeShow(this.url[0]);*/
-
   }
-
-// Recuperer la page current  et on linjecte
- /* onPageDocument(i: number) {
-    this.currentPage = i;
-    this.documentsService.getAlldocuments(this.currentUrl, this.currentPage, this.size)
-      .subscribe(data => {
-        console.log("voila le resultat de get", data)
-        console.log("page courrante est ", this.currentPage)
-        this.documents = data;
-
-        // recuperons la taille du premier tabeau img qu on utilise dans la fonction gatNumberAleatoire pour generer un nombre aleat
-        this.img = this.documents.content[0].img.length;
-        this.numberAleatoire = Math.floor(Math.random() * (this.img - 0)) + 0;
-
-        this.totalPages = this.documents.totalPages;
-        this.pages = new Array<number>(this.totalPages);
-        console.log("liste des documents", this.documents);
-
-
-        console.log("tableau image +++++", this.images);
-      }, error => {
-        console.log(error)
-      });
-
-
-  }
-
-
-// On appelle cette foncion dans le component HTML et l affichage change en fonction de url passer en parametre dans la
-  // FONCTION changeShow(url)  en fonction du menu clique
-  public changeShow(x: string) {
-
-    // this.status = !this.status;
-
-    this.mode = false;
-    this.senegal = false;
-    this.article = false;
-    this.currentUrl = x;
-
-    this.modeByKeyWord = false;
-
-    this.background = true;
-    this.onPageDocument(this.currentPage)
-    this.documentsService.getAlldocuments(x, this.currentPage, this.size).subscribe(
-      data => {
-        console.log(data)
-        this.documents = data;
-
-        // recuperons la taille du premier tabeau img qu on utilise dans la fonction gatNumberAleatoire pour generer un nombre aleat
-        this.img = this.documents.content[0].img.length;
-        this.numberAleatoire = Math.floor(Math.random() * (this.img - 0)) + 0
-        console.log("-------------number Aleatoire-------------------", this.numberAleatoire);
-        console.log("page courante = ", this.currentPage)
-        this.totalPages = this.documents.totalPages;
-
-
-        console.log("tableau image +++++", this.images);
-        this.pages = new Array<number>(this.totalPages);
-        console.log("liste des documents", this.documents)
-      }, error => {
-        console.log(error)
-      }
-    )
-  }
-
-
-  // Pour le formulaire de recherche
-
 
   onChercher(form: any) {
     this.pageableByCherche = true;
-    console.log(form);
+    this.documentsService.isOpen = true;
+    //console.log(form);
     this.currentPage = 0;
     this.currentKeyword = form.keyword;
     this.modeByKeyWord = true;
-    console.log("Cherche par " + this.currentKeyword);
+    this.modeFiltre=false;
+
+
     this.chercherDocument();
+
+
+
+    //console.log(this.dataSearchWho)
+
+
+
 
   }
 
   chercherDocument() {
-
-    this.documentsService.getDocumentbyKeyword(this.currentKeyword, this.currentPage, this.size)
+    //this.modeByKeyWord = true;
+    this.documentsService.getWhobyKeyword(this.currentKeyword, this.currentPage, this.size)
       .subscribe(data => {
-        this.documents = data;
-        console.log("documents " + this.documents);
-        // this.totalPages=data["page"].totalPages;
-        this.totalPages = this.documents.totalPages;
-
-
-        console.log("tableau image +++++", this.images);
-        this.pages = new Array<number>(this.totalPages);
-        console.log("liste des documents", this.documents)
+       // console.log("*********"+ JSON.parse(JSON.stringify(data)));
+        //this.dataSearchWho= JSON.parse(JSON.stringify(data));
+       // console.log("************************"+this.dataSearchWho["_embedded"]["whoes"].length);
+        this.dataSearchWho=data;
+        if(this.dataSearchWho["_embedded"]["whoes"].length ===0)
+        {
+          this.dataSearchWho=null;
+          this.chercherArticle();
+        }
+       // this.pagesTotal = this.documents.totalPages;
+       // this.pages = new Array<number>(this.pagesTotal);
 
       }, err => {
         console.log(err);
       });
 
-  }
-*/
 
+
+  }
+
+  getTS() {
+    return this.timestamp;
+  }
+
+
+  //**************************** recherche dans article**************//
+
+  chercherArticle() {
+
+    this.documentsService.getArticlebyKeyword(this.currentKeyword,this.currentPage,this.size)
+      .subscribe(data => {
+       // this.articles = data;
+        this.dataSearchArticle= data;
+        if(this.dataSearchArticle["_embedded"]["articles"].length===0)
+        {
+          this.dataSearchArticle=null;
+          console.log("*******appeler une autre fonction chercherPubmed() ********");
+          this.chercherPubmed();
+        }
+
+      }, err => {console.log(err); });
+
+  }
+
+  // =================== Chercher dans PubMebs *****================
+   chercherPubmed(){
+
+    this.documentsService.getPubmedbyKeyword(this.currentKeyword,this.currentPage,this.size)
+      .subscribe(data => {
+        this.pubmeds = data;
+        console.log("la taille pubmeds"+this.pubmeds["_embedded"]["pubMeds"].length);
+        if(this.pubmeds["_embedded"]["pubMeds"].length === 0)
+        {
+          this.pubmeds = null;
+          console.log("*******appeler la fonction chercherNature() ********");
+          this.chercherNature();
+        }
+
+      }, err => {console.log(err); });
+  }
+  // ==================********* FIN chercherPubmed() ********============//
+
+
+  // =================== Chercher dans Natures *****================
+
+  chercherNature() {
+
+    this.documentsService.getNaturebyKeyword(this.currentKeyword,this.currentPage,this.size)
+      .subscribe(data => {
+        this.natures = data;
+        if(this.natures["_embedded"]["natures"].length === 0)
+        {
+             this.natures=null;
+             this.chercherElsevier();
+            console.log("*******appeler une autre fonction elseviers *******");
+        }
+
+      }, err => {console.log(err); });
+
+  }
+
+// ==================********* FIN chercherNature() ********============//
+
+
+  // =================== Chercher dans Elsevier *****================ //
+
+  chercherElsevier() {
+
+    this.documentsService.getElsevierbyKeyword(this.currentKeyword,this.currentPage,this.size)
+      .subscribe(data => {
+        this.elseviers = data;
+        console.log("elseviers "+this.elseviers);
+        if(this.elseviers["_embedded"]["elseviers"].length === 0)
+        {
+          this.chercherPlosone();
+          console.log("*******appeler une autre fonction plosOne *******");
+        }
+        // this.totalPages=data["page"].totalPages;
+        // this.pages=new  Array<number>(this.totalPages);
+
+      }, err => {console.log(err); });
+
+  }
+
+
+// ==================********* FIN chercherElsevier() ********============//
+
+
+  // =================== Chercher dans plosOnes *****================ //
+
+
+  chercherPlosone() {
+    this.documentsService.getPlosOnebyKeyword(this.currentKeyword,this.currentPage,this.size)
+      .subscribe(data => {
+        this.plosones = data;
+        console.log("documents "+this.plosones);
+        // this.totalPages=data["page"].totalPages;
+        // this.pages=new  Array<number>(this.totalPages);
+
+      }, err => {console.log(err); });
+
+  }
+
+// ==================********* FIN chercherPlosone() ********============//
 
 
 }

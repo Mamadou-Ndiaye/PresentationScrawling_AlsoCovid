@@ -43,13 +43,13 @@ export class LoginComponent implements OnInit {
     {
       if (this.authentificationService.etat){
         this.authentificationService.saveAuthentificatedUser();
-        this.router.navigateByUrl("/documents")
+        this.router.navigateByUrl("/whos")
       }
       else{
        // this.authentificationService.userLogin.etat=true
         this.authentificationService.saveAuthentificatedUser();
         this.authentificationService.updateUtilisateur(this.authentificationService.userLogin).subscribe(
-          data=> this.router.navigateByUrl('/documents')  // / categories
+          data=> this.router.navigateByUrl('/whos')  // / categories
         )
 
       }
@@ -81,7 +81,7 @@ export class LoginComponent implements OnInit {
 
   gotoCategorie() {
     //this.router.navigateByUrl('/categories'); // on ne passe plus dans categeries
-    this.router.navigateByUrl('/documents');
+    this.router.navigateByUrl('/whos');
   }
 
 }

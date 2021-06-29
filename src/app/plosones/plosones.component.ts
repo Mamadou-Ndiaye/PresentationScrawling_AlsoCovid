@@ -86,7 +86,7 @@ export class PlosonesComponent implements OnInit {
 
 
 
-  constructor(private documentsService : DocumentsService,private  router:Router,private  authentificationService:AuthentificationService,private sanitizer: DomSanitizer) {
+  constructor(public documentsService : DocumentsService,private  router:Router,private  authentificationService:AuthentificationService,private sanitizer: DomSanitizer) {
     this.url=["/webDocumentOrderByCovid","/webDocumentOrderByhistorique","/webDocumentOrderByIdentite",
       "/webDocumentOrderByEnvironnement","/webDocumentOrderByNutrition", "/webDocumentOrderByObjet"];
 
@@ -104,6 +104,7 @@ export class PlosonesComponent implements OnInit {
   //*********************  Pour articles (PlosOne) *******************************//
   getPlosOnes()
   {
+    this.documentsService.isOpen= false;
     this.senegal=false;
     this.mode=false;
     this.plosone=true;
@@ -132,7 +133,6 @@ export class PlosonesComponent implements OnInit {
   }
 
   chercherPlosone() {
-
     this.documentsService.getPlosOnebyKeyword(this.currentKeyword,this.currentPage,this.size)
       .subscribe(data => {
         this.plosones = data;

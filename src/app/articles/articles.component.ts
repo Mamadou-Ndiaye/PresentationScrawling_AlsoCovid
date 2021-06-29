@@ -85,7 +85,7 @@ export class ArticlesComponent implements OnInit {
 
 
 
-  constructor(private documentsService : DocumentsService,private  router:Router,private  authentificationService:AuthentificationService,private sanitizer: DomSanitizer) {
+  constructor(public documentsService : DocumentsService,private  router:Router,private  authentificationService:AuthentificationService,private sanitizer: DomSanitizer) {
     this.url=["/webDocumentOrderByCovid","/webDocumentOrderByhistorique","/webDocumentOrderByIdentite",
       "/webDocumentOrderByEnvironnement","/webDocumentOrderByNutrition", "/webDocumentOrderByObjet"];
 
@@ -125,6 +125,7 @@ export class ArticlesComponent implements OnInit {
  //*********************  Pour articles (Science direct) *******************************//
   getArticles()
   {
+    this.documentsService.isOpen= false;
     this.senegal=false;
     this.mode=false;
     this.article=true;

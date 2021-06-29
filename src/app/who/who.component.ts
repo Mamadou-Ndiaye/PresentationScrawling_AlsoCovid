@@ -48,6 +48,8 @@ export class WhoComponent implements OnInit {
 
   getWhos()
   {
+    this.documentsService.isOpen= false;
+    // console.log("my boolean is "+this.documentsService.isOpen);
 
    //this.mode=true;
     this.documentsService.getAllWhos(this.currentPage,this.size).subscribe(
@@ -79,7 +81,7 @@ export class WhoComponent implements OnInit {
     this.currentKeyword = form.keyword;
     this.modeByKeyWord = true;
     this.modeFiltre=false;
-    console.log("Cherche par " + this.currentKeyword);
+    //console.log("Cherche par " + this.currentKeyword);
     this.chercherDocument();
 
   }
@@ -89,7 +91,7 @@ export class WhoComponent implements OnInit {
     this.documentsService.getWhobyKeyword(this.currentKeyword, this.currentPage, this.size)
       .subscribe(data => {
         this.documents = data;
-        console.log("documents " + this.documents);
+         console.log("documents " + this.documents);
 
         // recuperons la taille du premier tabeau img qu on utilise dans la fonction gatNumberAleatoire pour generer un nombre aleat
         //this.img = this.documents.content[0].img.length;
@@ -120,28 +122,28 @@ export class WhoComponent implements OnInit {
       {
         this.modeFiltre = true;
       }
-      console.log("I is  " + this.i);
-      console.log("checked is " + e.target.checked);
+      //console.log("I is  " + this.i);
+     // console.log("checked is " + e.target.checked);
       this.theCheckbox=true;
-      console.log("type de la variable est "+ typeof (e.target.value) );
-      console.log("comparaison"+ e.target.value.localeCompare("2020"));
+      //console.log("type de la variable est "+ typeof (e.target.value) );
+     // console.log("comparaison"+ e.target.value.localeCompare("2020"));
 
       if(e.target.value.localeCompare("2021")==0 || e.target.value.localeCompare("2020")==0 || e.target.value.localeCompare("2019")==0 || e.target.value.localeCompare("2018")==0)
       {
         this.selected.push(e.target.value);
         this.marked= e.target.checked;
-        console.log("checkbox is "+ this.theCheckbox + " marked is  " + this.marked);
-        console.log("valeur du checkbox ++++++°°°°°° " + e.target.value);
-        console.log("Selected  ++++ " + this.selected);
+       // console.log("checkbox is "+ this.theCheckbox + " marked is  " + this.marked);
+       // console.log("valeur du checkbox ++++++°°°°°° " + e.target.value);
+        //console.log("Selected  ++++ " + this.selected);
 
       }
       else
       {
         this.selectedType.push(e.target.value);
         this.marked= e.target.checked;
-        console.log("checkbox is "+ this.theCheckbox + " marked is  " + this.marked);
-        console.log("valeur du checkbox ++++++°°°°°° " + e.target.value);
-        console.log("SelectedType is   ++++ " + this.selectedType);
+       // console.log("checkbox is "+ this.theCheckbox + " marked is  " + this.marked);
+       // console.log("valeur du checkbox ++++++°°°°°° " + e.target.value);
+       // console.log("SelectedType is   ++++ " + this.selectedType);
 
       }
 
@@ -153,7 +155,7 @@ export class WhoComponent implements OnInit {
       if (this.i==0)
       {
         this.modeFiltre = false;
-        console.log(" ++++++++++++mode filtre ------------------- " + this.modeFiltre);
+        //console.log(" ++++++++++++mode filtre ------------------- " + this.modeFiltre);
       }
       this.theCheckbox=false;
       this.marked= e.target.checked;
@@ -167,28 +169,28 @@ export class WhoComponent implements OnInit {
       {
         var index = this.selected.indexOf(unchecked);
         if (index > -1) { this.selected.splice(index, 1); }
-        console.log("restant du tableau selected annee  is   " + this.selected);
+       // console.log("restant du tableau selected annee  is   " + this.selected);
       }
       else
       {
         var index = this.selectedType.indexOf(unchecked);
         if (index > -1) { this.selectedType.splice(index, 1); }
-        console.log("Bouton decoche et valeur is " ,e.target.value + " and index is " ,index);
-        console.log("restant du tableau selected Type is   " + this.selectedType);
+       // console.log("Bouton decoche et valeur is " ,e.target.value + " and index is " ,index);
+       // console.log("restant du tableau selected Type is   " + this.selectedType);
       }
 
-      console.log("checkbox is "+ this.theCheckbox);
+     // console.log("checkbox is "+ this.theCheckbox);
 
     }
-    console.log("taille de selected is " + this.selected.length);
-    console.log("taille de selected type is" + this.selectedType.length);
+   // console.log("taille de selected is " + this.selected.length);
+   // console.log("taille de selected type is" + this.selectedType.length);
 
 
     // Envoie du requete a la partie backend selon les elements coches
     //** Envoie dans la partie annee et type
     if(this.selected.length!=0 && this.selectedType.length!=0)
     {
-      console.log("Envoie dans la partie annee et type");
+      //console.log("Envoie dans la partie annee et type");
       this.documentsService.getWhobyFilterTitreAndDate(this.selectedType,this.selected).subscribe(
         data => {
           console.log(data);
@@ -200,10 +202,10 @@ export class WhoComponent implements OnInit {
     //** Envoie dans la partie annee
     else if(this.selected.length!=0 && this.selectedType.length==0)
     {
-      console.log("Envoie dans la partie annee");
+      //console.log("Envoie dans la partie annee");
       this.documentsService.getWhobyFilterAnnee(this.selected).subscribe(
         data => {
-          console.log(data);
+         // console.log(data);
           this.filtres = data;
         }, error => {
           console.log(error)
@@ -212,7 +214,7 @@ export class WhoComponent implements OnInit {
     //** Envoie dans la partie type
     else if(this.selected.length==0 && this.selectedType.length!=0)
     {
-      console.log("Envoie dans la partie type");
+      //console.log("Envoie dans la partie type");
       this.documentsService.getWhobyFilterTitre(this.selectedType).subscribe(
         data => {
           console.log(data);

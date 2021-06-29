@@ -86,7 +86,7 @@ export class NaturesComponent implements OnInit {
 
 
 
-  constructor(private documentsService : DocumentsService,private  router:Router,private  authentificationService:AuthentificationService,private sanitizer: DomSanitizer) {
+  constructor(public documentsService : DocumentsService,private  router:Router,private  authentificationService:AuthentificationService,private sanitizer: DomSanitizer) {
     this.url=["/webDocumentOrderByCovid","/webDocumentOrderByhistorique","/webDocumentOrderByIdentite",
       "/webDocumentOrderByEnvironnement","/webDocumentOrderByNutrition", "/webDocumentOrderByObjet"];
 
@@ -105,6 +105,7 @@ export class NaturesComponent implements OnInit {
   //*********************  Pour articles (Nature) *******************************//
   getNatures()
   {
+    this.documentsService.isOpen= false;
     this.senegal=false;
     this.mode=false;
     this.nature=true;

@@ -15,6 +15,7 @@ import {ElsevierComponent} from "./elsevier/elsevier.component";
 import {PubmedComponent} from "./pubmed/pubmed.component";
 import {WhoComponent} from "./who/who.component";
 import {Wp2Component} from "./wp2/wp2.component";
+import {ProduitComponent} from "./produit/produit.component";
 // ,canActivate : [AuthguardService]
 const routes: Routes = [
   {path:"",component: WhoComponent},
@@ -34,7 +35,9 @@ const routes: Routes = [
   {path: "infocovids",component: InfocovidComponent},
   {path: "infocovidBenin",component: InfocovidBeninComponent},
   {path: "infocovidspayspilotes",component: InfocovidSenegalComponent},
-  {path: "wp2",component: Wp2Component,canActivate : [AuthguardService]}
+  {path: "wp2",component: Wp2Component,canActivate : [AuthguardService]},
+  {path: "produit",component: ProduitComponent}
+
 
 ];
 

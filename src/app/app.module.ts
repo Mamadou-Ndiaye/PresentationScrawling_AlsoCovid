@@ -23,6 +23,7 @@ import { PubmedComponent } from './pubmed/pubmed.component';
 import { WhoComponent } from './who/who.component';
 import { Wp1Component } from './wp1/wp1.component';
 import { Wp2Component } from './wp2/wp2.component';
+import { ProduitComponent } from './produit/produit.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { Wp2Component } from './wp2/wp2.component';
     PubmedComponent,
     WhoComponent,
     Wp1Component,
-    Wp2Component
+    Wp2Component,
+    ProduitComponent
 
 
   ],

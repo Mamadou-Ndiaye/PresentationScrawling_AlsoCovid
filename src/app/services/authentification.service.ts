@@ -3,12 +3,14 @@ import {HttpClient} from "@angular/common/http";
 import {Utilisateur} from "../classes/Utilisateur";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Observable} from "rxjs";
+import {DocumentsService} from "./documents.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthentificationService {
-  public  host:string="http://localhost:8080";
+  //public  host:string="http://localhost:8080";
+  public host=this.documentsService.host;
   public isLogin:boolean=false;
   // Etat pour recuperer l etat de user current afin de injecter dans la classe login.ts
   // Pour faire le test afin de le redirige dans la partie souhaite
@@ -19,7 +21,7 @@ export class AuthentificationService {
   public token:any;
 
   constructor(private  http : HttpClient ,private route: ActivatedRoute,
-              private router: Router) { }
+              private router: Router, private documentsService:DocumentsService) { }
 
   //on envoie une requete a la partie backend demander les utilisateurs
   getUtilisateurs() {
